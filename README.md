@@ -1,3 +1,5 @@
+![](doc/head-image.png)
+
 The CNX Custom Theme allows customizing Connections to your needs with as less work and headaches as possible. It was started in the end of 2018 to gave Connections a more modern look & feel and adjust them to our corporate design.  
 
 ## Getting started
