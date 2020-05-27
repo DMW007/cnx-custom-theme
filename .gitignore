@@ -1,3 +1,8 @@
 node_modules
 dist
 .env
+.vs
+.vscode
+img/*
+!img/README.txt
+src/scss/color-vars.scss
