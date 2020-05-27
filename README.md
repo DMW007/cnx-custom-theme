@@ -64,3 +64,7 @@ Start the server:
 ```bash
 $ node src/tampermonkey/tampermonkey-server.js
 ```
+
+## Credits
+
+Icon created by [monkik](https://www.flaticon.com/de/kostenloses-icon/kundendienst_1086507) from [flaticon](https://www.flaticon.com/).
