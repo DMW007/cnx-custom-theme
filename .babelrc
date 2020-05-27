@@ -1,0 +1,5 @@
+{
+  "sourceType": "script",
+  "ignore": ["gulpfile.js"],
+  "presets": [["@babel/preset-env", { "useBuiltIns": "entry" }]]
+}
