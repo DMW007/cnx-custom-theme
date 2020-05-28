@@ -1,0 +1,128 @@
+/* Titelfarbe Karten */
+.theme-default .theme-header:not(.lotusWelcomeBox),
+.theme-default .theme-header:not(.lotusWelcomeBox):hover,
+.gen4-theme.theme-default ul.theme-list li.lotusSelected a {
+  background: $highlight-background-color;
+}
+
+body.hikari-theme.lotusui30 {
+  div.lotusPlaceBar .lotusInner {
+    padding-top: 0;
+  }
+  .lotusPlaceBar.board-info-bar {
+    padding-bottom: 0;
+    padding-top: 5px;
+  }
+}
+
+.lotusui30 .boards-banner .lotusTitleBar2 .lotusNavTabs {
+  border-bottom: none;
+}
+
+/* Boards Navi und Meta-Infos vom Board bündig untereinander */
+.board-info-container {
+  margin-left: 288px;
+}
+.board-info-bar .lotusRightCorner {
+  padding-left: 2px;
+}
+
+/* "Boards" Widget auf der Community-Startseite: Button "Community-Board erstellen" */
+.kudos-boards-ui .blue-btn-container {
+  .blue-btn,
+  .blue-btn:hover,
+  .blue-btn:focus,
+  .blue-btn:visited,
+  .blue-btn:active {
+    /* Kudos Boards überschreibt unser CSS, was durch Entfernen des BG revidiert wird. 
+       Das Widget wurde von Kudos Boards als iFrame eingebunden, welches sämtliche Ressourcen (inkl. diesem CSS) doppelt lädt. */
+    background: none !important;
+  }
+}
+
+/* Startseite Boards: Titel der Widget-Boxen */
+.board-tile a.title-link {
+  color: $highlight-foreground-color !important;
+}
+
+/* "Kudos Boards" durch "Boards" ersetzen und Logo ausblenden */
+.boards-logo-container .lotusText {
+  color: transparent !important;
+
+  &:before {
+    content: "Boards";
+    color: black;
+  }
+}
+img.kudos-logo-header {
+  display: none;
+}
+
+/* Boards als Aktivität ~> Aufgaben vom Mitglied: Reiter für Aufgaben, die mir zugewiesen wurden - Titelleist Petrol => Weiß */
+/* ToDo: Prüfen - Entfernt wegen Seiteneffekten */
+/*.vcard > a {
+  color: $highlight-background-color !important;
+}*/
+
+/* Highlight aktives Element in Navi */
+body.hikari-theme.lotusui30 .lotusTitleBar2 .lotusNavTabs {
+  li .lotusTab:hover,
+  li.lotusSelected a {
+    border-bottom: 2px solid $link-color !important;
+  }
+}
+
+/* ## "Meine Boards ## */
+/* Trennlinie Sub-Nav und Inhalt */
+body.hikari-theme #board-info-container {
+  border-top: 1px solid $link-color;
+}
+
+/* Board-Kategorien -> Kategorie hinzufügen bündig/formatiert wie andere Elemente */
+.add-category-item > div {
+  padding: 0;
+}
+/* X zum Löschen rechts neben der Kategorie in der linken Navi (sofern Kategorien existieren) */
+.custom-board-category .delete-category-btn {
+  top: 0;
+}
+/* Boards-Karten Titel/Community Link (z.B. in Öffentliche Boards -> Abgeschlossen) */
+/* Da wir den Standard blauen BG behalten, muss hier weiß statt petrol zur besseren Lesbarkeit genutzt werden */
+.board-list-container a.link {
+  color: white !important;
+}
+
+/* Board-Karte > Lesezeichen hinzufügen > Speicher-Button - wird auch bei Feld hinzufügen genutzt */
+.saveButton {
+  color: $button-foreground-color !important;
+  background: $button-background-color !important;
+}
+
+// "Board-Kategorien" Icon in Boards ist standardmäßig orange und passt damit nicht ins CD
+.board-categories-menu .glyphicon-bookmark {
+  color: $text-color;
+}
+.kudos-boards-ui {
+  #board-info-container {
+    // Buttons "Board-Aktionen"/Vollbild mit genügend Abstand positionieren, damit kein Scrollbalken entsteht
+    .lotusInlinelist.lotusRight {
+      right: 40px !important;
+    }
+  }
+  // IE-Fix: Horizontale Scrollbar erscheint, ist aber nicht benutzbar, weil sie über einer Platzhalter-Scrollbar liegt. Es konnte nur über den weißen BG gescrollt werden.
+  // Workaround legt die "richtige" Taskbar ein Stück hoch. ToDo: "Falsche" Taskleiste im IE ausblenden
+  .sectionScroller.scrollbar {
+    overflow-x: auto !important;
+    max-height: 98% !important;
+  }
+}
+
+// Make the "save" button of the create board modal dialog visible. Per default, the modal is not full visible.
+#kudosBoardsCommunityIFrame {
+  height: 600px !important;
+}
+
+// Blauer Rahmen ist doppelt zum bereits vorhandenen grauen Rahmen des darunterliegenden Elementes
+body.hikari-theme #board-info-container {
+  border-top: none !important;
+}

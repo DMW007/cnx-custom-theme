@@ -1,0 +1,114 @@
+@import "./button";
+
+.lotusui30 {
+  /* Standard-Dialoge wie z.B. Dateiupload auf der Startseite */
+  .lotusDialog .lotusDialogHeader,
+  // Editor Dialoge (z.B. Link einfügen)
+  .cke_dialog_title {
+    background: $highlight-background-color;
+  }
+
+  /* "Snackbars", z.B. beim Klick auf einen geteilten Inhalt werden hier Details angezeigt */
+  .lotusFlyout .lotusFlyoutHeader {
+    background-color: $highlight-background-color;
+  }
+  /* Trennlinie in den Snackbars zwischen Kopfbereich und Kommentare */
+  .lotusFlyoutInner .lotusTabCondensed .lotusTabs li.lotusSelected {
+    border-bottom: 2px solid $highlight-background-color;
+  }
+}
+
+/* "Apps Hinzufügen" Dialog, wenn man auf der Startseite bei den Widgets rechts auf "Anpassen" klickt */
+.app_palette_modal_header {
+  background-color: $highlight-background-color;
+}
+/* Reiter bei "Apps hinzufügen" farblich abheben */
+.app_palette_modal_tabs_ul {
+  border-bottom: 1px solid white;
+}
+/* Titel zentrieren, damit er besser ins Layout passt */
+.app_palette_modal_header_title {
+  text-align: center;
+}
+
+/* Datei folgen ~> "Nicht mehr Folgen" Bestätigungsdialog */
+.ics-viewer-open {
+  .dijitDialog.versionDialog .dijitDialogTitleBar,
+  .dijitDialog.commentDialog .dijitDialogTitleBar,
+  .dijitDialog.sharingDialog .dijitDialogTitleBar,
+  .dijitDialog.linkDialog .dijitDialogTitleBar,
+  .dijitDialog.confirmationDialog .dijitDialogTitleBar,
+  .dijitDialog.templateCreateDialog .dijitDialogTitleBar,
+  .dijitDialog.roundtripEditDialog .dijitDialogTitleBar,
+  .dijitDialog.provisionExternalUserDialog .dijitDialogTitleBar,
+  .dijitDialog.flagActionDialog .dijitDialogTitleBar {
+    background: $highlight-background-color !important;
+  }
+
+  .dijitDialog {
+    /* Entspricht .dijitDialog.versionDialog.a */
+    /* .ics-viewer-ok-button wird ausgeschlossen, damit der Primärbutton keinen Petrol-Rahmen bekommt */
+    &.versionDialog a:not(.ics-viewer-ok-button),
+    &.commentDialog a:not(.ics-viewer-ok-button),
+    &.sharingDialog a:not(.ics-viewer-ok-button),
+    &.linkDialog a:not(.ics-viewer-ok-button),
+    &.confirmationDialog a:not(.ics-viewer-ok-button),
+    &.templateCreateDialog a:not(.ics-viewer-ok-button),
+    &.roundtripEditDialog a:not(.ics-viewer-ok-button),
+    &.provisionExternalUserDialog a:not(.ics-viewer-ok-button),
+    &.flagActionDialog a:not(.ics-viewer-ok-button) {
+      border: 1px solid $button-border-color;
+    }
+
+    /* Datei nicht mehr Teilen Dialog: Behebt flickern der Buttons beim Hover durch Padding, der an den Seiten eingebaut wird */
+    &.versionDialog a:hover,
+    &.commentDialog a:hover,
+    &.sharingDialog a:hover,
+    &.linkDialog a:hover,
+    &.confirmationDialog a:hover,
+    &.templateCreateDialog a:hover,
+    &.roundtripEditDialog a:hover,
+    &.provisionExternalUserDialog a:hover,
+    &.flagActionDialog a:hover,
+    &.versionDialog a:focus,
+    &.commentDialog a:focus,
+    &.sharingDialog a:focus,
+    &.linkDialog a:focus,
+    &.confirmationDialog a:focus,
+    &.templateCreateDialog a:focus,
+    &.roundtripEditDialog a:focus,
+    &.provisionExternalUserDialog a:focus,
+    &.flagActionDialog a:focus,
+    &.versionDialog a,
+    &.commentDialog a,
+    &.sharingDialog a,
+    &.linkDialog a,
+    &.confirmationDialog a,
+    &.templateCreateDialog a,
+    &.roundtripEditDialog a,
+    &.provisionExternalUserDialog a,
+    &.flagActionDialog a {
+      padding: 9px 17px !important;
+    }
+
+    /* Primärer Button (OK) in Primärfarbe darstellen */
+    .ics-viewer-ok-button,
+    .button-container #ok {
+      @extend %button-default-color;
+      /* Dient als Höhenausgleich, da die Nicht-Primärbuttons ohne Rahmen sonst kleiner aussehen */
+      border: 1px solid $highlight-background-color !important;
+    }
+  }
+}
+
+// Popups wenn z.B. im Wiki auf die Anzahl der Likes geklickt wird
+// Lässt sich nicht überall stylen, da IBM dies inkonsistent verwendet und teils ein iFrame nutzt
+// (z.B. ActivitiyStream Kommentar oder andere Aktion Box anklicken ~> Auf die Likes klicken ~> Popup mit Like-Liste
+.lotusPopup .lotusLikeHeader {
+  background: $highlight-background-color !important;
+}
+
+// Link zu Datei einfügen: Abstand Durchsuchen-Button zu Hinweistext
+.lotusUploadFile .pickerDropfilesDesc {
+  margin-top: 15px;
+}

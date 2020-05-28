@@ -1,0 +1,79 @@
+@mixin eml-viewer {
+  .eml-parent {
+    padding: 50px 0 0 0 !important;
+    background: transparent !important;
+  }
+  
+  .emlPreviewWrapper {
+    background-color: #2E3031;
+    white-space: normal;
+    margin-top: 1rem;
+    text-align: left;
+    box-shadow: 0 0 5px white;
+    border-radius:5px;
+  
+    table {
+      width: 100%;
+    }
+  
+    .emlPreviewSubject {
+      padding: 15px 17px 10px 17px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: $button-background-color;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  
+    .emlPreviewAddresses {
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
+      color: #222;
+      background-color: #f1f1f1;
+      table td {
+        padding: 5px 5px 5px 0px;
+        white-space: normal !important;
+        vertical-align: top;
+      }
+    }
+  
+    .emlContent {
+      padding: 0px;
+      color: #111;
+      background-color: white;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+  
+      .warning {
+        background-color: $warning-background-color;
+        font-weight: bold;
+        color: $warning-foreground-color;
+        padding: 5px;
+        margin-bottom: 20px;
+        padding-left: 14px;
+        box-shadow: 0 2px 0 rgba(0,0,0,.1);
+      }
+  
+      table a {
+        color: white !important;
+        background-color: $link-color;
+        display: inline-block;
+        line-height: 16px;
+        margin-left: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 0 rgba(0,0,0,.1);
+        font-weight: normal;
+        margin-right: 10px;
+      }
+  
+      table a:hover, table a:focus, table a:visited, table a:active{
+        text-decoration: none;
+      }
+    }
+  
+    .mail-content {
+      padding: 0 1rem 1rem 1rem;
+    }
+  }
+  
+}

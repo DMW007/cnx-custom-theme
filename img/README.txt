@@ -1,0 +1,1 @@
+Place custom images in this directory and refer it without path prefix, e.g. `background-image: url('my-img.jpg)` from SCSS.

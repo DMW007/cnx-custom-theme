@@ -1,0 +1,81 @@
+/* Abstand entfernt, da er zu einem Rahmen im Button führt */
+.lotusui30 .lotusBtn,
+.lotusui30 .lotusMain span.lotusBtn a {
+  margin: 0;
+}
+
+.lotusui30 {
+  .lotusBtn {
+    @extend %button-default-color;
+    font-size: $default-font-size !important;
+
+    /* Für mehrere Buttons die nebeneinander liegen, z.B. Im Profil Mail senden/vCard herunterladen */
+    margin-right: 5px;
+
+    a,
+    a:active,
+    a:focus,
+    a:hover {
+      @extend %button-default-color;
+    }
+    :hover {
+      opacity: 0.7;
+    }
+  }
+  .lotusMain {
+    /* CTA-Buttons wie z.B. Aktivität anlegen, neuen Thread erstellen usw. */
+    .lotusBtnAction {
+      a,
+      a:focus,
+      a:hover {
+        @extend %button-default-color;
+      }
+    }
+
+    /* Formular-Buttons für z.B. Das Anlegen einer Aktivität */
+    button.lotusFormButton,
+    input.lotusFormButton {
+      @extend %button-default-color;
+      /*box-shadow: 0 0 0 1px $button-border-color inset !important;*/
+    }
+  }
+  /* Kleine Buttons finden sich z.B. beim hinzufügen von Schlagwörtern */
+  .lotusBtnSmall {
+    @extend %button-default-color;
+  }
+  /* "Hochladen" Button in der Dateivorschau */
+  .ics-viewer-action-upload .actionLink {
+    @extend %button-default-color;
+  }
+}
+.lotusFormButton[title="OK"] {
+  @extend %button-default-color;
+}
+
+// Popup-Dialoge
+.cke_dialog_ui_button_ok {
+  @extend %button-default-color;
+  border: 1px solid $button-background-color !important;
+
+  span {
+    color: white !important;
+  }
+}
+// Link zu Dateien hinzufügen ~> Upload: Button ist beim Start deaktiviert, bis man Dateien hinzufügt (deaktivierter Button bleibt damit ausgegraut)
+#submit_button[aria-disabled="false"] {
+  @extend %button-default-color;
+}
+
+.lotusBtnDisabled {
+  opacity: $button-disabled-opacity !important;
+}
+
+%button-default-color {
+  color: $button-foreground-color !important;
+  background-color: $button-background-color !important;
+  box-shadow: none !important;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

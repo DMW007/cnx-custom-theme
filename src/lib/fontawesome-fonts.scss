@@ -1,0 +1,29 @@
+// WOFF ist Cross-Browser kompatibel bis IE9: https://creativemarket.com/blog/the-missing-guide-to-font-formats
+// https://caniuse.com/#search=woff
+// Das Standard CSS von FA bindet etliche weitere Formate ein, wodurch die Datengröße auf ~6MB erhöht werden würde
+// regular.css
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/fa-regular-400.woff") format("woff");
+}
+
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+// solid.css
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../webfonts/fa-solid-900.woff") format("woff");
+}
+
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}

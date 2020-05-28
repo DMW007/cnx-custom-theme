@@ -1,0 +1,19 @@
+/* Inhaltsverzeichnis Wiki Sidebar links */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow a {
+  color: $text-color !important;
+}
+
+/* Community-Bild im Wiki */
+.discussCommunityLogo {
+  border-radius: $community-image-border-radius !important;
+  /* Chrome */
+  margin-top: 5px;
+}
+
+// Navi links
+.lotusui30 .lotusPlaceBar .lotusInlinelist {
+  li a,
+  a:visited {
+    color: $link-color !important;
+  }
+}

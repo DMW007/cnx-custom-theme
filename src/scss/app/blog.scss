@@ -1,0 +1,90 @@
+/* Titelgröße in den Blogs vergrößern */
+.entryContentContainerTD {
+  h4 {
+    font-size: 2em !important;
+  }
+  /* Standard-Schriftgröße von Hikari. Scheint sich nur derart unschön lösen zu lassen, da Connections keinen vernünftigen Selektor für den Blogtitel bietet */
+  .entryContentContainer h4 {
+    /* 1em ~ ca 16px */
+    font-size: 1.2em !important;
+  }
+
+  // More space between content and controls
+  padding-bottom: 10px !important;
+}
+#entries {
+  // Optical highlighted box for controls
+  .lotusInlinelist {
+    box-shadow: 0 1px 1px rgba(0,0,0,.2),0 -1px 2px rgba(0,0,0,.2);
+    padding: 10px;
+  }
+}
+
+/* Einzelner Blogeintrag */
+/* Buttons für Aktionen am unteren Ende (Kommentieren, Bearbeiten usw) */
+.aria_toolbar {
+  margin-top: 10px !important;
+}
+
+.blogsAdd {
+  font-size: $default-font-size !important;
+  color: $link-color !important;
+  text-decoration: none !important;
+  margin-left: 15px !important;
+
+  &::hover {
+    // text-decoration: underline !important;
+    color: red !important;
+  }
+  &::before {
+    content: "\f067";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 18px;
+  }
+}
+
+// Schriftzug "Keine Tags"
+.blogsEmpty,
+// Textbox zum hinzufügen neuer Tags
+#addtagwidgetAddTagsTypeAhead,
+// Liste existierender Tags
+div[dojoattachpoint="_selectedTagsSection"] .lotusAction,
+#trackbackUrl {
+  font-size: $default-font-size !important;
+}
+
+div[dojoattachpoint="_selectedTagsSection"] .lotusAction {
+  padding: 5px 8px !important;
+  border: 1px solid $link-color !important;
+  border-radius: 1px !important;
+}
+
+// Blogtitel
+.entryEditTable {
+  width: 100% !important;
+
+  #title {
+    @extend %modern-textbox;
+  }
+}
+
+// Textbox neuer Tag
+#addtagwidgetAddTagsTypeAhead {
+  padding: 4px !important;
+}
+// OK/Abbrechen Button beim hinzufügen eines neuen Tags
+.lotusBtnSmall,
+.lotusBtnSmallGray {
+  padding: 8px 10px;
+}
+
+// Sidebar Schlagwortwolke links
+.lotusTagCloud .lotusF1,
+// "Wolke", "Liste"
+.lotusActions,
+div[dojoattachpoint="_tagSearchText"] {
+  color: $link-color !important;
+  font-size: $default-font-size !important;
+}

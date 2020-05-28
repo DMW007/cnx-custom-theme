@@ -1,0 +1,17 @@
+.filesList {
+  // "Gepinnte Dateien": Blau gefärbtes Bild ausblenden
+  .dropfilesIcon64 {
+    display: none;
+  }
+  // Stattdessen ein FA Icon einbinden, um CD Farben zu gewährleisten
+  // #fileDropTitle_1 nicht nutzen! Beim navigieren führt Connections komische Id Manipulationen durch, z.B. wird aus der Id #fileDropTitle_2 wenn man ein Menü-Element
+  // darunter anklickt und dann wieder auf "Gepinnte Dateien"
+  .filesDnDTitle:before {
+    @extend %fa-shared;
+    content: "\f15c";
+    font-weight: 300 !important;
+    display: block !important;
+    font-size: 64px !important;
+    margin-bottom: 30px;
+  }
+}

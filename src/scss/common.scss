@@ -1,0 +1,141 @@
+.lotusui30 {
+  /*Linkfarbe*/
+  a,
+  a:active,
+  a:focus,
+  a:hover,
+  a:visited {
+    color: $link-color;
+  }
+  .lotusVCard {
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited {
+      color: $link-color;
+    }
+  }
+
+  .lotusBanner {
+    /*Tagcloud*/
+    a.lotusF3,
+    a.lotusF3:visited {
+      color: $link-color;
+    }
+  }
+}
+.lotusui30 {
+  /*Linkfarbe*/
+  a,
+  a:active,
+  a:focus,
+  a:hover,
+  a:visited {
+    // No important to allow users to override the color using inline css
+    color: $link-color;
+  }
+  .lotusVCard {
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited {
+      color: $link-color;
+    }
+  }
+
+  .lotusBanner {
+    /*Tagcloud*/
+    a.lotusF3,
+    a.lotusF3:visited {
+      color: $link-color;
+    }
+  }
+}
+
+/* Abstand Seiteninhalt zur Navigationsleiste verringern, um den Platz besser auszunutzen */
+.communities-widget-appearance .lotusui30 div.lotusTitleBar2 .lotusInner {
+  padding: 10px;
+}
+/* Abstand der 2. Navigation (z.B. "Meine Blogs", "Öffentliche Blogs") zur globalen Navigation */
+.search-result-pages-restyle .lotusui30 .lotusTitleBar2 .lotusNavTabs {
+  padding-top: 15px;
+}
+
+/* Eckige Bilder */
+/* Community-Bilder eckig statt rund */
+.communities-widget-appearance .lotusui30 #communityLogo, /* Communitys */
+.lotusui30 .resultsDisplay .lotusTable img {
+  border-radius: 2px;
+}
+
+/* Überschrift der Anwendung links oben (Wikis, Aktivitäten, ...) */
+.lotusui30 .lotusTitleBar .lotusHeading a,
+.lotusui30 .lotusTitleBar2 .lotusHeading a {
+  color: $text-color !important;
+}
+
+/* Entfernt den horizontalen Scrollbalken in Chrome */
+.lotusui30_body .lotusFrame {
+  min-width: initial;
+}
+
+/* Hinweis-Boxen mit Tipps, die z.B. in "Lesezeichen" links erscheinen, wenn man zum ersten Mal mit diesen arbeitet */
+.lotusInfoBox {
+  /* Standard ist ein Rahmen um die gesamte Box. Mit der neuen Titelfarbe sieht dies aufgrund des hohen Kontrastes merkwürdig aus. */
+  border-top: none;
+
+  h3 {
+    background: $highlight-background-color !important;
+    color: $highlight-foreground-color !important;
+  }
+}
+
+/* Hamburger Menüs, erscheinen rechts in der Ecke neben Widgets (z.B. Profil) */
+.lotusui30 .dijitMenuPopup .dijitMenuTable {
+  .dijitMenuItemFocused td.dijitMenuItemLabel {
+    border-bottom: 1px solid $highlight-background-color !important;
+    border-top: 1px solid $highlight-background-color !important;
+  }
+  .dijitMenuItemSelected td.dijitMenuItemIconCell {
+    border-left: 4px solid $highlight-background-color !important;
+  }
+}
+
+// Verhindert das Ausklappen von langen Aktivitätengruppen
+body {
+  overflow: scroll !important;
+}
+
+// Standard von IBM sind 700px in den Blogs. Das nutzt den Platz in der Blog-Startseite nicht optimal aus.
+// Nebenbei wird damit auch das inkonsistente Verhalten in Wikis gefixt, die maximale Breite ist hier nicht limitiert ~> Große Bilder werden abgeschnitten
+// Muss auf .entryContentContainer beschränkt werden, da ansonsten Avatare verzerrt dargestellt werden
+#wikiContentDiv,
+// Blogs
+.lotusui30 .entryContentContainer {
+  img {
+    max-width: 100%;
+  }
+}
+
+// Notifications Link "alle als gelesen markieren"
+.icBanner-notif-center .icBanner-popover-notificationReadAll {
+  color: $widget-title-bg !important;
+}
+
+// Editor Link zu Dateien hinzufügen Reiter oben
+// ToDo: Die Icons sind noch falsch gefärbt. Durch FA ersetzen, damit sie einheitlich in Petrol erscheinen.
+.lconnPicker .tabbedSwitch {
+  .switchContainer {
+    border-bottom: 1px solid $link-color !important;
+  }
+
+  .lconnPickerSourceLabelSpan {
+    color: $link-color !important;
+  }
+}
+
+form label {
+  font-size: $form-label-font-size;
+}

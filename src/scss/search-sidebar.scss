@@ -1,0 +1,60 @@
+/* Such-Menü (Lupe) rechts */
+.icSearchPaneButton {
+  background-color: $highlight-background-color !important;
+  outline: none !important;
+  :hover {
+    border: none;
+  }
+}
+
+/* Such-Menü Unterstrich Suchbox */
+.search-history-view-ui .lotusui30 {
+  .icSearchPaneButton.icSearchBarMode .icSearchBar .dijitTextBox,
+  .icSearchPane .icTopSection .icSearchBar .dijitTextBox {
+    border-bottom-color: $highlight-background-color !important;
+  }
+}
+/* Lupen-Suchsymbol neben dem Suchfeld (aufgeklappter Zustand der Suchbar) */
+.search-history-view-ui .lotusui30 {
+  .icSearchPaneButton.icSearchBarMode .icSearchBar .icSearchIcon svg,
+  .icSearchPane .icTopSection .icSearchBar .icSearchIcon svg {
+    fill: $highlight-background-color !important;
+  }
+}
+
+/* Hover auf einen Suchtreffer */
+/* Blauer Strich links zur Markierung */
+.search-history-view-ui .lotusui30 .icSearchPane .pfEntry.spSelected,
+.search-history-view-ui .lotusui30 .icSearchPane .pfEntry:hover {
+  border-color: $highlight-background-color !important;
+}
+
+%link-color {
+  color: $link-color !important;
+}
+/* Suchtreffer Hover/Blauer Strich links zur Markierung des aktiven Elements */
+.search-history-view-ui .lotusui30 .icSearchPane {
+  @extend %link-color;
+
+  .pfEntry.spSelected {
+    .lconn_gray,
+    .lconn_gray a,
+    .lconn_gray a:visited,
+    .lconn_title {
+      @extend %link-color;
+    }
+  }
+  .pfEntry:hover {
+    @extend %link-color;
+
+    .lconn_title,
+    .lconn_gray,
+    .lconn_gray a {
+      @extend %link-color;
+    }
+
+    .lconn_gray a:visited {
+      @extend %link-color;
+    }
+  }
+}

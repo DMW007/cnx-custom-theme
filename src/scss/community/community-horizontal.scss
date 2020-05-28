@@ -1,0 +1,14 @@
+// Folgen/Community Aktionen Links
+#communityActionBar a {
+  color: $link-color !important;
+}
+
+.lotusDialogFooter .submit {
+  background-color: $highlight-background-color !important;
+  color: $highlight-foreground-color !important;
+  border: none !important;
+
+  &::hover {
+    border: none !important;
+  }
+}

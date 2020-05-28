@@ -1,0 +1,68 @@
+// "Anpassen" in der Sidebar rechts
+.lotusui30 .lotusTitleBarExt .lotusInlinelist {
+  #paletteLink:before {
+    @extend %fa-shared;
+    content: "\f044" !important;
+    vertical-align: top !important;
+  }
+}
+
+.toDoTable {
+  // Icon für Fälligkeitsdatum bei Aufgaben
+  .lconnHomepage-todoWidgetContent .lotusMeta {
+    & > .toDoText:first-child {
+      color: transparent;
+      display: none !important;
+    }
+    & > .toDoText:last-child:before {
+      @extend %fa-shared;
+      content: "\f017" !important;
+      color: $link-color;
+    }
+  }
+
+  // Roter Haken durch ein neutraleres Icon im CD-Format ersetzen
+  .lconnHomepage-todoWidgetIcon {
+    float: left;
+
+    img {
+      display: none !important;
+    }
+
+    &:before {
+      @extend %fa-shared;
+      content: "\f0c8" !important;
+      font-weight: 300 !important;
+    }
+  }
+  .lconnHomepage-todoWidgetContent {
+    padding-left: 2px !important;
+
+    // Meta-Beschreibung (Erstellen/Fälligkeit) bündig mit der Checkbox
+    & > .toDoText {
+      margin-left: -3px;
+    }
+  }
+}
+
+.toDoFooter {
+  margin-top: 5px !important;
+  margin-bottom: -5px !important;
+
+  a.lotusAction:before {
+    @extend %fa-shared;
+    content: "\f0ae" !important;
+  }
+}
+
+// Widget-Einstellungen verwenden standardmäßig ein Bild-Icon, dass farblich schlecht auf Petrol lesbar ist
+#lotusColRight .homepage-widget .lotusSectionHeader .lotusActionIcon {
+  img {
+    display: none;
+  }
+  &:before {
+    @extend %fa-shared;
+    content: "\f0c9" !important;
+    color: $widget-title-fg !important;
+  }
+}

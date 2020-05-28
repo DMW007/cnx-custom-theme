@@ -1,0 +1,49 @@
+/* Erhöht den Abstand vom Profilbild zu der Navileiste, da es wegen einer Reduzierung der globalen Abstände (common.scss) zu weit oben ist */
+.lotusui30.hasSideNav .lotusTitleBar2 .lotusInner .titleBarBody {
+  margin-top: 15px;
+}
+
+/* "Mein Profil" Rand unter aktivem Reiter (Neuigkeiten, Kontaktinformationen, ...) */
+.lotusui30 {
+  .lotusTabs li.lotusSelected {
+    border-bottom: 2px solid $link-color !important;
+  }
+
+  // Visitenkarte, die beim Hovern auf den Name erscheint
+  .lotusVCard {
+    // vCard etwas verbreitern (Standard 375px)
+    width: 460px !important;
+
+    // Textgröße Links Kopfzeile
+    lotusAppLinks td a {
+      font-size: 13px !important;
+    }
+
+    // Unnötiger Abstand vom Titel zum Name
+    .lotusDetails .title {
+      margin-top: 0 !important;
+    }
+    // Name des Users
+    h2 {
+      font-size: 24px !important;
+    }
+    // Abstand von der vCard nach unten
+    .lotusDetails {
+      padding-bottom: 10px !important;
+    }
+    // Etwas Abstand vom Profilfoto zu den Profilinfos
+    #cardBody .lotusPhoto {
+      margin-right: 10px !important;
+    }
+    // Links unter der Karte (E-Mail Senden) bündig mit dem Profilbild
+    #cardFooter .lotusPersonActions {
+      margin-left: 5px !important;
+      font-size: 13px !important;
+    }
+  }
+}
+// Grauer, dicker Schatten um vCard deaktivieren, sodass box-shadow einen leichteren, zur Startseite passenden Schatten erzeugt
+.lotusui30 .lotusVCard,
+#cardDiv {
+  border: none !important;
+}

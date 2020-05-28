@@ -1,0 +1,41 @@
+/* */
+
+.communities-widget-appearance {
+  /* Horizontale Communitys: Einheitlich kein rundes Community-Bild */
+  img.discussCommunityLogo {
+    border-radius: 1%;
+  }
+
+  /* Subcommunity-Widget Abstand der Subcommunitys zu "Liste Anzeigen" */
+  .wpthemeWide .lconnSubcomImageDiv {
+    height: auto !important;
+  }
+}
+
+.lotusui30 {
+  .tabNavBar .lotusTabs {
+    /* Strich unter dem aktiven Element in der Navi 2. Ebene (Community) */
+    li.lotusSelected {
+      border-bottom: 4px solid $highlight-background-color !important;
+    }
+  }
+}
+
+/* Titel bündig mit darunter befindlichen Content-Boxen */
+.lotusCommunities .comNavInline {
+  margin-left: 7px !important;
+}
+
+/* Zu viel Abstand rechts bei den Likes der Test-Community */
+#blogEntries .lotusTable td nobr {
+  > span[style] {
+    padding: 0 !important;
+    /* Rechts bündig mit "Wiki" Widget (ähnlicher Aufbau), falls diese untereinander genutzt werden */
+    margin-right: 5px;
+  }
+  .lotusLike span:last-child[style] {
+    $margin: 7px;
+    margin-right: $margin !important;
+    margin-left: $margin !important;
+  }
+}

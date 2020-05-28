@@ -1,0 +1,179 @@
+// Die Icons müssen teils in unterschiedlichen Selektoren eingefügt werden, um eine große Murkserei zu fixen: Buttons lassen sich theoretisch über ihre CSS Klassen identifizieren
+// (.speichernAction, .kommentarAction usw). Allerdings werden diese in die Nutzersprache übersetzt (!), sodass man für alle 35 Sprachen (!!) eigene Selektoren bräuchte, die oft auch
+// Sonderzeichen beinhalten (!!!) wie z.B. Chinesisch. Einziger Workaround für diesen Unsinn ist, im DOM weit weit nach oben zu gehen, und anhand der data-Attribute der List-Items
+// auf Basis von Zählern zu selektieren...
+%save {
+  @extend %fa-shared;
+  content: "\f02e" !important;
+}
+%unfollow {
+  @extend %fa-shared;
+  content: "\f235" !important;
+  vertical-align: top !important;
+}
+%comment {
+  @extend %fa-shared;
+  content: "\f086" !important;
+  vertical-align: top !important;
+}
+%repost {
+  @extend %fa-shared;
+  content: "\f079" !important;
+  vertical-align: top !important;
+}
+%like {
+  @extend %fa-shared;
+  content: "\f004" !important;
+  vertical-align: top !important;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain {
+  .lotusActions[role="toolbar"] .lotusFirst:not(.speichernAction) {
+    // Inhalte die andere User empfohlen haben sind komplexer aufgebaut, weswegen das Icon nur am ersten Kindelement angefügt wird
+    & > span:before {
+      @extend %fa-shared;
+      content: "\f004";
+      font-weight: 400;
+      color: $stream-control-non-clickable-color !important;
+    }
+  }
+
+  // Likezähler für Inhalte, die man selbst zusammen mit einem anderen User empfohlen hat
+  .lotusActions[role="toolbar"] .lotusFirst:not(.speichernAction) {
+    // Überschreibt die 32px von oben, da wir hier Zähler und Text getrennt haben und der Workaround mit der Breite somit obsolet ist
+    width: auto;
+
+    .lotusIconLike {
+      display: none;
+    }
+    .lotusLikeCount {
+      padding-left: 0 !important;
+    }
+  }
+
+  // Legacy-Icons für die Standard-Boxen mit Speichern/Nicht mehr folgen
+  li[data-activity-verb="share"],
+  li[data-activity-verb="post"],
+  li[data-activity-verb="like"][data-activity-target-object="article"],
+  li[data-activity-verb="follow"],
+  li[data-activity-verb="update"],
+  li[data-activity-verb="add"],
+  li[data-activity-verb="make-friend"],
+  li[data-activity-verb="unknown"] {
+    #TOGGLE_com_ibm_oneui_controls_Like_0:before {
+      @extend %like;
+    }
+    // .lotusLeft grenzt die Controls von den Kommentaren ab
+    .lotusActions.lotusLeft {
+      li:not(.lotusHidden) {
+        &:nth-child(3) a:before {
+          @extend %save;
+        }
+        &:nth-child(4) a:before {
+          @extend %unfollow;
+        }
+      }
+      // "Empfehlung" ausblenden, damit nur das Icon erscheint.
+      // Vorerst wieder rausgenommen, da keine vernpnünftige Methode gefunden, um zwischen der Mehrfachverwendung zu differenzieren und bei 0 likes auszublenden
+      // .lotusFirst:not(.speichernAction) {
+      //   width: 32px;
+      //   overflow: hidden;
+      // }
+    }
+  }
+
+  // Sonderfälle: User A postet ins Profil von User B, beide empfehlen die Nachricht - Sicht aus User A
+  // Hier gibt es einen Button "Mehr" und die Reihenfolge der Listelemente unterscheidet sich teils (z.B. Profilnachricht: Empfehlen/Kommentar statt Speichern/Nicht mehr folgen)
+  li[data-activity-verb="post"][data-activity-target-object="note"],
+  li[data-activity-verb="like"][data-activity-target-object="note"]
+  /*li[data-activity-verb="like"] */ {
+    #TOGGLE_com_ibm_oneui_controls_Like_0:before {
+      @extend %like;
+    }
+
+    .lotusActions.lotusLeft {
+      li:not(.lotusHidden) {
+        &:nth-child(3) a:before {
+          @extend %comment;
+        }
+        &:nth-child(4) a:before {
+          @extend %repost;
+        }
+      }
+    }
+
+    .moreActions .lotusInlinelist li {
+      &:nth-child(1) a:before {
+        @extend %save;
+      }
+      &:nth-child(2) a:before {
+        @extend %unfollow;
+      }
+    }
+  }
+
+  // Abstand Kommentare zu Controls (Posten/Abbrechen)
+  #cke_editor2 {
+    margin: 5px 0 0 0 !important;
+  }
+  // Abstand Kommentar-Controls zur Ende der Box
+  .lotusStreamUpdate {
+    margin-bottom: 20px !important;
+  }
+}
+
+#activityStream {
+  // AcitivityStream Icon (Pfeil) entfernt, da es einen blauen BG besitzt
+  .stream-finWrapper {
+    .otherActivityStream14 {
+      display: none !important;
+    }
+  }
+  // Platz schaffen und stattdessen FA einbinden (IMG ausblenden weil ungeeignet und FA Icon vor das nächste Element platzieren)
+  .stream-finRight,
+  .stream-finLeft {
+    height: 5px !important;
+    padding-bottom: 15px !important;
+    margin-top: -7px !important;
+    z-index: 99999999 !important;
+  }
+  .stream-finRight:before {
+    @extend %fa-shared;
+    content: "\f0de" !important;
+    margin-left: 3px !important;
+    color: white !important;
+    font-size: 20px !important;
+  }
+  .headerFins {
+    height: 30px !important;
+  }
+  .lotusPagingTop {
+    margin-bottom: -3px !important;
+  }
+}
+
+#activityStream {
+  a[dojoattachpoint="resetButtonNode"]:before {
+    @extend %fa-shared;
+    content: "\f2ed" !important;
+  }
+  .ublogPost:before {
+    @extend %fa-shared;
+    content: "\f14b" !important;
+    vertical-align: top !important;
+  }
+}
+
+// Kommentarfelder immer anzeigen (Default wird top auf -9999px gesetzt, wenn nicht gehovered)
+.lotusui30 .lotusBoard .lotusCommentList .lotusAddComment {
+  top: -1px !important;
+}
+
+// Icon Sidebar rechts für "Gespeichert" (Wiedererkennung)
+// ToDo: Vorerst rausgenommen, kann später separat mal getestet werden
+// #com_ibm_social_as_nav_ASSideNav_0 ul[role="toolbar"] {
+//   #savedView a:before {
+//     @extend %fa-shared;
+//     content: "\f02e" !important;
+//   }
+// }

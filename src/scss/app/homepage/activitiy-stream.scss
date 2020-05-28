@@ -1,0 +1,246 @@
+@import "activity-stream-icons";
+
+// Abstand unter der Box "Was möchten Sie teilen" - Muss differenziert werden ob Standard Ansicht oder Sticky
+.streamHeaderWrapper.isSticky {
+  #com_ibm_social_sharebox_ContextualSharebox_0 {
+    margin-bottom: -38px;
+  }
+}
+
+.lotusui30 .lotusSection2 {
+  // Hoher Abstand bei der Aufgabenliste reduzieren
+  div.lotusChunk {
+    margin-top: 0px !important;
+  }
+}
+.lotusui30 .lotusPostContent {
+  .lotusPostAction {
+    margin-bottom: 5px !important;
+  }
+  .lotusPostAction.lotusTitle {
+    margin-bottom: 2px !important;
+    padding-bottom: 5px !important;
+  }
+
+  // Punkt als Trennzeichen nach der Likeanzahl in den Controls einer Box (Nicht mehr Empfehlen usw) entfernen (wir nutzen dafür Abstand)
+  .lotusLikeConnector {
+    display: none !important;
+  }
+}
+// Links unter der Teilen-Box
+#lconn_news_microblogging_sharebox_InputForm_0_myactions {
+  // Sichtbarkeit Icons
+  .lotusInlinelist.lotusLeft {
+    height: auto !important;
+  }
+}
+.lotusStream {
+  margin-top: 5px !important;
+
+  .lotusPost {
+    // Weiße Linie links rechts, die durch den Rahmen der Box sichtbar werden würde, entfernen
+    margin-right: -1px !important;
+    margin-left: -1px !important;
+  }
+  .lotusPostHover,
+  .lotusPostSelected {
+    background-color: $hover-color !important;
+    border-color: none !important;
+  }
+
+  .lotusPostContent {
+    // IE benötigt hier 100%, da er auto nicht kennt
+    max-width: 100% !important;
+  }
+
+  .lotusPostContent .file {
+    border: none !important;
+    background: none !important;
+
+    .fileBody {
+      background: none !important;
+
+      // Dateiname und Author bündig mit dem Vorschaubild
+      .fileDetails {
+        top: -40px !important;
+      }
+    }
+  }
+
+  .lotusPostDetails {
+    .lconn-ftype32 {
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
+      border-radius: 2px;
+      // Die Icons haben von der Grafik her Abstand an den Seiten, aber nicht oben/unten
+      padding-top: 3px;
+      padding-bottom: 3px;
+      background-origin: content-box;
+    }
+    /* Unnötige Meta-Info: Wenn eine Datei geteilt wird steht zusätzlich "von <Name>" rechts neben der Vorschau */
+    .lotusMeta .lotusInlinelist {
+      display: none !important;
+    }
+  }
+
+  // Erwähnte/Verlinkte Personen in der Content-Vorschau nicht fett (wäre inkonsistent: Alle Personennamen, Titel usw. sind nicht fett)
+  .vcard .url {
+    font-weight: normal;
+  }
+}
+#activityStream {
+  // Veröffentlichen, Löschen und Datei hinzufügen (Klick auf "Was möchten Sie teilen")
+  .ublogPost,
+  a[dojoattachpoint="resetButtonNode"],
+  .share-attachAction {
+    font-size: 14px !important;
+  }
+
+  // Abstand "Veröffentlichen/Löschen" Buttons oben unten (nicht direkt mit margin top/bottom über das Element möglich da hier iwas dynamisch mit JS gemacht wird)
+  #lconn_news_microblogging_sharebox_InputForm_0_textBoxContainer {
+    // Control-Elemente unter der Teilen Box Abstand nach oben zur Box
+    margin-bottom: 10px !important;
+  }
+  .lotusPagingTop[role="navigation"] {
+    // Abstand "Ich Folge" Leiste zu Teilen Box nach oben (nicht ausgeklappter Zustand)
+    margin-top: -5px !important;
+  }
+
+  .lotusStream,
+  .lotusStream a,
+  .lotusInlinelist .lotusFirst span {
+    font-size: 14px;
+  }
+
+  .lotusStream {
+    li[data-activity-verb] {
+      box-shadow: 0 2px 3px $border-color,
+        0 -2px 4px $border-color;
+      border-radius: 4px;
+      margin: 0 5px 13px 0;
+      padding-right: 15px;
+    }
+  }
+  // Kompakteres Layout
+  .filterArea {
+    margin-top: -10px !important;
+  }
+}
+
+#activityStreamMain {
+  .filterAreaInner {
+    border: none;
+  }
+  // #activityStreamMain.lotusWidgetBody
+  &.lotusWidgetBody {
+    .lotusPost {
+      padding: 15px !important;
+    }
+    .lotusPostDetails {
+      margin-bottom: 5px !important;
+    }
+    .lotusInlinelist.lotusActions {
+      // Punkte zwischen den Controls unter einem Post entfernen (Speichern, Nicht mehr folgen usw)
+      ::before {
+        background: none !important;
+      }
+      li {
+        margin-right: 8px !important;
+      }
+
+      // Links ohne Ziel, z.B: "Gespeichert" bei bereits gespeicherten Elementen, damit der User nicht denkt, er kann darauf klicken (kein Toggle möglich)
+      // Muss in den Actions stehen - sonst fehlerhafte IBM Links ebenfalls betroffen (z.B. Verlinkungen auf Communitys: XY hat eine Datei mit der Community >>ABC<< geteilt)
+      a[title] {
+        color: $stream-control-non-clickable-color !important;
+      }
+    }
+  }
+  .lotusChunk {
+    margin: 0 !important;
+  }
+
+  .lotusCommentList {
+    // Mehr Platz für längere Kommentare
+    max-width: 840px !important;
+
+    margin-top: 10px !important;
+    border-top: none !important;
+    border-bottom: none !important;
+
+    .lotusCommentItem {
+      background: none !important;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18),
+        -1px -1px 2px rgba(0, 0, 0, 0.18) !important;
+      margin-bottom: 10px;
+    }
+    .lotusCommentItem,
+    li[dojoattachpoint="commentInputNodeInline"] {
+      border: none !important;
+    }
+
+    .lotusPostContent {
+      .lotusActions .lotusFirst {
+        // Kommentar Author mit Datum ebenbürtig
+        .vcard > a {
+          vertical-align: top !important;
+        }
+      }
+    }
+  }
+  // Author nicht abschneiden und Dimensionen anpassen bei der Meta-Box unter der Dateivorschau (Titel, Author, Icon)
+  .previewable .fileBody {
+    height: 52px !important;
+
+    .fileDetails {
+      top: -40px !important;
+    }
+  }
+}
+.lotusMeta .lotusActions li a {
+  font-size: 14px;
+  font-weight: bold;
+}
+// ALLE Tabs Umstylen. Connections nummert diese durch (0 = Ich folge, 1 = Statusaktualisierungen usw)
+[id^="com_ibm_social_as_filter_FilterList_"] {
+  .lotusInlinelist {
+    display: inline-block !important;
+    margin-top: -5px;
+  }
+  ul li a {
+    font-size: 15px !important;
+  }
+}
+
+.streamHeaderWrapper.isSticky[style] {
+  width: 1015px !important;
+}
+
+.streamHeaderWrapper {
+  &.isSticky {
+    .lotusStreamUpdate {
+      // Grauer Rahmen sieht etwas seltsam aus, wenn die Box in gürn umgefärbt ist
+      border-bottom: none !important;
+      // Abstand Teilen-Box Controls nach unten (sieht sonst abgeschnitten aus)
+      div[role="region"][style] {
+        margin-bottom: 8px;
+      }
+    }
+    // Abstand Teilen-Box zu Sub-Navi (nur wenn Sticky, da sonst die Darstellung verschoben wird, wenn nicht Sticky)
+    .lotusStreamUpdate {
+      margin-bottom: -20px !important;
+    }
+  }
+}
+
+.isSticky #asPermLinkAnchor {
+  margin-left: 200px !important;
+}
+
+// Farbe beim Hovern über einen Eintrag im Activitiy Stream
+.lotusui30 .lotusStream #activityStreamMain.lotusWidgetBody {
+  .lotusCommentList .lotusInlinelist .lotusLike a,
+  .lotusInlinelist.lotusActions .vcard a,
+  .lotusPostHover .lotusInlinelist.lotusActions a {
+    color: $link-color !important;
+  }
+}

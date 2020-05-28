@@ -1,0 +1,81 @@
+/* Title-Box unter "Share something" */
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain {
+  .streamHeaderWrapper .lotusPaging, /* Oberer breiter Teil */
+  .stream-finLeft, /* Zeile darunter: Linker Teil bis zum Pfeil, der den aktuellen Eintrag markiert */
+  .stream-finRight {
+    /* Rechter Teil neben Pfeil */
+    background-color: $highlight-background-color !important;
+  }
+}
+
+/* Dateiupload Activity-Stream: Reiter "Dateien", "Computer" => Standard-Farbe sieht ähnlich aus, ist aber nicht CD */
+.lconnPicker .tabbedSwitch .pickerSourceChecked .lconnPickerSourceLabel {
+  border-bottom: 3px solid $link-color;
+}
+
+/* Sticky Share-Box wenn man auf der Startseite nach unten scrollt */
+.lotusStream
+  .lotusWidgetBody#activityStreamMain
+  .isSticky.streamHeaderWrapper
+  .streamHeaderInner {
+  background: $highlight-background-color !important;
+}
+
+/* Veröffentlichen/Löschen Buttons im Aktualisierungen-Stream oben (Sticky Teilen Box) -> BG ist grün in der Box, wenn man nach unten Scrollt */
+/* Muss auf Sticky expaneded eingeschränkt werden, sonst Seiteneffekte auf Kudos-Boards Kommentarfeld-Controls */
+.streamHeaderWrapper.isSticky.isExpanded {
+  .lotusStreamUpdate {
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited {
+      color: $highlight-foreground-color !important;
+    }
+  }
+}
+// Abstand "Teilen: Status aktualisieren oder eine Datei hochladen" reduzieren
+.lotusHeader .shareSome-desc {
+  margin-bottom: 0 !important;
+}
+/* Strich links beim aktiven Menüelement auf der Startseite, Dateien, Foren */
+.lotusui30 .lotusMenu {
+  .lotusHeaderSelected,
+  li.lotusSelected,
+  li.lotusSelected:active,
+  li.lotusSelected:focus,
+  li.lotusSelected:hover,
+  li.lotusSelected:visited,
+  div.lotusSelected {
+    /* Erfordert überschreiben per important */
+    border-left: 4px solid $highlight-background-color !important;
+  }
+}
+/* Strich unter dem aktuellen Element in der Höhe verkleinern */
+.lotusStream .lotusWidgetBody#activityStreamMain .headerFins {
+  height: 5px;
+}
+
+/* Linkfarben */
+.lotusui30
+  .lotusStream
+  .lotusWidgetBody#activityStreamMain
+  .lotusActions.lotusInlinelist
+  .vcard {
+  a:focus,
+  a:hover,
+  a:active,
+  a:focus,
+  a:hover,
+  a:active {
+    color: $link-color;
+  }
+}
+
+/* Links der Reiter ("Ich folge", "Statusaktualisierungen", "Finden") nicht in Petrol, da die BG-Box in der Kontrastfarbe grün ist */
+.streamHeaderInner .lotusPagingTop a {
+  color: $highlight-foreground-color !important;
+}
+
+@import "activitiy-stream";
+@import "sidebar-right";

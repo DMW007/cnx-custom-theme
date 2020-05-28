@@ -1,0 +1,19 @@
+@import "color-vars.scss";
+
+%modern-textbox {
+  padding: 7px 28px 7px 14px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: $default-font-size;
+}
+
+// Icons
+%fa-shared {
+  // Hier sollte möglichst wenig mit !important deklariert werden, sodass wir die Möglichkeit haben, dies später in erbenden Selektoren noch mit höherer Prio zu überschreiben
+  display: inline-block;
+  padding-right: 5px;
+  vertical-align: middle;
+  font-weight: 900;
+  background: none !important;
+  font-family: "Font Awesome 5 Free" !important;
+}

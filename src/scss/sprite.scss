@@ -1,0 +1,8 @@
+//.iconsStates16 darf nicht selektiert werden, da hier ansonsten auch die Icons oben Rechts (Mail/Glocke) ausgeschlossen werden müssten
+// .lconnSprite-iconMailWhite16 ist ein neues Icon der Mailintegration, dass einen anderen Sprite verwendet (sprite16.png)
+@if ($override-lconn-sprite ){
+  .lconnSprite:not(.lconnSprite-iconMailWhite16)
+  :not(.iconsComponents16-Notifications) {
+    background-image: url(sprite-lconn-32bit_petrol.png) !important;
+  }
+}

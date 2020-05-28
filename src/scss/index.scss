@@ -1,0 +1,40 @@
+// Leerzeichen scheinbar notwendig wegen SCSS Bug: https://stackoverflow.com/a/46733092/9428314
+// Seit diese eingefügt wurden, tritt der Fehler zumindest seltener auf, in Kombination mit https://stackoverflow.com/a/46671246/9428314
+
+// Imports the color-vars.scss
+@import "./common-mixins.scss";
+@import "./sprite";
+
+@import "./navigation";
+@import "./common";
+@import "./button";
+@import "./dialog";
+@import "./profile";
+
+// ToDo: Pfade können umgestellt werden (Navigation in ../global nicht mehr nötig, siehe vCard)
+@import "./vcard";
+
+@import "./app/homepage/homepage";
+
+@import "./community/community";
+
+@import "./left-sidebar";
+@import "./right-sidebar";
+
+@import "./search-sidebar";
+@import "./search-result";
+
+@import "./app/activity";
+@import "./app/blog";
+@import "./app/boards";
+@import "./app/wiki";
+@import "./app/file";
+@import "./app/profile";
+@import "./app/forum.scss";
+
+@import "./custom-extensions/emlviewer";
+@if $include-eml-viewer {
+    @include eml-viewer;
+}
+
+@import "./selectr.scss";

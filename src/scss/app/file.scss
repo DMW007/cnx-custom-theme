@@ -1,0 +1,89 @@
+@import "./file-icons";
+/* ## Dateivorschau ## */
+.ics-viewer {
+  /* Titelleiste */
+  .ics-viewer-banner {
+    background-color: $header-background-color !important;
+  }
+  /* Dateiname in der Titelleiste */
+  .ics-viewer-title-name {
+    color: $header-foreground-color !important;
+  }
+}
+.fileviewer-panels-textnav
+  .ics-viewer
+  .ics-viewer-details
+  .ics-viewer-details-shelf
+  h3 {
+  background-color: $highlight-background-color !important;
+}
+.fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs {
+  > li a {
+    color: $highlight-foreground-color !important;
+  }
+  > li.selected a {
+    border-bottom: 6px solid $highlight-foreground-color !important;
+  }
+}
+/* Dateivorschau ~> Reiter "Teilen" ~> Plus-Symbol um Personen hinzuzufügen */
+.ics-viewer
+  .ics-panel-entry-container
+  .ics-sharing-panel
+  .ics-viewer-action-multiShare
+  img:not(.removeIcon) {
+  /* .removeIcon für das Entfernen von geteilten Usern ~> Verhindert Seiteneffekte mit dem Sprite */
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* Dateivorschau Hochladen-Button Pfeil rechts */
+.ics-viewer
+  .ics-viewer-banner
+  .ics-viewer-toolbar
+  .ics-viewer-action-splitmenu
+  .dijitButtonNode,
+.ics-viewer
+  .ics-viewer-banner
+  .ics-viewer-toolbar
+  .ics-viewer-action-roundtripedit
+  a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a,
+.ics-viewer
+  .ics-viewer-banner
+  .ics-viewer-toolbar
+  .ics-viewer-action-templateCreate
+  a {
+  background-color: $highlight-background-color !important;
+}
+
+/* Besseres Icon für EML-Dateien */
+/* Connections scheint automatisch eine lconn-ftype32-${erweiterung} klasse zu generieren. Alternativ kann auch das dndelementtitle Attribut genutzt werden: 
+   tr[dndelementtitle$=".eml"] .lconn-ftype32 { background-position: 0 -503px !important; } */
+.lconn-ftype32-eml {
+  /* /connections/resources/web/com.ibm.social.hikari.theme/sprite/iconsFileTypes64-8bit.png */
+  background-position: 0 -503px !important;
+}
+/* Großes Icon für die Vorschau-Darstellung */
+.lconn-ftype64-eml {
+  /* -72px pro Icon. Nach dem 8. Icon folgt ein Haken, das nächste Symbol (Ordner) = 608px */
+  /* /connections/resources/web/com.ibm.social.hikari.theme/sprite/iconsFileTypes32-8bit.png */
+  background-position: 0 -900px !important;
+}
+/* GIF */
+/* GIFs haben kein Icon, daher weisen wir ihnen das Standard-Dateiicon zu */
+/* ToDo: Kleine 32er Version fehlt noch (Listenansicht) */
+.ic-thumb-widget-flip-card[dndelementtitle$=".gif"]
+  img[data-dojo-type="lconn.share.widget.FilePreview"] {
+  background-image: url(connections/resources/web/com.ibm.social.hikari.theme/sprite/iconsFileTypes32-8bit.png);
+  background-position: 0 -503px !important;
+}
+
+/* CR3 Update hat im November 2018 zwei Reiter unter Dateien eingefügt, mit Markierung des aktiven */
+.lconnFiles {
+  .toolActions .actionOn::after,
+  .lotusToolBar #qkrViewControl .viewOn::after {
+    border-bottom: 3px solid $highlight-background-color;
+  }
+}

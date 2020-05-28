@@ -1,0 +1,28 @@
+// vCard beim Hovern über eine Person
+// ToDo: Fürs nächste Release ergänzen und erweitern (Titel über Foto wegen der Höhe bzw Karte vergrößern)
+// .popupPersonCard {
+//   #cardHeader {
+//     table[role="list"] {
+//       td {
+//         font-size: 14px;
+//       }
+//     }
+//   }
+//   #cardBody {
+//     .lotusPersonInfo {
+//       h2 .fn {
+//         font-size: 24px;
+//       }
+//       .title {
+//         font-size: 16px;
+//         margin-top: 10px;
+//       }
+//       p:not(.title) {
+//         font-size: 14px;
+//       }
+//     }
+//   }
+// }
+// .lotusVCard[style] {
+//   width: 450px !important;
+// }

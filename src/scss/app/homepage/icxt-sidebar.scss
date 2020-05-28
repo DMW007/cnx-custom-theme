@@ -1,0 +1,21 @@
+@if $apply-icxt-fixes {
+  // Workaround ICXT: Buttons "Wiki-Aktionen", "Community-Aktionen" sollen nicht in die ICXT Navbar hineinragen
+  .lotusui30 .lotusTitleBarExt .lotusInlinelist {
+    // Statt 1
+    z-index: 0 !important;
+  }
+
+  // Zahnrad Icon rechts zum öffnen der ICXT Optionen
+  #icxt-sidebar-closed {
+    background-color: $highlight-background-color !important;
+  }
+  // Aktives Hover-Element in der ausgeklappten Sidebar
+  .icxt-sidebar-content .actionContainer:hover {
+    border-color: $hover-border-color !important;
+  }
+
+  // PDF Export Link zur Vollbildansicht des generierten PDF
+  #pdfExportNewWindowIconContainer a {
+    color: $link-color !important;
+  }
+}

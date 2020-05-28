@@ -1,0 +1,86 @@
+@import "./sidebar-right-icons";
+
+// "Anpassen" Link rechts oben
+// Einschränkung auf Kindelement zur Unterscheidung von Startseiten-Widgets und Boards. Hier werden mit den Controls rechts oben sonst Seiteneffekte verursacht.
+.lotusTitleBarExt > .lotusWrapper > .lotusInner > .lotusInlinelist {
+  // Workaround: Ist ein bisschen frickelei, aber zerschießt uns weniger als die absolute Positionierung von IBM und Responsive ist das Design ohnehin nicht
+  position: relative !important;
+  margin-top: -10px !important;
+  margin-bottom: -20px !important;
+  margin-right: -45px !important;
+
+  #paletteLink {
+    font-size: $widget-action-link-size !important;
+  }
+}
+
+.lotusColRight {
+  .lotusSectionHeader {
+    background-color: $widget-title-bg !important;
+
+    .lotusInner {
+      h2 {
+        color: $widget-title-fg !important;
+        padding-left: 10px !important;
+        font-size: $widget-title-size !important;
+      }
+    }
+  }
+}
+.toDoTable {
+  // Letzte Zeile besitzt bereits einen Trennrahmen nach unten
+  tr td {
+    border-bottom: 1px solid $border-color !important;
+  }
+  .linkToDo {
+    font-size: $widget-content-headline-size !important;
+    font-weight: normal !important;
+    // Sauberes Umbrechen des Titels in seiner Spalte, ohne das Icon vorne zu beeinflussen
+    width: 350px;
+  }
+  .lotusMeta:last-child {
+    display: inline !important;
+  }
+
+  // Meta Infoos (Ersteller/Datum) in eine Zeile statt für jede Angabe eine eigene
+  .lconnHomepage-todoWidgetContent {
+    // Muss Block-Element bleiben, damit Aufgabentitel nicht auch noch in die Meta-Zeile geworfen wird
+    .linkToDo {
+      display: block !important;
+    }
+    .lotusMeta {
+      display: inline !important;
+
+      &:not(:last-child) {
+        margin-right: 10px !important;
+      }
+    }
+  }
+}
+.toDoFooter {
+  // Redundant mit eigenem Rahmen in td
+  border: none !important;
+  a.lotusAction {
+    font-size: $widget-action-link-size !important;
+  }
+}
+
+// Empfehlungen
+#lconn_sand_RecommendWidget_0 {
+  .lotusTable {
+    // Titel dürfen max 100% der Breite einnehmen und werden mit ... abgeschnitten, falls sie länger sind
+    td.lotusMeta {
+      max-width: 340px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    a[aria-describedby="lconnRecommendLinkDescription"] {
+      font-size: $widget-content-headline-size !important;
+      font-weight: normal;
+    }
+  }
+}
+
+@import "./icxt-sidebar.scss";

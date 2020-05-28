@@ -1,0 +1,45 @@
+/* Dropdown Seitenleiste in Communitys unter dem Bild (Übersicht, Neuigkeiten, usw) */
+.lotusui30 .lotusMenu li {
+  a,
+  a:visited {
+    color: $text-color !important;
+  }
+  /* Per default haben wir eine schwarze Box, die weg muss */
+  a:hover {
+    @extend %no-background;
+  }
+}
+
+/* Zusätzlich muss eine schwarze Box um das ausgewählte Element (= Seite auf der man sich gerade befindet) entfernt werden */
+div#dropdownNavMenuContainer div#dropdownNavMenu {
+  li a:hover,
+  li a:focus,
+  li:focus a,
+  li.lotusSelected a {
+    @extend %no-background;
+  }
+}
+/* Vorsicht: Keine Kopie von oben, hier liegten die Elemente in dropdownSUBMenuContainer! */
+div#dropdownSubMenuContainer div#dropdownSubMenu {
+  li a:hover,
+  li a:focus,
+  li:focus a,
+  li.lotusSelected a {
+    @extend %no-background;
+  }
+}
+%no-background {
+  background: none !important;
+}
+
+.myDriveNavigation {
+  /* Färbt die Links in der Sidebar schwarz (z.B. in Dateien) statt Petrol, wie es per Standard der Fall ist */
+  .lotusInner a, /* Erste Ebene */ 
+  .lotusColLeft .lotusLeft, /* Links 2. Ebene (z.B. Teilen ~> Für jeden) */ 
+  #peopleSearchLink /* "Personen Suchen" Link in der Navi */ {
+    /* ToDo: IBM-Farbe, nicht CD! */
+    color: #292929 !important;
+    /* Einheitliche Schriftgröße für alle Unterelemente */
+    font-size: 14px;
+  }
+}

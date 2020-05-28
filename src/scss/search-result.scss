@@ -1,0 +1,207 @@
+// Petrol-Farbe für alle Komponenten der Suchergebnisse
+// ToDo: ReFactoring kopierter Filter von search.css
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lconnSearchHeader
+  .lotusSearch
+  .icSearchInputBox
+  input,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lconnSearchResults
+  .icPagination
+  .icSelected,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lconnSearchResults
+  .lotusTable
+  tr:hover
+  .lconnSearchBookmarkUrl,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lotusTable
+  tr:hover
+  .lotusMeta
+  .icGreyText,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lotusTable
+  tr:hover:not(.icLastPageMessage)
+  .lotusMeta,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lconnSearchBookmarkUrl,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .icSearchDetails
+  a,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .icSearchTitle
+  a,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .lconnStatusUpdateTitle
+  .icStatusUpdate,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .lconnStatusUpdateTitle
+  .lotusPerson {
+  @extend %link-color;
+}
+
+// ToDo: ReFactor, ebenfalls von search.css
+.search-global-search-restyle
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .icSearchTitle
+  a,
+.search-global-search-restyle
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr.icSearchResultSelected
+  .icSearchTitle
+  a,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lotusTable
+  tr:hover:not(.icLastPageMessage)
+  .lotusMeta,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lotusTable
+  tr.icSearchResultSelected
+  .lotusMeta,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lotusTable
+  tr:hover
+  .lotusMeta
+  .icGreyText,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lotusTable
+  tr.icSearchResultSelected
+  .lotusMeta
+  .icGreyText,
+.search-global-search-restyle
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .icSearchDetails
+  a,
+.search-global-search-restyle
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr.icSearchResultSelected
+  .icSearchDetails
+  a,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lconnSearchResults
+  .lotusTable
+  tr:hover
+  .lconnSearchBookmarkUrl,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lconnSearchResults
+  .lotusTable
+  tr.icSearchResultSelected
+  .lconnSearchBookmarkUrl,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .lconnStatusUpdateTitle
+  .lotusPerson,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr.icSearchResultSelected
+  .lconnStatusUpdateTitle
+  .lotusPerson,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover
+  .lconnStatusUpdateTitle
+  .icStatusUpdate,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr.icSearchResultSelected
+  .lconnStatusUpdateTitle
+  .icStatusUpdate,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lconnSearchBookmarkUrl {
+  @extend %link-color;
+}
+
+/* Horizontaler Unterstrich des Suchbegriffes */
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  .lconnSearchHeader
+  .lotusSearch {
+  border-bottom-color: $link-color !important;
+}
+/* Strich neben dem aktiven Suchelement */
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr:hover,
+.search-global-search-restyle
+  .lotusui30
+  .icSearchResultsPage
+  div.lconnSearchResults
+  .lotusTable
+  tr.icSearchResultSelected {
+  border-color: $link-color !important;
+}

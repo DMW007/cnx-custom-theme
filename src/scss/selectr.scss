@@ -1,0 +1,16 @@
+.selectr-container {
+  // Behebt das Problem der abgeschnittenen Liste/Buttons durch den Connections Container, wenn wenige Profilfelder vorhanden sind
+  .selectr-options-container {
+    position: relative;
+  }
+
+  .selectr-option.active {
+    background-color: $button-background-color;
+  }
+  .selectr-match {
+    font-weight: bold;
+  }
+  .selectr-tag {
+    font-size: $default-font-size;
+  }
+}

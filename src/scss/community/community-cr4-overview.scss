@@ -1,0 +1,65 @@
+%create-community-button {
+  border-color: $button-background-color !important;
+  color: white !important;
+  fill: $button-background-color !important;
+}
+body .icCatalogCommunityCreate.bx--dropdown {
+  background: $button-background-color !important;
+
+  &:hover {
+    @extend %create-community-button;
+  }
+}
+body .icCatalogCommunityCreate.bx--dropdown .bx--dropdown-toggle:hover {
+  @extend %create-community-button;
+  opacity: $button-disabled-opacity !important;
+}
+
+body .bx--tabs__nav-item--selected {
+  border-bottom-color: $link-color;
+}
+.bx--list-box__menu-icon > svg {
+  fill: $button-background-color;
+}
+.bx--list-box__field[aria-expanded="true"] ~ .bx--list-box__menu {
+  box-shadow: 0 1px 0 0 black, 1px 0 0 0 black, -1px 0 0 0 $link-color;
+}
+.bx--list-box__field:focus,
+.bx--list-box__field[aria-expanded="true"] {
+  outline-color: black;
+}
+
+// Navigation Startseite Communitys (Meine Community, Entdecken, Eingeladen)
+body .bx--tabs__nav-link:hover {
+  background: $hover-border-color !important;
+  color: white !important;
+  border: none !important;
+}
+
+// Suchfilter sidebar links
+.bx--action-icon--selected {
+  border-bottom-color: $hover-border-color !important;
+}
+.tag-finder .input svg.search {
+  fill: $highlight-background-color !important;
+}
+// ToDo: Refactoring Farben (wurden auf die schnelle für Screenshots anhand der direkten Farbvariablen gesetzt)
+
+// Active menu item top
+.catalog .bx--tabs__nav-item--selected {
+  border-bottom-color: $hover-border-color !important;
+}
+
+// Sorting combobox top right
+.bx--list-box__field:focus,
+.bx--list-box__field[aria-expanded="true"] {
+  outline-color: $hover-border-color !important;
+  outline: 1px solid $hover-border-color !important;
+}
+.bx--dropdown--open {
+  border-bottom-color: $hover-border-color !important;
+}
+
+/*
+.bx--list-box__field:focus, .bx--list-box__field[aria-expanded="true"]
+*/

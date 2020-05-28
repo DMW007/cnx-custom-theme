@@ -1,0 +1,35 @@
+.lotusui30 .lotusTitleBar2 .lotusNavTabs {
+  /* Unterstich für die gesamte Navigationsleiste in den Aktivitäten */
+  /* Entfernt, da Anzeigebug in den Boards verursacht wird und redundant */
+  /*border-bottom: 1px solid $link-color !important;*/
+
+  /* Hervorhebung des aktiven Navigationselementes */
+  li.lotusSelected .lotusTab {
+    border-bottom: 2px solid $link-color !important;
+  }
+}
+
+/* Meine Aktivitäten: Hover einer Aktivität */
+.search-result-pages-restyle
+  .lotusui30
+  .oaActivityListContentNode
+  .oaActivityRowNode:hover {
+  /* Linker Strich zur Markierung der angezeigten Aktivität */
+  border-color: $highlight-background-color !important;
+
+  /* Verhindert, dass die Meta-Keys ("Aktualisiert von") ebenfalls in Petrol gefärbt werden */
+  .lotusDivider,
+  .lotusMeta {
+    color: $light-text-color !important;
+  }
+}
+
+// Mehr Abstand zur Überschrift - Entfernt, da Seiteneffekte auf Community-Widgets (Erhalten ebenfalls Abstand und zerstören damit die letzte Spalte des Grid-Layouts)
+//.search-result-pages-restyle .lotusui30_layout .lotusMain .lotusContent {
+//padding-left: 16px !important;
+// Margin top darf nicht verändert werden, da im Sticky-Zustand folgendes überschrieben wird:
+// .lotusui30_layout .lotusMain .lotusContent {
+//    margin: 0 0 40px;
+// }
+// In diesem Fall überlappt der mittlere Container auf die linke Sidebar
+//}

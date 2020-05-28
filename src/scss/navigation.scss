@@ -1,0 +1,130 @@
+/* Farbschema anpassen: Weiß auf Grau */
+.lotusui30 div.lotusBanner {
+  .lotusLogo {
+    margin-left: -10px;
+    /* Bündig mit Anfang von Navigationsleiste */
+    margin-right: 47px;
+
+    .lotusAltText {
+      .lotusTNLogo {
+        display: block !important;
+        margin-top: 5px !important;
+      }
+    }
+  }
+
+  // Brading in the top right order (HCL by default)
+  .lotusBranding {
+    font-size: 20px;
+    padding-top: 8px !important;
+  }
+
+  /* Weißer Streifen zur Markierung des aktiven Menüelements näher nach oben wegen Verkleinerung der Navigationsleiste */
+  ul.lotusInlinelist.lotusLinks li.lotusSelected::after {
+    margin-bottom: 0;
+  }
+
+  .lotusRightCorner {
+    background-color: $header-background-color;
+    /* Größe der Navigationsleiste verringern (äußerer Container + Abstände innen) */
+    height: 43px;
+
+    /* Teilen-Button oben rechts ausblenden, da er nicht genutzt wird */
+    #headerSharebox {
+      display: none;
+    }
+
+    /* Überschreiben der Standard-Farbe wegen braunem BG */
+    * {
+      color: $highlight-foreground-color !important;
+    }
+  }
+
+  ul.lotusInlinelist {
+    li {
+      /* Header-Buttons CD Farbe */
+      a:active,
+      a:focus,
+      a:hover {
+        background-color: transparent !important;
+        color: $header-foreground-color !important;
+      }
+    }
+  }
+}
+/* Umbenennung der Datei wegen Caching nicht mehr nötig */
+@if $insert-header-image {
+  .lotusui30.hasSideNav .lotusFrame .lotusTitleBar2 {
+    filter: none !important;
+    background-image: url($header-image);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 70px;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    width: auto;
+    display: block;
+    margin-bottom: 15px;
+  }
+}
+
+/* Zu viel Freiraum zwischen Profilbild und Menüelementen in der Sidbar links reduzieren */
+#homepageLeftNavigationMenuContainer {
+  margin-top: 65px;
+}
+/* Bläuliche Hervorhebung des aktiven Menüpunktes in der Navigation mit weiß ans CD anpassen */
+.lotusui30 .lotusBanner ul.lotusInlinelist li a:active,
+.lotusui30 .lotusBanner ul.lotusInlinelist li a:focus,
+.lotusui30 .lotusBanner ul.lotusInlinelist li a:hover {
+  background-color: #9d9d9d;
+  color: #ffffff;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist li.lotusHover {
+  a,
+  a:hover,
+  a.lotusBannerBtn,
+  .lotusSelected {
+    background-color: #9d9d9d;
+    color: #ffffff;
+  }
+}
+
+.lotusui30 .lotusNavMenu {
+  /* Abstand ausklappendes Menü zur globalen Navileiste (z.B. wenn man auf "Anwendungen" klickt) ebenbündig ohne Zwischenraum */
+  margin-top: 2px;
+
+  /* Linkfarbe ausgeklappes globales Menü (Communitys, Anwendungen usw) */
+  tr {
+    a,
+    a.lotusHover,
+    a:active,
+    a:focus,
+    a:hover {
+      color: #292929 !important;
+    }
+  }
+}
+
+/* Im Profil wird ein Trennstrich zwischen grauer globaler Navi und den Tabs erzeugt */
+#lotusHeaderNavigation_UL {
+  border-bottom: none;
+}
+
+/* Überschrift "zuletzt aktualisierte Communitys" */
+.lotusui30 .lotusNavMenu tr #recentCommunities {
+  color: $link-color !important;
+}
+
+/* "Profil" Menü links ausblenden, da redundant mit rechtem Menü + Metrics ausblenden */
+@if $hide-profiles-menu {
+  #lotusBannerProfiles {
+    display: none;
+  }
+
+}
+@if $hide-metrics-menu {
+  #lotusBannerHeaderMetrics {
+    display: none;
+  }
+}

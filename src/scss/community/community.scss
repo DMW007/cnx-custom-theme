@@ -1,0 +1,97 @@
+.lotusui30 {
+  /* Streifen rechts neben Community folgen/Nicht mehr folgen */
+  .lotusPlaceBar .lotusInlinelist li {
+    border-left-color: $link-color;
+  }
+  .tabNavBar .lotusTabs {
+    li a {
+      color: black !important;
+    }
+  }
+  /* Trennlinie Dateien-Widget zwischen Reiter und Inhalt */
+  .lotusTabContainer {
+    border-bottom: 1px solid $link-color;
+  }
+
+  /* 
+    Blog/Wiki Widget: Die Herzen rechts werden nicht vollständig dargestellt, es fehlt links ein Stück => Fix: Sprite um 1px nach rechts verschoben.
+    Betrifft primär Chrome, auf manchen Bildschirmgrößen aber auch den IE.
+  */
+  .lotusIconLike.ui-heart-like-hikari /* Horizontales Layout */,
+  .lotusIconLike /* Vertikales Layout */ {
+    background-position: -1394px -8px !important;
+  }
+}
+
+/* # Community Startseite # */
+.communities-widget-appearance .lotusui30 {
+  /* Wort "Wolke" links unten in der Tag-Cloud */
+  div:not(#profilePaneLeft):not(#profilePaneRight):not(#profileBody):not(#tabsWidget1_widgetId_container)
+    > .lotusWidget2
+    .lotusBold {
+    color: $link-color !important;
+  }
+  /* Strich aktiver Reiter im Dateien-Widget */
+  .widgetContainer .lotusWidget2 .lotusTabs li.lotusSelected {
+    border-bottom: 4px solid $link-color !important;
+  }
+}
+
+/* Seiten links im Wiki: Darstellung nicht in Petrol sondern Schwarz */
+.dijitTreeLabel {
+  color: black !important;
+}
+
+// Sidebar Dateien Alle Community-Dateien/Community-Ordner
+.lotusui30 .lotusColLeft .lconnNavTreeSelector.lotusSelected {
+  // ToDo: Border Größe in Variable migrieren
+  border-left: 4px solid $highlight-background-color !important;
+}
+
+// Community > Dateien rechts oben Buttons zur Ansicht (Piktrogramm, Details, ...)
+.lconnFiles.files-enable-refine-panel #qkrViewControl .viewOn::after {
+  // Default sind 3px. Wir fixen die Inkonsistenzen von IBM
+  border-bottom: 4px solid $highlight-background-color !important;
+}
+
+// Innenabstände Richtextbox an andere Widgets anpassen (IBM Bug)
+#iWikiWidgetContent {
+  #showRichContent {
+    padding: 8px 20px;
+  }
+}
+
+// Links in Community Übersicht Widgets
+.communities-widget-appearance
+  .lotusui30
+  div:not(#profilePaneLeft):not(#profilePaneRight):not(#profileBody):not(#tabsWidget1_widgetId_container)
+  > .lotusWidget2
+  .lotusTable
+  h4 {
+  color: $link-color;
+
+  a {
+    color: $link-color;
+  }
+}
+
+// "Tags" Widget
+div[data-dojo-attach-point="_tagSearchText"] a,
+.lotusTagCloud a,
+.lotusSubsection a,
+// Restliche Widgets allgemein
+.lotusWidgetBody a,
+// Show all in wikis widget
+.lotusAction {
+  color: $link-color !important;
+}
+
+// Community description widget tags
+#communityTags a {
+  color: $link-color !important;
+  font-size: $default-font-size !important;
+}
+
+@import "community-vertical";
+@import "community-horizontal";
+@import "./community-cr4-overview.scss";

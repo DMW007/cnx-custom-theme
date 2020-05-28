@@ -1,0 +1,60 @@
+$text-color: black !default;
+$primary-color: #339933 !default;
+$secondary-color: #00CC66 !default;
+$second-color-light: #f6f6f6 !default;
+$hover-color: #e8e8e8 !default;
+$light-text-color: #636363 !default;
+$link-color: $secondary-color  !default;;
+$header-foreground-color: white !default;
+$header-background-color: $primary-color !default;
+$header-background-color-hover: $second-color-light !default;
+
+$highlight-foreground-color: white !default;
+$highlight-background-color: $primary-color !default;
+$border-color: rgba(0, 0, 0, 0.2) !default;
+// ToDo: Not widely used, we need to replace the hover border color in many scss files
+$hover-border-color: $primary-color !default;
+$secondary-background-color: $secondary-color !default;
+
+$button-foreground-color: white !default;
+$button-background-color: $primary-color !default;
+$button-border-color: $secondary-color !default;
+$button-disabled-opacity: 0.5 !default;
+
+$default-font-size: 14px !default;
+$form-label-font-size: 16px !default;
+
+$community-image-border-radius: 3px !default;
+
+// ##### Startseite #####
+$widget-title-bg: $secondary-color !default;
+$widget-title-fg: white !default;
+$widget-title-size: 16px !default;
+$widget-content-headline-size: 14px !default;
+// Links wie "Zu meinen Aufgaben wechseln", "Anpassen" etc
+$widget-action-link-size: 14px !default;
+
+// Informelle Controls unter einem ActivityStream Eintrag, die nicht angeklickt werden können (z.B: "Gespeichert" oder Herzen-Zähler)
+$stream-control-non-clickable-color: $light-text-color !default;
+
+$include-eml-viewer: false !default;
+// For EML viewer
+$warning-background-color: $light-text-color !default;
+$warning-foreground-color: #fafbf4 !default;
+
+// Insert header image on the homepage
+$insert-header-image: false !default;
+// Path relative to img directory
+$header-image: "2019_01.jpg" !default;
+
+// If set to true, we expect a (customized) copy of sprite-lconn-32bit_petrol.png in the img directory (holds a lot of colorized icons)
+$override-lconn-sprite: false !default;
+
+// Entries in the global header navigation 
+$hide-profiles-menu: false !default;
+$hide-metrics-menu: false !default;
+
+// Hide the "time" label in the user profile to save space and improve usability (designed for icon usage)
+$hide-user-profile-page-time-label: false !default;
+
+$apply-icxt-fixes: true !default;

@@ -1,0 +1,53 @@
+#editProfile tr.lotusFormFieldRow td {
+  vertical-align: middle;
+}
+
+#tableEditProfileContactInfo {
+  .lotusFormLabel label {
+    font-size: $default-font-size;
+  }
+
+  .lotusText {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100% !important;
+    @extend %modern-textbox;
+  }
+}
+
+/* Größere Schrift in den Profilreitern */
+#_profileEditScene_div {
+  #editProfileTabs li {
+    font-size: $default-font-size;
+  }
+  #editTabPronounciation {
+    display: none;
+  }
+  .lotusMeta {
+    font-size: 12px !important;
+  }
+}
+
+/* Tags-Box sidebar links */
+#socialTagName,
+// Reiter "Foto"
+#photoUploadFileSelected {
+  @extend %modern-textbox;
+}
+#addTagButtonId img {
+  margin-top: 5px;
+}
+#tagCloud {
+  .lotusTagCloud ul li,
+  .lotusInlinelist li span {
+    font-size: $default-font-size !important;
+  }
+}
+
+// Profilseite: "Ortszeit" ist standardmäßig fett, kann aber nicht über die ftl Templates oder NLS-Snippets ausgeblendet werden.
+// Da dies in einem <strong> Tag unmittelbar in #businessCardDetails geschachtelt ist, können wir so NUR das Uhrzeit-Label ausblenden
+@if $hide-user-profile-page-time-label {
+  #businessCardDetails > strong {
+    display: none !important;
+  }
+}

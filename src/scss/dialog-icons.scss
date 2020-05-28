@@ -1,0 +1,42 @@
+@import "./icons-template.scss";
+
+// Link zu Datei einfügen (Editor) Dialog: Alte Bilder durch FA-Icons ersetzen
+$dialog-icon-size: 17px;
+#lconn_files_widget_CompactFilePicker_0 {
+  .lconnPickerSourceToCheck {
+    // &.pickerSourceChecked {
+    //   border-bottom: 5px solid red;
+    //   padding: 6px;
+    // }
+    .lconnPickerSourceLabel {
+      //padding: 0 0 4px 0;
+      padding: 4px;
+    }
+    img {
+      display: none;
+    }
+    .lconnPickerSourceLabelSpan {
+      margin-bottom: 5px;
+
+      &:before {
+        font-size: $dialog-icon-size;
+        //margin-bottom: 4px;
+        margin-right: 4px;
+        @extend %fa-shared;
+      }
+    }
+    // Dateien
+    #lconn_files_widget_CompactFilePicker_0_sourcetab_0
+      .lconnPickerSourceLabelSpan:before {
+      content: "\f15c";
+    }
+    #lconn_files_widget_CompactFilePicker_0_sourcetab_1
+      .lconnPickerSourceLabelSpan:before {
+      content: "\f093";
+    }
+    #lconn_files_widget_CompactFilePicker_0_sourcetab_2
+      .lconnPickerSourceLabelSpan:before {
+      content: "\f0c0";
+    }
+  }
+}
