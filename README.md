@@ -2,6 +2,12 @@
 
 The CNX Custom Theme allows customizing Connections to your needs with as less work and headaches as possible. It was started in the end of 2018 to gave Connections a more modern look & feel and adjust them to our corporate design.  
 
+## Main Features
+- Set main colors for all Connections applications
+- Activity Stream facelift: Added boxes around entries for a better distinction, FA icons for actions, use full width
+- Added boxes around widgets in the right sidebar of the Activity Stream
+- Many small improvements and bugfixes (e.g. increased font size for better readability)
+
 ## Getting started
 ### Requirements
 The following guide is written for Ubuntu. Make sure you have a supported NodeJS Version (LTS, currently 12):
@@ -96,4 +102,5 @@ $ node src/tampermonkey/tampermonkey-server.js
 
 ## Credits
 
-Icon created by [monkik](https://www.flaticon.com/de/kostenloses-icon/kundendienst_1086507) from [flaticon](https://www.flaticon.com/).
+- Icon from the head image of this readme created by [monkik](https://www.flaticon.com/de/kostenloses-icon/kundendienst_1086507) from [flaticon](https://www.flaticon.com/)
+- [Font Awesome](https://fontawesome.com)
