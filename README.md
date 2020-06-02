@@ -9,8 +9,12 @@ The CNX Custom Theme allows customizing Connections to your needs with as less w
 - Many small improvements and bugfixes (e.g. increased font size for better readability)
 - Up2date: Tested with 6.5 CR1 (Currently in use with 6.0 CR 6, too)
 
-Example of the activity stream
-![test image size](doc/examples/cnx-stream.png){:width="48%"}
+## Example of the activity stream
+### With custom theme
+![Custom theme](doc/examples/cnx-stream.png)
+
+### Connections default
+![Custom theme](doc/examples/cnx-stream-vanilla.png)
 
 ## Getting started
 ### Requirements
