@@ -88,6 +88,7 @@ To apply the changes, you need to move the files from the `dist` folder to your 
 
 ```html
 <link
+  id="custom-css"
   rel="stylesheet"
   type="text/css"
   href="/custom-theme/dist/css/custom-all.css?cache-control=max-age%3D0&lastModified=26052020"
@@ -116,6 +117,19 @@ Start the server:
 ```bash
 $ node src/tampermonkey/tampermonkey-server.js
 ```
+
+To rebuild the CSS on file changes, you need to run the watch task in another shell (e.g. terminal of your editor):
+
+```bash
+$ npx gulp watch
+```
+
+If you save any file, the following process happens:
+1. The gulp task detect the changes
+2. A rebuild of the dist file(s) is triggered
+3. Tampermonkeys server reads the new combined css file and send them to the browser using websockets
+4. The Browser replaces the `link` element with id `custom-css` if present. Otherwise, it would be append to the `head`.
+5. You'll also see the timestamp of the last update in your Browsers title bar
 
 ## Credits
 
