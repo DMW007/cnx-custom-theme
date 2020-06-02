@@ -7,6 +7,10 @@ The CNX Custom Theme allows customizing Connections to your needs with as less w
 - Activity Stream facelift: Added boxes around entries for a better distinction, FA icons for actions, use full width
 - Added boxes around widgets in the right sidebar of the Activity Stream
 - Many small improvements and bugfixes (e.g. increased font size for better readability)
+- Up2date: Tested with 6.5 CR1 (Currently in use with 6.0 CR 6, too)
+
+Example of the activity stream
+![test image size](doc/examples/cnx-stream.png){:width="48%"}
 
 ## Getting started
 ### Requirements
