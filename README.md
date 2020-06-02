@@ -73,6 +73,7 @@ $primary-color: red;
 $text-color: black !default;
 
 ```
+If you need help for choosing colors, try [a color picker](https://html-color-codes.info/webfarben_hexcodes/).
 
 ### Build CSS files
 Execute the following gulp task using npx:
@@ -132,6 +133,13 @@ If you save any file, the following process happens:
 5. You'll also see the timestamp of the last update in your Browsers title bar
 
 ## Credits
+This project uses the power of other Open Source projects. Here I list the main of them:
 
 - Icon from the head image of this readme created by [monkik](https://www.flaticon.com/de/kostenloses-icon/kundendienst_1086507) from [flaticon](https://www.flaticon.com/)
 - [Font Awesome](https://fontawesome.com)
+- [SASS](https://sass-lang.com/documentation)
+- [NodeJS](https://nodejs.org)
+- [Socket.io](https://socket.io/)
+- [Gulp](https://gulpjs.com/)
+- [Babel](https://babeljs.io/)
+- [Browserify](http://browserify.org/)
