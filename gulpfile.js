@@ -138,12 +138,6 @@ gulp.task("watch-js", () => {
   );
 });
 
-gulp.task("watch", () => {
-  // For the sake of simplicity we watch to EVERY file in the src directory
-  var watcher = gulp.watch("src/**/*.*", gulp.parallel("watch-css", "watch-js"));
-  watcher.on("change", filePath =>
-    console.log(`[Watcher] File ${filePath} has changed`)
-  );
-});
+gulp.task("watch", gulp.parallel("watch-css", "watch-js"));
 
 gulp.task("default", gulp.series("css", "js"))
