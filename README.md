@@ -101,7 +101,7 @@ In fact, this makes customizations more complicated without providing real benef
 ## Local live reloading
 Allows you to see changes nearly immediately in your browser: You only need to save the file. The browser shows your changes locally just a few seconds later. This can improve development massively - especially when you have at least two screens. No manual work and no huge waiting times only to see a few css changes.
 
-![Live reloading example]()./doc/examples/cnx-live-reloading.gif)
+![Live reloading example](./doc/examples/cnx-live-reloading.gif)
 
 ### Browser extension
 1. Install [Tampermonkey](https://addons.mozilla.org/de/firefox/addon/tampermonkey/) if not already present as extension for your Browser
