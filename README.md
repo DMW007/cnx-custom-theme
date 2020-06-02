@@ -3,11 +3,12 @@
 The CNX Custom Theme allows customizing Connections to your needs with as less work and headaches as possible. It was started in the end of 2018 to gave Connections a more modern look & feel and adjust them to our corporate design.  
 
 ## Main Features
-- Set main colors for all Connections applications
+- Set main colors for all Connections applications to fit them in your corporate style
 - Activity Stream facelift: Added boxes around entries for a better distinction, FA icons for actions, use full width
 - Added boxes around widgets in the right sidebar of the Activity Stream
 - Many small improvements and bugfixes (e.g. increased font size for better readability)
 - Up2date: Tested with 6.5 CR1 (Currently in use with 6.0 CR 6, too)
+- Live Reloading: Instant see your changes in the browser for rapid development/testing
 
 ## Example of the activity stream
 ### With custom theme
@@ -93,7 +94,15 @@ To apply the changes, you need to move the files from the `dist` folder to your 
 />
 ```
 
+While [the official documentation](https://help.hcltechsw.com/connections/v6/admin/customize/t_customize_communities_new_theme.html) describes customizations on the default theme, I don't recommend this approach: It sometimes make customizations harder by having no control of the load order. When using external files like fonts or images, WAS rewrites those urls - this could cause problems, too. Per default, it requires a restart of the common applications to apply changes. This could be bypassed by enabling debug mode in WAS.
+
+In fact, this makes customizations more complicated without providing real benefits. The customizer uses a better approach. This theme is currently not developed on top of the customizer because it has some bugs in the past. It's planned to re-try this with the latest version and port this theme on the customizer later.
+
 ## Local live reloading
+Allows you to see changes nearly immediately in your browser: You only need to save the file. The browser shows your changes locally just a few seconds later. This can improve development massively - especially when you have at least two screens. No manual work and no huge waiting times only to see a few css changes.
+
+![Live reloading example]()./doc/examples/cnx-live-reloading.gif)
+
 ### Browser extension
 1. Install [Tampermonkey](https://addons.mozilla.org/de/firefox/addon/tampermonkey/) if not already present as extension for your Browser
 2. Click on the tampermonkey icon > _Create a new script_
