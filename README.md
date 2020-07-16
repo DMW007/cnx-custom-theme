@@ -84,6 +84,22 @@ npx gulp scss
 
 There is another task called `watch` designed for development: When you execute `npx gulp watch`, it will watch the file system for changes. When you modify and save a file, the css is automatically rebuild in the `dist` directory.
 
+### Load customized files
+To apply the changes, you need to move the files from the `dist` folder to your IHS webserver and load them in a customized `header.jsp` like this:
+
+```html
+<link
+  id="custom-css"
+  rel="stylesheet"
+  type="text/css"
+  href="/custom-theme/dist/css/custom-all.css?cache-control=max-age%3D0&lastModified=26052020"
+/>
+```
+
+While [the official documentation](https://help.hcltechsw.com/connections/v6/admin/customize/t_customize_communities_new_theme.html) describes customizations on the default theme, I don't recommend this approach: It sometimes make customizations harder by having no control of the load order. When using external files like fonts or images, WAS rewrites those urls - this could cause problems, too. Per default, it requires a restart of the common applications to apply changes. This could be bypassed by enabling debug mode in WAS.
+
+In fact, this makes customizations more complicated without providing real benefits. The customizer uses a better approach. This theme is currently not developed on top of the customizer because it has some bugs in the past. It's planned to re-try this with the latest version and port this theme on the customizer later.
+
 ## Automatically deploy css to IHS
 If you would like to test in a production-ready way, I recomment uploading the css files to the IBM HTTP Server. So you can include them in `header.jsp`. To automate this, use the `sftp-watch-upload.sh` script. It requires `inotify`, which could be installed using apt on Ubuntu:
 
@@ -109,22 +125,6 @@ On every scss change, the following will happen:
 3. After a page reload, you'll see the changes without restart
 
 Disabling/purging cache may required, depending on your browser. But this is still much faster and easier than using CNX customization files, which requires a restart.
-
-### Load customized files
-To apply the changes, you need to move the files from the `dist` folder to your IHS webserver and load them in a customized `header.jsp` like this:
-
-```html
-<link
-  id="custom-css"
-  rel="stylesheet"
-  type="text/css"
-  href="/custom-theme/dist/css/custom-all.css?cache-control=max-age%3D0&lastModified=26052020"
-/>
-```
-
-While [the official documentation](https://help.hcltechsw.com/connections/v6/admin/customize/t_customize_communities_new_theme.html) describes customizations on the default theme, I don't recommend this approach: It sometimes make customizations harder by having no control of the load order. When using external files like fonts or images, WAS rewrites those urls - this could cause problems, too. Per default, it requires a restart of the common applications to apply changes. This could be bypassed by enabling debug mode in WAS.
-
-In fact, this makes customizations more complicated without providing real benefits. The customizer uses a better approach. This theme is currently not developed on top of the customizer because it has some bugs in the past. It's planned to re-try this with the latest version and port this theme on the customizer later.
 
 ## Local live reloading
 Allows you to see changes nearly immediately in your browser: You only need to save the file. The browser shows your changes locally just a few seconds later. This can improve development massively - especially when you have at least two screens. No manual work and no huge waiting times only to see a few css changes.
