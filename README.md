@@ -84,6 +84,32 @@ npx gulp scss
 
 There is another task called `watch` designed for development: When you execute `npx gulp watch`, it will watch the file system for changes. When you modify and save a file, the css is automatically rebuild in the `dist` directory.
 
+## Automatically deploy css to IHS
+If you would like to test in a production-ready way, I recomment uploading the css files to the IBM HTTP Server. So you can include them in `header.jsp`. To automate this, use the `sftp-watch-upload.sh` script. It requires `inotify`, which could be installed using apt on Ubuntu:
+
+```bash
+sudo apt install inotify-tools
+```
+
+Start the script in a terminal window (may adjust the server name, if not matching the default from this environment):
+
+```bash
+./sftp-watch-upload.sh
+```
+
+Now start gulps watch task in another terminal tab:
+
+```bash
+npx gulp watch
+```
+On every scss change, the following will happen:
+
+1. Gulp detect the scss changes, compile them to css and update the css files in `bin/css`
+2. Inotify detects the updated css file and copy them to IHS `htdocs` directory
+3. After a page reload, you'll see the changes without restart
+
+Disabling/purging cache may required, depending on your browser. But this is still much faster and easier than using CNX customization files, which requires a restart.
+
 ### Load customized files
 To apply the changes, you need to move the files from the `dist` folder to your IHS webserver and load them in a customized `header.jsp` like this:
 
