@@ -17,3 +17,11 @@
     color: $link-color !important;
   }
 }
+
+// "Bearbeiten" Knopf nicht sichtbar, wenn Wiki-Seite von einem anderen Benutzer gesperrt
+.lotusui30 span.lotusBtnDisabled a  {
+  @extend %button-default-color;
+  &:hover {
+      opacity: 1;
+  }
+}
