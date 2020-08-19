@@ -1,4 +1,6 @@
 #!/bin/bash
+npx gulp
+
 host=centos@cnx65.internal
 args=StrictHostKeyChecking=no
 cssFile=dist/css/custom-all.css
