@@ -18,10 +18,31 @@
   }
 }
 
-// "Bearbeiten" Knopf nicht sichtbar, wenn Wiki-Seite von einem anderen Benutzer gesperrt
+// Apply a light background on disabled buttons (e.g. wiki page locked by other user) and show a forbidden cursor on hover
 .lotusui30 span.lotusBtnDisabled a  {
   @extend %button-default-color;
+  cursor: not-allowed !important;
+
   &:hover {
       opacity: 1;
   }
+}
+
+// Increase and unify font size of notifications (e.g. wiki page locked)
+.lotusLeftWarning {
+  font-size: $default-font-size;
+}
+// Wiki article content
+#wikiContentDiv,
+.wikiHeader .lotusHeader {
+  font-size: $default-font-size;
+
+  // Header actions (like and other metadata)
+  .lotusLikeAction, .lotusMeta a {
+    font-size: $default-font-size;
+  }
+}
+// Title of a wiki page
+#wikiPageHeader {
+  font-size: $headline-font-size;
 }
