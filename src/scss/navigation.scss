@@ -16,7 +16,9 @@
   // Brading in the top right order (HCL by default)
   .lotusBranding {
     font-size: 20px;
+    line-height: 0;
     padding-top: 8px !important;
+    margin-top: 7px !important;
   }
 
   /* Weißer Streifen zur Markierung des aktiven Menüelements näher nach oben wegen Verkleinerung der Navigationsleiste */
@@ -38,16 +40,50 @@
     * {
       color: $highlight-foreground-color !important;
     }
+    #lotusBannerFlyout {
+      margin: 0 -10px 0 10px;
+      #lotusBannerFlyoutLink {
+        padding: 10px;
+        .fa {
+          font-family: 'Font Awesome 5 Free';
+          font-size: 24px;
+          line-height: 1;
+          &.fa-th:before {
+            content: "\f00a";
+          }
+        }
+      }
+    }
   }
 
   ul.lotusInlinelist {
     li {
+      height: 43px;
+      margin-bottom: 1px;
+
       /* Header-Buttons CD Farbe */
       a:active,
       a:focus,
       a:hover {
         background-color: transparent !important;
         color: $header-foreground-color !important;
+      }
+
+      &#headerHelpLi {
+        a#headerHelpLink {
+          padding-top: 9px;
+          height: auto;
+        }
+      }
+
+      &.lotusHover a {
+        padding-bottom: 20px !important;
+      }
+      &#lotusBannerNotifications {
+        padding-left: 0;
+        a {
+          padding-left: 11px;
+        }
       }
     }
   }
