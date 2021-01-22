@@ -31,15 +31,15 @@
     /* Größe der Navigationsleiste verringern (äußerer Container + Abstände innen) */
     height: 43px;
 
+    .lotusAltText {
+      color: $header-foreground-color;
+    }
+
     /* Teilen-Button oben rechts ausblenden, da er nicht genutzt wird */
     #headerSharebox {
       display: none;
     }
 
-    /* Überschreiben der Standard-Farbe wegen braunem BG */
-    * {
-      color: $highlight-foreground-color !important;
-    }
     #lotusBannerFlyout {
       margin: 0 -10px 0 10px;
       #lotusBannerFlyoutLink {
@@ -62,11 +62,19 @@
       margin-bottom: 1px;
 
       /* Header-Buttons CD Farbe */
-      a:active,
-      a:focus,
-      a:hover {
-        background-color: transparent !important;
-        color: $header-foreground-color !important;
+      a {
+        color: $header-foreground-color;
+        &:active,
+        &:focus,
+        &:hover {
+          background-color: transparent !important;
+          color: $header-foreground-color !important;
+        }
+      }
+      &.lotusSelected {
+        a {
+          color: $header-foreground-color;
+        }
       }
 
       &#headerHelpLi {

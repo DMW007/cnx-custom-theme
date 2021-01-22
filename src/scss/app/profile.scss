@@ -51,3 +51,23 @@
     display: none !important;
   }
 }
+
+.lotusui30 {
+  .lotusFrame {
+    .lotusTitleBar2 .lotusHeading .lotusText {
+      color: $text-color;
+    }
+    .lotusMain {
+      .lotusColLeft, .lotusColRight {
+        .widgetTitle {
+          color: $text-color;
+        }
+      }
+      .lotusContent {
+        th {
+          color: $text-color;
+        }
+      }
+    }
+  }
+}

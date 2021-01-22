@@ -35,6 +35,7 @@
 /* Suchtreffer Hover/Blauer Strich links zur Markierung des aktiven Elements */
 .search-history-view-ui .lotusui30 .icSearchPane {
   @extend %link-color;
+  z-index: 1000;
 
   .pfEntry.spSelected {
     .lconn_gray,

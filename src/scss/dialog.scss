@@ -16,6 +16,38 @@
   .lotusFlyoutInner .lotusTabCondensed .lotusTabs li.lotusSelected {
     border-bottom: 2px solid $highlight-background-color;
   }
+
+  /* Einführungs-Box */
+  .hopscotch-bubble {
+    .hopscotch-bubble-container {
+      border: none !important;
+      .hopscotch-actions {
+        background-color: $highlight-background-color;
+        color: $highlight-foreground-color;
+        border: none;
+        .hopscotch-nav-arrow {
+          background: none;
+          .hopscotch-svg-nav {
+            color: $highlight-foreground-color;
+          }
+        }
+        .progress-nums {
+          color: $highlight-foreground-color;
+        }
+      }
+      .hopscotch-bubble-content {
+        h3, .hopscotch-content {
+          color: $text-color;
+        }
+      }
+      .hopscotch-close {
+        color: $highlight-foreground-color;
+      }
+    }
+    .hopscotch-bubble-arrow-container {
+      color: $highlight-background-color;
+    }
+  }
 }
 
 /* "Apps Hinzufügen" Dialog, wenn man auf der Startseite bei den Widgets rechts auf "Anpassen" klickt */

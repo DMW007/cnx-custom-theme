@@ -1,8 +1,8 @@
 @if $apply-icxt-fixes {
   // Workaround ICXT: Buttons "Wiki-Aktionen", "Community-Aktionen" sollen nicht in die ICXT Navbar hineinragen
-  .lotusui30 .lotusTitleBarExt .lotusInlinelist {
-    // Statt 1
-    z-index: 0 !important;
+  body #icxt-sidebar {
+    z-index: 999; // 999px überschrieben da ungültig
+    top: 120px; // um Such-Icon nicht zu überdecken
   }
 
   // Zahnrad Icon rechts zum öffnen der ICXT Optionen

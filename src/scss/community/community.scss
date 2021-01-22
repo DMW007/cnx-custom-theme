@@ -1,4 +1,27 @@
 .lotusui30 {
+  .lotusMain {
+    #catalog-app-container {
+      .catalog-top-nav {
+
+      }
+      .lotusContent {
+        .lconn-filter-input-container {
+          .catalog-text-input {
+            border: 1px solid $border-color;
+            border-radius: 0;
+            padding-bottom: 32px;
+          }
+        }
+      }
+    }
+    .card-grid-wrp {
+      .card-header {
+        .card-header__info {
+          color: $light-text-color;
+        }
+      }
+    }
+  }
   /* Streifen rechts neben Community folgen/Nicht mehr folgen */
   .lotusPlaceBar .lotusInlinelist li {
     border-left-color: $link-color;

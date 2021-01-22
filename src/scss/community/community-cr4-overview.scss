@@ -1,13 +1,31 @@
 %create-community-button {
-  border-color: $button-background-color !important;
-  color: white !important;
-  fill: $button-background-color !important;
+  background: none; 
+  color: $light-text-color;
+  border: none;
 }
 body .icCatalogCommunityCreate.bx--dropdown {
-  background: $button-background-color !important;
-
+  background: none;
+  color: $light-text-color;
+  border-radius: 0;
+  outline: none;
   &:hover {
     @extend %create-community-button;
+  }
+  &.bx--dropdown--open .bx--dropdown-list {
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: 1px solid $border-color;
+    opacity: 1;
+  }
+  .bx--dropdown-list {
+    opacity: 0;
+    border: 1px solid transparent;
+    transition: all .15s ease-in;
+    a {
+      text-decoration: none;
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
   }
 }
 body .icCatalogCommunityCreate.bx--dropdown .bx--dropdown-toggle:hover {

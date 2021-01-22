@@ -1,4 +1,6 @@
 .lotusui30 {
+  color: $text-color;
+
   /*Linkfarbe*/
   a,
   a:active,
@@ -7,17 +9,13 @@
   a:visited {
     color: $link-color;
   }
-  .lotusVCard {
+
+  .lotusVCard, .lotusBanner, .lotusFooter {
     a,
     a:active,
     a:focus,
     a:hover,
-    a:visited {
-      color: $link-color;
-    }
-  }
-
-  .lotusBanner {
+    a:visited,
     /*Tagcloud*/
     a.lotusF3,
     a.lotusF3:visited {

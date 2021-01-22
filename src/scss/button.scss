@@ -5,6 +5,9 @@
 }
 
 .lotusui30 {
+  a {
+    color: $link-color;
+  }
   .lotusBtn {
     @extend %button-default-color;
     font-size: $default-font-size !important;
