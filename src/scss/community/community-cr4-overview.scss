@@ -1,27 +1,30 @@
 %create-community-button {
-  background: none; 
-  color: $light-text-color;
+  background: none !important; 
+  color: $light-text-color !important;
   border: none;
 }
 body .icCatalogCommunityCreate.bx--dropdown {
   background: none;
   color: $light-text-color;
+  box-shadow: none !important;
   border-radius: 0;
   outline: none;
+  border: none !important;
   &:hover {
     @extend %create-community-button;
   }
   &.bx--dropdown--open .bx--dropdown-list {
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    border: 1px solid $border-color;
     opacity: 1;
+    outline: none;
   }
   .bx--dropdown-list {
     opacity: 0;
-    border: 1px solid transparent;
+    border: 1px solid grey !important;
     transition: all .15s ease-in;
     a {
       text-decoration: none;
+      border: none !important;
       &:hover {
         background-color: $hover-color;
       }
