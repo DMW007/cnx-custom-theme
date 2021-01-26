@@ -145,3 +145,50 @@
 .lotusUploadFile .pickerDropfilesDesc {
   margin-top: 15px;
 }
+
+// Für Dialoge wie "Datei hinzufügen"
+.lotusDialogWrapper {
+  .lotusDialogBorder {
+    border: none;
+    .lotusDialogHeader {
+      .lotusDialogClose {
+        &:focus {
+          outline: none;
+        }
+        &::before {
+          @extend %fa-shared;
+          content: "\f00d";
+          color: #fff;
+          font-size: 20px;
+          padding: 0;
+          margin-top: 6px;
+          margin-right: 10px;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+    .lconnPickerDialogBody, .lconnPickerSourceArea {
+      .lconnFilesTree, select, label {
+        color: $text-color;
+      }
+      .lotusMeta {
+        color: $light-text-color;
+      }
+    }
+    .lconnPickerSourceArea {
+      .lconnUploadMultiple {
+        max-width: 98%;
+      }
+    }
+    .lotusDialogFooter {
+      .lotusFormButton {
+        @extend %button-default-color;
+        &#cancel_button {
+          @extend %button-secondary-color;
+        }
+      }
+    }
+  }
+}

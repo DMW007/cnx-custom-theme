@@ -33,14 +33,16 @@
         .lotusLeft {
           color: $text-color !important;
         }
-        a.lotusBold[role="button"] {
-          display: inline-block;
-          padding: 11px 30px;
-          line-height: 1;
-          background-color: $button-secondary-background-color;
-          color: $button-secondary-foreground-color;
-          font-weight: normal;
-          text-decoration: none;
+        a.lotusBold, a.lotusSearchLink {
+          &[role="button"] {
+            display: inline-block;
+            padding: 11px 30px;
+            line-height: 1;
+            background-color: $button-secondary-background-color;
+            color: $button-secondary-foreground-color;
+            font-weight: normal;
+            text-decoration: none;
+          }
         }
       }
       .lotusContent {

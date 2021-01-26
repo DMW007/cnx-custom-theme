@@ -269,6 +269,9 @@
           .streamHeaderWrapper {
             .cke {
               border-radius: 0;
+              .cke_top {
+                border-top: none !important;
+              }
             }
             .icStream-search {
               margin-top: -17px;
@@ -310,6 +313,7 @@
     }
   }
   .lotusColRight {
+    margin-top: 38px;
     .lotusSection2 {
       .linkToDo {
         color: $text-color;

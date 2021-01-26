@@ -5,8 +5,10 @@ $second-color-light: #f6f6f6 !default;
 $hover-color: #e8e8e8 !default;
 $light-text-color: #636363 !default;
 $link-color: $secondary-color  !default;
+$header-height: 56px !default;
 $header-foreground-color: white !default;
 $header-background-color: $primary-color !default;
+$header-foreground-color-hover: $secondary-color !default;
 $header-background-color-hover: $second-color-light !default;
 
 $highlight-foreground-color: white !default;
@@ -61,3 +63,8 @@ $hide-metrics-menu: false !default;
 $hide-user-profile-page-time-label: false !default;
 
 $apply-icxt-fixes: true !default;
+
+// Hide the sub navigation for the second level navigation
+$hide-second-level-sub-navigation: false !default;
+
+$transition-default-all: all .15s ease-in !default;

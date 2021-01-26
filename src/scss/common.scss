@@ -49,6 +49,7 @@
     a.lotusF3:visited {
       color: $link-color;
     }
+    background-color: transparent;
   }
 }
 
@@ -136,4 +137,14 @@ body {
 
 form label {
   font-size: $form-label-font-size;
+}
+
+.lotusui h1 a {
+  color: $text-color;
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    color: $text-color;
+  }
 }

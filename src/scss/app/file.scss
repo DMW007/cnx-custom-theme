@@ -11,13 +11,14 @@
   }
 }
 .fileviewer-panels-textnav
+  .lotusui
   .ics-viewer
   .ics-viewer-details
   .ics-viewer-details-shelf
   h3 {
   background-color: $highlight-background-color !important;
 }
-.fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs {
+.fileviewer-panels-textnav .lotusui .ics-viewer ul.ics-viewer-tabs {
   > li a {
     color: $highlight-foreground-color !important;
   }
