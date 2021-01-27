@@ -186,6 +186,10 @@
                     opacity: 1;
                     pointer-events: none;
                     transition: $transition-default-all;
+                    
+                  }
+                  &[_lconn_menuid]::after {
+                    right: 42px;
                   }
                   &:hover::after {
                     opacity: 0;
@@ -242,6 +246,7 @@
   }
   /* Sub-Navigation */
   .lotusNavMenu {
+    box-shadow: 0 2px 4px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.2);
     /* Abstand ausklappendes Menü zur globalen Navileiste (z.B. wenn man auf "Anwendungen" klickt) ebenbündig ohne Zwischenraum */
     margin-top: 0;
     &#lconnheadermenu-notifications {
@@ -250,13 +255,21 @@
     }
 
     /* Linkfarbe ausgeklappes globales Menü (Communitys, Anwendungen usw) */
+    padding: 0;
     tr {
-      a,
-      a.lotusHover,
-      a:active,
-      a:focus,
-      a:hover {
+      a {
         color: $text-color !important;
+        outline: none;
+        border: none !important;
+        padding-top: 10px;
+        transition: $transition-default-all;
+        &.lotusHover,
+        &:active,
+        &:hover {
+          color: $header-foreground-color-hover !important;
+          background-color: $header-background-color-hover !important;
+          border: none !important;
+        }
       }
       /* Überschrift "zuletzt aktualisierte Communitys" */
       #recentCommunities {
