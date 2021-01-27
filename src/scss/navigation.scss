@@ -228,7 +228,9 @@
   /* Notification styling */
   .dijitPopup {
     outline: none;
-    min-width: 200px;
+    &#lotusBannerApps_dropdown {
+      min-width: 200px;
+    }
     .lotusNavMenu > .dijitTooltipContainer > .dijitTooltipContents table.lotusLayout {
       width: 100%;
     }

@@ -101,6 +101,9 @@
     border-left: 4px solid $highlight-background-color !important;
   }
 }
+.ics-viewer-open .dijitPopup .dijitMenu {
+  margin: 0 !important;
+}
 
 // Verhindert das Ausklappen von langen Aktivitätengruppen
 body {
