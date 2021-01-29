@@ -100,68 +100,70 @@
 }
 
 /* Activity Stream*/
-.lotusStream ul.lotusStream > li {
-  > .lotusPost > .lotusPostContent {
-    > .lotusPostIndicator img {
-      display: none;
-      + span.lotusAltText {
-        position: relative;
-        display: inline-block;
-        text-indent: -99999px;
-        width: 14px;
-        height: 14px;
-        &::before {
-          @extend %fa-shared;
-          content: "\f101";
-          padding: 0;
-          text-indent: 0;
-          position: absolute;
-          top: 0;
-          right: 0;
+.lotusStream {
+  ul.lotusStream > li {
+    > .lotusPost > .lotusPostContent {
+      > .lotusPostIndicator img {
+        display: none;
+        + span.lotusAltText {
+          position: relative;
+          display: inline-block;
+          text-indent: -99999px;
           width: 14px;
           height: 14px;
+          &::before {
+            @extend %fa-shared;
+            content: "\f101";
+            padding: 0;
+            text-indent: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+      > .lotusMeta > .lotusRight > abbr {
+        &::after{
+          @extend %fa-shared;
+          margin-left: 5px;
+        }
+        + img {
+          display: none;
         }
       }
     }
-    > .lotusMeta > .lotusRight > abbr {
-      &::after{
-        @extend %fa-shared;
-        margin-left: 5px;
-      }
-      + img {
-        display: none;
-      }
+    &[data-activity-targetid*="activities"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f0f2";
     }
-  }
-  &[data-activity-targetid*="activities"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f0f2";
-  }
-  &[data-activity-targetid*="blogs"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f10d";
-  }
-  &[data-activity-targetid*="bookmarks"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f02e";
-  }
-  &[data-activity-targetid*="communities"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f0c0";
-  }
-  &[data-activity-targetid*="connections"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f1e0";
-  }
-  &[data-activity-targetid*="files"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f0a0";
-  }
-  &[data-activity-targetid*="forums"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f086";
-  }
-  &[data-activity-targetid*="libraries"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f02d";
-  }
-  &[data-activity-targetid*="profiles"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f007";
-  }
-  &[data-activity-targetid*="wikis"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
-    content: "\f246";
+    &[data-activity-targetid*="blogs"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f10d";
+    }
+    &[data-activity-targetid*="bookmarks"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f02e";
+    }
+    &[data-activity-targetid*="communities"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f0c0";
+    }
+    &[data-activity-targetid*="connections"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f1e0";
+    }
+    &[data-activity-targetid*="files"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f0a0";
+    }
+    &[data-activity-targetid*="forums"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f086";
+    }
+    &[data-activity-targetid*="libraries"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f02d";
+    }
+    &[data-activity-targetid*="profiles"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f007";
+    }
+    &[data-activity-targetid*="wikis"] > .lotusPost > .lotusPostContent > .lotusMeta > .lotusRight > abbr::after {
+      content: "\f246";
+    }
   }
 }
 

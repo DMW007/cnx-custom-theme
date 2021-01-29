@@ -273,16 +273,39 @@
                 border-top: none !important;
               }
             }
+            #asSearchMenuOption {
+              padding: 10px 5px;
+              outline: none;
+              &::before {
+                @extend %fa-shared;
+                content: "\f002";
+                line-height: 1;
+                color: $highlight-foreground-color;
+                font-size: 18px;
+                padding: 0;
+              }
+              > img {
+                display: none;
+              }
+            }
             .icStream-search {
               margin-top: -17px;
               border: none;
               background-color: $primary-color;
+              .icStream-searchSubmitTd {
+                &::before {
+                  @extend %fa-shared;
+                  content: "\f002";
+                  font-size: 16px;
+                  color: $light-text-color;
+                }
+              }
               .icStream-searchClose {
                 margin: 3px;
                 &::before {
                   @extend %fa-shared;
                   content: "\f00d";
-                  color: white;
+                  color: $highlight-foreground-color;
                   font-size: 20px;
                   padding: 0;
                 }

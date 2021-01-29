@@ -33,12 +33,18 @@
   // Letzte Zeile besitzt bereits einen Trennrahmen nach unten
   tr td {
     border-bottom: 1px solid $border-color !important;
+    position: relative;
+    .lconnHomepage-todoWidgetIcon {
+      margin-right: -20px;
+    }
   }
-  .linkToDo {
-    font-size: $widget-content-headline-size !important;
-    font-weight: normal !important;
-    // Sauberes Umbrechen des Titels in seiner Spalte, ohne das Icon vorne zu beeinflussen
-    width: 350px;
+  .lconnHomepage-todoWidgetContent {
+    padding-left: 20px !important;
+    .linkToDo {
+      font-size: $widget-content-headline-size !important;
+      font-weight: normal !important;
+      
+    }
   }
   .lotusMeta:last-child {
     display: inline !important;
@@ -70,12 +76,20 @@
 // Empfehlungen
 #lconn_sand_RecommendWidget_0 {
   .lotusTable {
-    // Titel dürfen max 100% der Breite einnehmen und werden mit ... abgeschnitten, falls sie länger sind
-    td.lotusMeta {
-      max-width: 340px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    table-layout: fixed;
+    tr {
+      &:hover {
+        background-color: $hover-color;
+      }
+      // Titel dürfen max 100% der Breite einnehmen und werden mit ... abgeschnitten, falls sie länger sind
+      td.lotusMeta {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        + td {
+          width: 20px;
+        }
+      }
     }
 
     a[aria-describedby="lconnRecommendLinkDescription"] {

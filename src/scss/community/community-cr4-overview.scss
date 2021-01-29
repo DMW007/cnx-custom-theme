@@ -20,7 +20,7 @@ body .icCatalogCommunityCreate.bx--dropdown {
   }
   .bx--dropdown-list {
     opacity: 0;
-    border: 1px solid grey !important;
+    border: 1px solid rgba(0,0,0,.15) !important;
     transition: all .15s ease-in;
     a {
       text-decoration: none;
@@ -36,25 +36,8 @@ body .icCatalogCommunityCreate.bx--dropdown .bx--dropdown-toggle:hover {
   opacity: $button-disabled-opacity !important;
 }
 
-body .bx--tabs__nav-item--selected {
-  border-bottom-color: $link-color;
-}
 .bx--list-box__menu-icon > svg {
   fill: $button-background-color;
-}
-.bx--list-box__field[aria-expanded="true"] ~ .bx--list-box__menu {
-  box-shadow: 0 1px 0 0 black, 1px 0 0 0 black, -1px 0 0 0 $link-color;
-}
-.bx--list-box__field:focus,
-.bx--list-box__field[aria-expanded="true"] {
-  outline-color: black;
-}
-
-// Navigation Startseite Communitys (Meine Community, Entdecken, Eingeladen)
-body .bx--tabs__nav-link:hover {
-  background: $hover-border-color !important;
-  color: white !important;
-  border: none !important;
 }
 
 // Suchfilter sidebar links
@@ -66,21 +49,54 @@ body .bx--tabs__nav-link:hover {
 }
 // ToDo: Refactoring Farben (wurden auf die schnelle für Screenshots anhand der direkten Farbvariablen gesetzt)
 
-// Active menu item top
-.catalog .bx--tabs__nav-item--selected {
-  border-bottom-color: $hover-border-color !important;
+// sub menu item top
+.catalog .bx--tabs {
+  .bx--tabs__nav {
+    height: 100%;
+    .bx--tabs__nav-item {
+      padding-left: 15px;
+      padding-right: 15px;
+      display: table;
+      height: 100%;
+      border: none !important;
+      transition: $transition-default-all;
+      outline: none;
+      &:hover {
+        background-color: $header-background-color-hover !important;
+        color: $header-foreground-color-hover;
+        > .bx--tabs__nav-link {
+          color: $header-foreground-color-hover;
+        }
+      }
+      &.bx--tabs__nav-item--selected {
+        > .bx--tabs__nav-link::before {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          bottom: 15%;
+          background-color: $header-foreground-color;
+          opacity: 1;
+          transition: $transition-default-all;
+        }
+        &:hover {
+          > .bx--tabs__nav-link::before {
+            opacity: 0;
+          }
+        }
+      }
+      > .bx--tabs__nav-link {
+        display: table-cell;
+        position: relative;
+        vertical-align: middle;
+        border: none;
+        border-radius: 0;
+        height: 100%;
+        padding: 0;
+        background: none;
+        color: $header-foreground-color;
+      }
+    }
+  }
 }
-
-// Sorting combobox top right
-.bx--list-box__field:focus,
-.bx--list-box__field[aria-expanded="true"] {
-  outline-color: $hover-border-color !important;
-  outline: 1px solid $hover-border-color !important;
-}
-.bx--dropdown--open {
-  border-bottom-color: $hover-border-color !important;
-}
-
-/*
-.bx--list-box__field:focus, .bx--list-box__field[aria-expanded="true"]
-*/

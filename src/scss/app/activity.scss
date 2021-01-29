@@ -5,7 +5,11 @@
 
   /* Hervorhebung des aktiven Navigationselementes */
   li.lotusSelected .lotusTab {
-    border-bottom: 2px solid $link-color !important;
+    border-bottom: 2px solid $text-color !important;
+  }
+  .lotusTab, .lotusTabInner {
+    outline: none;
+    color: $text-color;
   }
 }
 
@@ -22,6 +26,10 @@
   .lotusMeta {
     color: $light-text-color !important;
   }
+}
+
+.lotusui30 .lotusStream #activityStreamMain.lotusWidgetBody .lotusPost abbr.timeago {
+  color: $light-text-color;
 }
 
 // Mehr Abstand zur Überschrift - Entfernt, da Seiteneffekte auf Community-Widgets (Erhalten ebenfalls Abstand und zerstören damit die letzte Spalte des Grid-Layouts)

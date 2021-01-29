@@ -2,12 +2,14 @@
   color: $text-color;
 
   /*Linkfarbe*/
-  a,
-  a:active,
-  a:focus,
-  a:hover,
-  a:visited {
+  .lotusColLeft a, a {
     color: $link-color;
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+      color: $link-color;
+    }
   }
 
   .lotusVCard, .lotusBanner, .lotusFooter {
