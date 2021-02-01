@@ -9,6 +9,36 @@
 }
 
 .lotusui30 {
+  /* Search */
+  .lotusTitleBar2 .icSearchPaneButton, .icSearchPane .icTopSection .icSearchBar {
+    .icSearchIcon {
+      background-color: $header-background-color-hover !important;
+      &::before {
+        @extend %fa-shared;
+        content: "\f002";
+        padding: 0;
+        font-size: 18px;
+        line-height: 20px;
+        color: $header-foreground-color-hover;
+      }
+      > svg {
+        display: none;
+      }
+    }
+  }
+  .icSearchPane .icTopSection .icSearchBar .icSearchIcon {
+    background: transparent !important;
+    margin-right: -10px;
+    &::before {
+      color: $light-text-color;
+      line-height: 30px;
+      opacity: .5;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
   /* Sub-Navigation */
   .lotusNavMenu {
     .lotusNavMenuLarge {
