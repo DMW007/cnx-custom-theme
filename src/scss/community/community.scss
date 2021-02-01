@@ -128,8 +128,8 @@ div[data-dojo-attach-point="_tagSearchText"] a,
           color: $text-color;
         }
         .filter-section-content {
-          .bx--tag {
-            color: $text-color;
+          .bx--tag, .bx--tag a {
+            color: $link-color;
           }
         }
         .tags-filter {
