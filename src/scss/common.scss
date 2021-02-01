@@ -24,6 +24,23 @@
       color: $link-color;
     }
   }
+
+  .lotusHeading1 {
+    color: $text-color;
+  }
+
+  .lotusInactive {
+    color: $light-text-color;
+  }
+
+  .lotusWidget {
+    h2, h3, h4 {
+    color: $text-color;
+    }
+    .day, .meta {
+      color: $light-text-color;
+    }
+  }
 }
 .lotusui30 {
   /*Linkfarbe*/

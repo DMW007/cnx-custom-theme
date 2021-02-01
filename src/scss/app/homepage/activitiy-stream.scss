@@ -298,6 +298,12 @@
                   content: "\f002";
                   font-size: 16px;
                   color: $light-text-color;
+                  position: absolute;
+                  top: 50%;
+                  margin-top: -4px;
+                }
+                input {
+                  background-image: none;
                 }
               }
               .icStream-searchClose {

@@ -1,0 +1,18 @@
+.dijitTabContainer {
+  .dijitTabController {
+    .dijitTab {
+      background-color: $header-background-color;
+      color: $header-foreground-color !important;
+      &.dijitTabChecked, &:hover {
+        background-color: $header-background-color-hover;
+        color: $header-foreground-color-hover !important;
+      }
+      * {
+        outline: none;
+      }
+      .stepNum, .tabSpan {
+        font-weight: normal;
+      }
+    }
+  }
+}
