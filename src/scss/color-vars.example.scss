@@ -1,3 +1,12 @@
+// $logo-left and $logo-right must be paths
+$hide-hcl-logo: false !default;
+$logo-left: false !default;
+$logo-left-width: 215px !default;
+$logo-left-height: 20px !default;
+$logo-right: false !default; // If set to a url, hcl logo will be hidden
+$logo-right-width: 215px !default;
+$logo-right-height: 20px !default;
+
 $text-color: black !default;
 $primary-color: #339933 !default;
 $secondary-color: #31B404 !default;

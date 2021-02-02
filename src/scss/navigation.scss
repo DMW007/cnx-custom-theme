@@ -58,13 +58,38 @@
             margin: 0 20px 0 0;
             padding-right: 20px;
             box-sizing: content-box;
+            @if $logo-left {
+              background: url($logo-left);
+              background-repeat: no-repeat;
+              background-position: left center;
+              background-size: $logo-left-width $logo-left-height;
+              > span.lotusAltText {
+                visibility: hidden;
+                opacity: 0;
+              }
+            }
           }
           .lotusBranding {
-            padding: 0 15px !important;
+            padding: 0 0 0 15px;
             line-height: $header-height;
             display: inline;
+            @if $hide-hcl-logo and $logo-right == false {
+              padding: 0;
+            }
+            @if $logo-right {
+              display: inline-block;
+              width: $logo-right-width;
+              height: 100%;
+              background: url($logo-right);
+              background-repeat: no-repeat;
+              background-position: right center;
+              background-size: $logo-right-width $logo-right-height;
+            }
             img {
               vertical-align: middle;
+              @if $logo-right or $hide-hcl-logo {
+                display: none;
+              }
             }
           }
           .lotusAltText {
