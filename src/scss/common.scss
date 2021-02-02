@@ -170,3 +170,12 @@ form label {
     color: $text-color;
   }
 }
+
+.lotusui30 {
+  .lotusStyledScroll {
+    &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb {
+      border: none;
+      border-radius:0;
+    }
+  }
+}

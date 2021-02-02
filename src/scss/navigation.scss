@@ -144,14 +144,16 @@
             &:hover, &:focus {
               background: $header-background-color-hover;
               color: $header-foreground-color-hover;
+              .lotusArrow + span::after {
+                color: $header-foreground-color-hover;
+              }
             }
             .lotusArrow {
               display: none;
               + span {
                 display: inline-block;
-                visibility: hidden;
+                color: transparent;
                 position: relative;
-                color: inherit;
                 margin-top: -2px;
                 &::after {
                   position: absolute;
@@ -159,7 +161,7 @@
                   right: 0;
                   content: "\f078";
                   @extend %fa-shared;
-                  color: inherit;
+                  color: $header-foreground-color;
                   font-size: 14px;
                   margin-top: 2px;
                 }
@@ -183,6 +185,9 @@
                   color: $header-foreground-color-hover;
                   &::after {
                     border-color: $header-foreground-color-hover;
+                  }
+                  .lotusArrow + span::after {
+                    color: $header-foreground-color-hover;
                   }
                 }
                 &.lotusSelected {
