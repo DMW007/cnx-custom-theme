@@ -2,7 +2,7 @@
 // Seit diese eingefügt wurden, tritt der Fehler zumindest seltener auf, in Kombination mit https://stackoverflow.com/a/46671246/9428314
 
 // Imports the color-vars.scss
-@import "./common-mixins.scss";
+@import "./common-mixins";
 @import "./sprite";
 
 @import "./navigation";
@@ -32,13 +32,14 @@
 @import "./app/wiki";
 @import "./app/file";
 @import "./app/profile";
-@import "./app/forum.scss";
+@import "./app/forum";
 
 @import "./custom-extensions/emlviewer";
 @if $include-eml-viewer {
     @include eml-viewer;
 }
 
-@import "./selectr.scss";
-@import "./forms.scss";
-@import "./icons.scss";
+@import "./selectr";
+@import "./forms";
+@import "./icons";
+@import "./xcc";

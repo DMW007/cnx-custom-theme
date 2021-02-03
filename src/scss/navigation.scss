@@ -53,6 +53,11 @@
         .lotusInner {
           height: 100%;
           box-sizing: content-box;
+          a {
+            &#notificationCenterNode, &#headerHelpLink {
+              height: 100% ;
+            }
+          }
           .lotusLogo {
             width: 216px;
             margin: 0 20px 0 0;

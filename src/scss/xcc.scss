@@ -1,0 +1,106 @@
+#xccMain {
+  .container {
+    .bx--btn {
+      @extend %button-default-color;
+      border: none;
+      &.bx--btn--secondary {
+        @extend %button-secondary-color;
+      }
+    }
+  }
+}
+
+.xccstyle {
+  .live-editor, .modal {
+    .bx--btn {
+      @extend %button-default-color;
+      border: none;
+      &.bx--btn--secondary {
+        @extend %button-secondary-color;
+      }
+    }
+  }
+}
+
+body.xccstyle {
+  .live-editor {
+    .live-editor_form {
+      width: 35vw;
+      .live-editor_title, .live-editor_section {
+        color: $text-color;
+      }
+      .live-editor_section {
+        .live-editor_heading-icon {
+          fill: $text-color;
+        }
+        .live-editor_body {
+          a {
+            color: $link-color;
+          }
+          .input-group {
+            .input-group-addon, .form-control {
+              color: $text-color;
+            }
+          }
+          .live-editor_inner .label {
+            color: $text-color;
+          }
+        }
+      }
+      .btn-group.dropup {
+        max-width: 35vw;
+        width: 35vw;
+      }
+    }
+  }
+
+  .chpFlyout {
+    .lotusFlyout {
+      .lotusFlyoutHeader {
+        background-color: $highlight-background-color;
+        color: $highlight-foreground-color;
+        h2 {
+          color: $highlight-foreground-color;
+          a {
+            color: $highlight-foreground-color;
+            text-decoration: none;
+          }
+        }
+        a, .lotusClose {
+          color: $highlight-foreground-color;
+        }
+        .lotusPrint {
+          font-size: 20px;
+          top: 4px;
+        }
+        button.lotusClose {
+          font-size: 22px;
+          top: 3px;
+        }
+      }
+      .lotusFlyoutContent {
+        .likes, .more {
+          .lotusButton {
+            color: $link-color;
+          }
+        }
+        .btn {
+          @extend %button-default-color;
+          border: none;
+          border-radius: 0;
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .xccstyle {
+    .modal {
+      .modal-dialog {
+        width: 700px;
+      }
+    }
+  }
+}

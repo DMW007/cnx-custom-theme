@@ -87,12 +87,12 @@ body .icCatalogCommunityCreate.bx--dropdown .bx--dropdown-toggle:hover {
         }
       }
       > .bx--tabs__nav-link {
-        display: table-cell;
+        display: block;
         position: relative;
-        vertical-align: middle;
         border: none;
         border-radius: 0;
         height: 100%;
+        line-height: 40px;
         padding: 0;
         background: none;
         color: $header-foreground-color;
