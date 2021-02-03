@@ -1,0 +1,45 @@
+#header span {
+    font-size: 22px !important;
+}
+#header-wrapper {
+    background-color: white !important;
+    border-top: none !important;
+}
+#header-wrapper,
+#productName,
+.step-description h1{
+    color: #004f23 !important;
+}
+#button-start,
+#button-continue,
+.nextbutton,
+.backbutton{
+    background: #004f23 !important;
+    border: none !important;
+    color: white !important;
+}
+.pip-filled,
+.follow-button {
+    background: #004f23 !important;
+    border: none !important;
+}
+.follow-button {
+    color: white !important;
+}
+
+/* The image is blue, we hide it as workaround */
+.navigation-back .button-arrow {
+    display: none !important;
+}
+
+#welcome-content, #privacyAndGuidelines-content {
+    // ToDo: Add var to cover 2021 path
+    // background-image: url('Cover2021.jpg') !important;
+}
+
+/* Avoid white text on the white baloons of the bg */
+#welcome-content-home, #privacyAndGuidelines-content-home { margin-left: 40px !important;}
+#networkExternal {
+    /*margin-left: 190px !important; */
+    display: none !important;
+}
