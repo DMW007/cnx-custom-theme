@@ -67,7 +67,7 @@ gulp.task("scss-touchpoint", () => {
     productionBuild ? cleanCSS(cleanCssOptions, cleanCssCallback) : noop()
   )
   .pipe(productionBuild ? sourcemaps.write() : noop())
-  .pipe(header('/`This file was automatically generated using gulp. Please apply changes to the original scss sources files. */\n'))
+  .pipe(header('/*`This file was automatically generated using gulp. Please apply changes to the original scss sources files. */\n'))
   .pipe(gulp.dest(outputFiles.cssTouchpoint.baseDir));
 })
 
