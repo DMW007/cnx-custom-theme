@@ -1,5 +1,6 @@
 const gulp = require("gulp"),
   rename = require("gulp-rename"),
+  replace = require('gulp-replace');
   sass = require("gulp-sass"),
   cleanCSS = require("gulp-clean-css"),
   sourcemaps = require("gulp-sourcemaps"),
@@ -56,7 +57,7 @@ gulp.task("scss", () => {
   const cssBase64Config = {
     baseDir: "img",
     // To override sprite-positions, we include the original images directly from the CNX server
-    exclude: [/^connections\/resources/, /\.(woff2?|ttf|svg|eot)/],
+    exclude: [/^connections\/resources/, /\.(woff2?|ttf|svg|eot)/, /data:image\/svg\+xml/],
     // Encode all with base64 to avoid rewriting issues from WebSphere
     maxImageSize: 100000000000,
     debug: true,
@@ -111,6 +112,8 @@ gulp.task("bundle-all", gulp.series("scss", "css-lib", () => {
     .pipe(
       productionBuild ? cleanCSS(cleanCssOptions, cleanCssCallback) : noop()
     )
+    .pipe(replace("/*! addWithoutChange ", ""))
+    .pipe(replace(" addWithoutChange */", ""))
     .pipe(gulp.dest(outputFiles.css.baseDir));
 }));
 gulp.task("css", gulp.series("scss", "css-lib", "bundle-all"));

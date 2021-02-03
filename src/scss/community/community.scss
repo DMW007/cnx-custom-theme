@@ -1,4 +1,32 @@
 .lotusui30 {
+  .lotusMain {
+    #catalog-app-container {
+      .catalog-top-nav {
+
+      }
+      .lotusContent {
+        .lconn-filter-input-container {
+          .catalog-text-input {
+            border: 1px solid $border-color;
+            border-radius: 0;
+            padding-bottom: 32px;
+          }
+        }
+      }
+    }
+    .card-grid-wrp {
+      .card-header {
+        .card-header__info {
+          color: $light-text-color;
+        }
+      }
+      .card-details {
+        .summary {
+          color: $light-text-color;
+        }
+      }
+    }
+  }
   /* Streifen rechts neben Community folgen/Nicht mehr folgen */
   .lotusPlaceBar .lotusInlinelist li {
     border-left-color: $link-color;
@@ -10,7 +38,7 @@
   }
   /* Trennlinie Dateien-Widget zwischen Reiter und Inhalt */
   .lotusTabContainer {
-    border-bottom: 1px solid $link-color;
+    border-bottom: 1px solid $text-color;
   }
 
   /* 
@@ -90,6 +118,73 @@ div[data-dojo-attach-point="_tagSearchText"] a,
 #communityTags a {
   color: $link-color !important;
   font-size: $default-font-size !important;
+}
+
+.lotusui {
+  > .lotusCommunities {
+    .lotusBanner {
+      margin-bottom: 140px;
+    }
+    .tabNavBar {
+      position: absolute;
+      width: 100%;
+      top: $header-height;
+      padding: 15px 0;
+      &.tabNavFixed {
+        position: fixed;
+        top: 0;
+      }
+    }
+  }
+  .lotusMain {
+    .resultsDisplay {
+      .filter-refiner {
+        .filter-section-heading {
+          color: $text-color;
+        }
+        .filter-section-content {
+          .bx--tag, .bx--tag a {
+            color: $link-color;
+          }
+        }
+        .tags-filter {
+          .bx--tooltip__trigger {
+            .bx--tooltip__icon {
+              fill: $text-color;
+            }
+          }
+          .tag-finder {
+            .catalog-text-input {
+              &::before {
+                @extend %fa-shared;
+                content: "\f002";
+                position: absolute;
+                font-size: 14px;
+                line-height: 30px;
+              }
+              input {
+                padding-bottom: 0;
+                &:focus {
+                  border-bottom: 1px solid transparent;
+                }
+              }
+              .bx--label {
+                color: $light-text-color;
+              }
+              &.catalog-text-input__motion {
+                .bx--label {
+                  color: $text-color;
+                }
+              }
+            }
+            .input svg.search {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @import "community-vertical";

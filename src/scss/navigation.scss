@@ -1,57 +1,3 @@
-/* Farbschema anpassen: Weiß auf Grau */
-.lotusui30 div.lotusBanner {
-  .lotusLogo {
-    margin-left: -10px;
-    /* Bündig mit Anfang von Navigationsleiste */
-    margin-right: 47px;
-
-    .lotusAltText {
-      .lotusTNLogo {
-        display: block !important;
-        margin-top: 5px !important;
-      }
-    }
-  }
-
-  // Brading in the top right order (HCL by default)
-  .lotusBranding {
-    font-size: 20px;
-    padding-top: 8px !important;
-  }
-
-  /* Weißer Streifen zur Markierung des aktiven Menüelements näher nach oben wegen Verkleinerung der Navigationsleiste */
-  ul.lotusInlinelist.lotusLinks li.lotusSelected::after {
-    margin-bottom: 0;
-  }
-
-  .lotusRightCorner {
-    background-color: $header-background-color;
-    /* Größe der Navigationsleiste verringern (äußerer Container + Abstände innen) */
-    height: 43px;
-
-    /* Teilen-Button oben rechts ausblenden, da er nicht genutzt wird */
-    #headerSharebox {
-      display: none;
-    }
-
-    /* Überschreiben der Standard-Farbe wegen braunem BG */
-    * {
-      color: $highlight-foreground-color !important;
-    }
-  }
-
-  ul.lotusInlinelist {
-    li {
-      /* Header-Buttons CD Farbe */
-      a:active,
-      a:focus,
-      a:hover {
-        background-color: transparent !important;
-        color: $header-foreground-color !important;
-      }
-    }
-  }
-}
 /* Umbenennung der Datei wegen Caching nicht mehr nötig */
 @if $insert-header-image {
   .lotusui30.hasSideNav .lotusFrame .lotusTitleBar2 {
@@ -67,53 +13,19 @@
     display: block;
     margin-bottom: 15px;
   }
-}
-
-/* Zu viel Freiraum zwischen Profilbild und Menüelementen in der Sidbar links reduzieren */
-#homepageLeftNavigationMenuContainer {
-  margin-top: 65px;
-}
-/* Bläuliche Hervorhebung des aktiven Menüpunktes in der Navigation mit weiß ans CD anpassen */
-.lotusui30 .lotusBanner ul.lotusInlinelist li a:active,
-.lotusui30 .lotusBanner ul.lotusInlinelist li a:focus,
-.lotusui30 .lotusBanner ul.lotusInlinelist li a:hover {
-  background-color: #9d9d9d;
-  color: #ffffff;
-}
-.lotusui30 .lotusBanner ul.lotusInlinelist li.lotusHover {
-  a,
-  a:hover,
-  a.lotusBannerBtn,
-  .lotusSelected {
-    background-color: #9d9d9d;
-    color: #ffffff;
+  /* Zu viel Freiraum zwischen Profilbild und Menüelementen in der Sidbar links reduzieren */
+  #homepageLeftNavigationMenuContainer {
+    margin-top: 65px;
   }
-}
-
-.lotusui30 .lotusNavMenu {
-  /* Abstand ausklappendes Menü zur globalen Navileiste (z.B. wenn man auf "Anwendungen" klickt) ebenbündig ohne Zwischenraum */
-  margin-top: 2px;
-
-  /* Linkfarbe ausgeklappes globales Menü (Communitys, Anwendungen usw) */
-  tr {
-    a,
-    a.lotusHover,
-    a:active,
-    a:focus,
-    a:hover {
-      color: #292929 !important;
-    }
+} @else {
+  #homepageLeftNavigationMenuContainer {
+    margin-top: 105px;
   }
 }
 
 /* Im Profil wird ein Trennstrich zwischen grauer globaler Navi und den Tabs erzeugt */
 #lotusHeaderNavigation_UL {
   border-bottom: none;
-}
-
-/* Überschrift "zuletzt aktualisierte Communitys" */
-.lotusui30 .lotusNavMenu tr #recentCommunities {
-  color: $link-color !important;
 }
 
 /* "Profil" Menü links ausblenden, da redundant mit rechtem Menü + Metrics ausblenden */
@@ -126,5 +38,297 @@
 @if $hide-metrics-menu {
   #lotusBannerHeaderMetrics {
     display: none;
+  }
+}
+
+.lotusui30 {
+  .lotusFrame  {
+    /* Header */
+    .lotusBanner {
+      box-shadow: 0 2px 0 rgba(0,0,0,.1);
+      .lotusRightCorner {
+        background: $header-background-color;
+        height: $header-height;
+        padding: 0;
+        .lotusInner {
+          height: 100%;
+          box-sizing: content-box;
+          a {
+            &#notificationCenterNode, &#headerHelpLink {
+              height: 100% ;
+            }
+          }
+          .lotusLogo {
+            width: 216px;
+            margin: 0 20px 0 0;
+            padding-right: 20px;
+            box-sizing: content-box;
+            @if $logo-left {
+              background: url($logo-left);
+              background-repeat: no-repeat;
+              background-position: left center;
+              background-size: $logo-left-width $logo-left-height;
+              > span.lotusAltText {
+                visibility: hidden;
+                opacity: 0;
+              }
+            }
+          }
+          .lotusBranding {
+            padding: 0 0 0 15px;
+            line-height: $header-height;
+            display: inline;
+            @if $hide-hcl-logo and $logo-right == false {
+              padding: 0;
+            }
+            @if $logo-right {
+              display: inline-block;
+              width: $logo-right-width;
+              height: 100%;
+              background: url($logo-right);
+              background-repeat: no-repeat;
+              background-position: right center;
+              background-size: $logo-right-width $logo-right-height;
+            }
+            img {
+              vertical-align: middle;
+              @if $logo-right or $hide-hcl-logo {
+                display: none;
+              }
+            }
+          }
+          .lotusAltText {
+            color: $header-foreground-color;
+            font-size: 22px;
+            padding: 0;
+            line-height: $header-height;
+          }
+          #lotusBannerNotifications, #headerHelpLi {
+            a {
+              &#notificationCenterNode, &#headerHelpLink {
+                &::before {
+                  display: block !important;
+                  content: "\f0f3";
+                  @extend %fa-shared;
+                  font-size: 24px;
+                  font-weight: 400;
+                  padding: 0;
+                  position: relative;
+                  top: auto;
+                  left: auto;
+                  height: auto;
+                  transform: none;
+                  border: none;
+                }
+                img {
+                  display: none;
+                }
+              }
+              &#headerHelpLink::before {
+                content: "\f059";
+              }
+            }
+            #com_ibm_social_as_notification_badging_NotificationCenterInlineBadge_1 {
+              height: 100%;
+              > .icBanner-badge-onprem {
+                top: -45%;
+              }
+            }
+          }
+          a {
+            font-size: 18px;
+            height: 100%;
+            line-height: $header-height;
+            padding: 0 15px;
+            transition: $transition-default-all;
+            color: $header-foreground-color;
+            outline: none;
+            &::before {
+              display: none !important;
+            }
+            &:hover, &:focus {
+              background: $header-background-color-hover;
+              color: $header-foreground-color-hover;
+              .lotusArrow + span::after {
+                color: $header-foreground-color-hover;
+              }
+            }
+            .lotusArrow {
+              display: none;
+              + span {
+                display: inline-block;
+                color: transparent;
+                position: relative;
+                margin-top: -2px;
+                &::after {
+                  position: absolute;
+                  visibility: visible;
+                  right: 0;
+                  content: "\f078";
+                  @extend %fa-shared;
+                  color: $header-foreground-color;
+                  font-size: 14px;
+                  margin-top: 2px;
+                }
+              }
+            }
+            img.usersRadius {
+              margin-top: -4px;
+            }
+          }
+          ul {
+            height: 100%;
+            &.lotusLinks {
+              float: left;
+            }
+            li {
+              margin: 0;
+              height: 100%;
+              &.lotusHover {
+                > a {
+                  background: $header-background-color-hover;
+                  color: $header-foreground-color-hover;
+                  &::after {
+                    border-color: $header-foreground-color-hover;
+                  }
+                  .lotusArrow + span::after {
+                    color: $header-foreground-color-hover;
+                  }
+                }
+                &.lotusSelected {
+                  > a {
+                    color: $header-foreground-color-hover;
+                    &::after {
+                      opacity: 0;
+                    }
+                  }
+                }
+              }
+              &.lotusSelected {
+                > a {
+                  color: $header-foreground-color;
+                  &:hover {
+                    color: $header-foreground-color-hover;
+                  }
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    border-bottom: 2px solid $header-foreground-color;
+                    width: auto;
+                    left: 15px;
+                    right: 15px;
+                    margin: 0;
+                    bottom: 25%;
+                    opacity: 1;
+                    pointer-events: none;
+                    transition: $transition-default-all;
+                    
+                  }
+                  &[_lconn_menuid]::after {
+                    right: 42px;
+                  }
+                  &:hover::after {
+                    opacity: 0;
+                  }
+                }
+                &::after {
+                  display: none;
+                }
+                &[aria-owns] > a::after {
+                  right: 42px;
+                }
+              }
+            }
+          }
+
+          /* Teilen-Button oben rechts ausblenden, da er nicht genutzt wird */
+          #headerSharebox {
+            display: none;
+          }
+
+          #lotusBannerFlyout {
+            margin: 0 -10px 0 10px;
+            #lotusBannerFlyoutLink {
+              padding: 10px;
+              .fa {
+                font-family: 'Font Awesome 5 Free';
+                font-size: 24px;
+                line-height: 1;
+                &.fa-th:before {
+                  content: "\f00a";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Notification styling */
+  .dijitPopup {
+    outline: none;
+    &#lotusBannerApps_dropdown {
+      min-width: 200px;
+    }
+    .lotusNavMenu > .dijitTooltipContainer > .dijitTooltipContents table.lotusLayout {
+      width: 100%;
+    }
+    .icBanner-popover-inner {
+      box-shadow: none;
+      border-radius: 0;
+      border: none;
+    }
+  }
+  /* Sub-Navigation */
+  .lotusNavMenu {
+    box-shadow: 0 2px 4px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.2);
+    /* Abstand ausklappendes Menü zur globalen Navileiste (z.B. wenn man auf "Anwendungen" klickt) ebenbündig ohne Zwischenraum */
+    margin-top: 0;
+    &#lconnheadermenu-notifications {
+      margin-top: 0;
+      outline: none;
+    }
+
+    /* Linkfarbe ausgeklappes globales Menü (Communitys, Anwendungen usw) */
+    padding: 0;
+    tr {
+      a {
+        color: $text-color !important;
+        outline: none;
+        border: none !important;
+        padding-top: 10px;
+        transition: $transition-default-all;
+        &.lotusHover,
+        &:active,
+        &:hover {
+          color: $header-foreground-color-hover !important;
+          background-color: $header-background-color-hover !important;
+          border: none !important;
+        }
+      }
+      /* Überschrift "zuletzt aktualisierte Communitys" */
+      #recentCommunities {
+        color: $light-text-color !important;
+      }
+    }
+
+    .lotusNavMenuLarge {
+      th {
+        img {
+          margin: 11px 8px 9px;
+        }
+        a {
+          padding-right: 32px;
+        }
+      }
+    }
+    @if $hide-second-level-sub-navigation {
+      .lotusNavMenuLarge {
+        td {
+          display: none;
+        }
+      }
+    }
   }
 }

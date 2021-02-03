@@ -1,27 +1,44 @@
 .lotusui30 {
+  color: $text-color;
+
   /*Linkfarbe*/
-  a,
-  a:active,
-  a:focus,
-  a:hover,
-  a:visited {
+  .lotusColLeft a, a {
     color: $link-color;
-  }
-  .lotusVCard {
-    a,
-    a:active,
-    a:focus,
-    a:hover,
-    a:visited {
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
       color: $link-color;
     }
   }
 
-  .lotusBanner {
+  .lotusVCard, .lotusBanner, .lotusFooter {
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited,
     /*Tagcloud*/
     a.lotusF3,
     a.lotusF3:visited {
       color: $link-color;
+    }
+  }
+
+  .lotusHeading1 {
+    color: $text-color;
+  }
+
+  .lotusInactive {
+    color: $light-text-color;
+  }
+
+  .lotusWidget {
+    h2, h3, h4 {
+    color: $text-color;
+    }
+    .day, .meta {
+      color: $light-text-color;
     }
   }
 }
@@ -51,6 +68,7 @@
     a.lotusF3:visited {
       color: $link-color;
     }
+    background-color: transparent;
   }
 }
 
@@ -102,6 +120,9 @@
     border-left: 4px solid $highlight-background-color !important;
   }
 }
+.ics-viewer-open .dijitPopup .dijitMenu {
+  margin: 0 !important;
+}
 
 // Verhindert das Ausklappen von langen Aktivitätengruppen
 body {
@@ -121,7 +142,7 @@ body {
 
 // Notifications Link "alle als gelesen markieren"
 .icBanner-notif-center .icBanner-popover-notificationReadAll {
-  color: $widget-title-bg !important;
+  color: $link-color !important;
 }
 
 // Editor Link zu Dateien hinzufügen Reiter oben
@@ -138,4 +159,23 @@ body {
 
 form label {
   font-size: $form-label-font-size;
+}
+
+.lotusui h1 a {
+  color: $text-color;
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    color: $text-color;
+  }
+}
+
+.lotusui30 {
+  .lotusStyledScroll {
+    &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb {
+      border: none;
+      border-radius:0;
+    }
+  }
 }

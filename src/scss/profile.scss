@@ -5,8 +5,26 @@
 
 /* "Mein Profil" Rand unter aktivem Reiter (Neuigkeiten, Kontaktinformationen, ...) */
 .lotusui30 {
-  .lotusTabs li.lotusSelected {
-    border-bottom: 2px solid $link-color !important;
+  .lotusTabs li {
+    &.lotusSelected {
+      border-bottom: 2px solid $text-color !important;
+      a {
+        color: $text-color;
+      } 
+    }
+    a {
+      color: $text-color;
+    }
+  }
+  .cke_top {
+    border: none !important;
+  }
+  a.ublogPost.lotusPersonInactive {
+    color: $link-color;
+    &:hover, &:focus {
+      color: $link-color;
+      text-decoration: underline;
+    }
   }
 
   // Visitenkarte, die beim Hovern auf den Name erscheint

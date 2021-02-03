@@ -28,21 +28,41 @@
   }
 }
 
-// Increase and unify font size of notifications (e.g. wiki page locked)
-.lotusLeftWarning {
-  font-size: $default-font-size;
-}
-// Wiki article content
-#wikiContentDiv,
-.wikiHeader .lotusHeader {
-  font-size: $default-font-size;
-
-  // Header actions (like and other metadata)
-  .lotusLikeAction, .lotusMeta a {
-    font-size: $default-font-size;
+.lotusui30 {
+  .lotusFrame {
+    .lotusMain {
+      .lotusColLeft, .lotusColRight {
+        .lotusLeft {
+          color: $text-color !important;
+        }
+        a.lotusBold, a.lotusSearchLink {
+          &[role="button"] {
+            display: inline-block;
+            padding: 11px 30px;
+            line-height: 1;
+            background-color: $button-secondary-background-color;
+            color: $button-secondary-foreground-color;
+            font-weight: normal;
+            text-decoration: none;
+          }
+        }
+      }
+      .lotusContent {
+        .lotusHeader {
+          h1 {
+            color: $text-color;
+          }
+        }
+        .lotusMeta, .lotusInlinelist li {
+          color: $light-text-color;
+        }
+        .lotusPaging {
+          color: $light-text-color;
+          div {
+            color: $light-text-color;
+          }
+        }
+      }
+    }
   }
-}
-// Title of a wiki page
-#wikiPageHeader {
-  font-size: $headline-font-size;
 }

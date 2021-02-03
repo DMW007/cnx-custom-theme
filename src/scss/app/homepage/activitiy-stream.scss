@@ -125,6 +125,14 @@
   .filterArea {
     margin-top: -10px !important;
   }
+
+  .streamHeaderWrapper {
+    &.isSticky {
+      + .filterArea {
+        margin-top: 138px !important;
+      }
+    }
+  }
 }
 
 #activityStreamMain {
@@ -211,12 +219,13 @@
   }
 }
 
-.streamHeaderWrapper.isSticky[style] {
-  width: 1015px !important;
-}
-
 .streamHeaderWrapper {
+  margin-right: 5px;
   &.isSticky {
+    &[style] {
+      padding: 0 24px 0 0;
+      box-sizing: border-box;
+    }
     .lotusStreamUpdate {
       // Grauer Rahmen sieht etwas seltsam aus, wenn die Box in gürn umgefärbt ist
       border-bottom: none !important;
@@ -242,5 +251,105 @@
   .lotusInlinelist.lotusActions .vcard a,
   .lotusPostHover .lotusInlinelist.lotusActions a {
     color: $link-color !important;
+  }
+}
+
+.lotusui30 {
+  .lotusContent {
+    .lotusHeader {
+      .shareSome-desc {
+        color: $text-color;
+        .shareSome-title {
+          color: $text-color;
+        }
+      }
+    }
+    .lotusStream {
+        .lotusWidgetBody#activityStreamMain {
+          .streamHeaderWrapper {
+            .cke {
+              border-radius: 0;
+              .cke_top {
+                border-top: none !important;
+              }
+            }
+            #asSearchMenuOption {
+              padding: 10px 5px;
+              outline: none;
+              &::before {
+                @extend %fa-shared;
+                content: "\f002";
+                line-height: 1;
+                color: $highlight-foreground-color;
+                font-size: 18px;
+                padding: 0;
+              }
+              > img {
+                display: none;
+              }
+            }
+            .icStream-search {
+              margin-top: -17px;
+              border: none;
+              background-color: $primary-color;
+              .icStream-searchSubmitTd {
+                &::before {
+                  @extend %fa-shared;
+                  content: "\f002";
+                  font-size: 16px;
+                  color: $light-text-color;
+                  position: absolute;
+                  top: 50%;
+                  margin-top: -4px;
+                }
+                input {
+                  background-image: none;
+                }
+              }
+              .icStream-searchClose {
+                margin: 3px;
+                &::before {
+                  @extend %fa-shared;
+                  content: "\f00d";
+                  color: $highlight-foreground-color;
+                  font-size: 20px;
+                  padding: 0;
+                }
+                img {
+                  display: none;
+                }
+              }
+            }
+            &.isSticky {
+              .comment-box-mode {
+                border: none !important;
+              }
+              .icStream-search {
+                margin-top: -30px;
+                width: calc(100% - 24px);
+              }
+            }
+          }
+          .filterArea {
+            * {
+              color: $text-color;
+            }
+          }
+          .noContentItem div {
+            color: $text-color;
+          }
+        }
+    }
+  }
+  .lotusColRight {
+    margin-top: 38px;
+    .lotusSection2 {
+      .linkToDo {
+        color: $text-color;
+      }
+      .toDoText {
+        color: $light-text-color;
+      }
+    }
   }
 }

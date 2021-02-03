@@ -1,3 +1,12 @@
+// $logo-left and $logo-right must be paths
+$hide-hcl-logo: false !default;
+$logo-left: false !default;
+$logo-left-width: 215px !default;
+$logo-left-height: 19px !default;
+$logo-right: false !default; // If set to a url, hcl logo will be hidden
+$logo-right-width: 215px !default;
+$logo-right-height: 19px !default;
+
 $text-color: black !default;
 $primary-color: #339933 !default;
 $secondary-color: #31B404 !default;
@@ -5,8 +14,10 @@ $second-color-light: #f6f6f6 !default;
 $hover-color: #e8e8e8 !default;
 $light-text-color: #636363 !default;
 $link-color: $secondary-color  !default;
+$header-height: 56px !default;
 $header-foreground-color: white !default;
 $header-background-color: $primary-color !default;
+$header-foreground-color-hover: $secondary-color !default;
 $header-background-color-hover: $second-color-light !default;
 
 $highlight-foreground-color: white !default;
@@ -20,6 +31,8 @@ $button-foreground-color: white !default;
 $button-background-color: $primary-color !default;
 $button-border-color: $secondary-color !default;
 $button-disabled-opacity: 0.5 !default;
+$button-secondary-foreground-color: white !default;
+$button-secondary-background-color: $secondary-color !default;
 
 $default-font-size: 14px !default;
 $form-label-font-size: 16px !default;
@@ -59,3 +72,8 @@ $hide-metrics-menu: false !default;
 $hide-user-profile-page-time-label: false !default;
 
 $apply-icxt-fixes: true !default;
+
+// Hide the sub navigation for the second level navigation
+$hide-second-level-sub-navigation: false !default;
+
+$transition-default-all: all .15s ease-in !default;

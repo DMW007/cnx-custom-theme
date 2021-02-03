@@ -5,6 +5,9 @@
 }
 
 .lotusui30 {
+  a {
+    color: $link-color;
+  }
   .lotusBtn {
     @extend %button-default-color;
     font-size: $default-font-size !important;
@@ -78,4 +81,9 @@
   &:hover {
     opacity: 0.7;
   }
+}
+
+%button-secondary-color {
+  color: $button-secondary-foreground-color !important;
+  background-color: $button-secondary-background-color !important;
 }

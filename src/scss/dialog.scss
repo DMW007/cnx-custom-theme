@@ -8,13 +8,42 @@
     background: $highlight-background-color;
   }
 
-  /* "Snackbars", z.B. beim Klick auf einen geteilten Inhalt werden hier Details angezeigt */
-  .lotusFlyout .lotusFlyoutHeader {
-    background-color: $highlight-background-color;
-  }
   /* Trennlinie in den Snackbars zwischen Kopfbereich und Kommentare */
   .lotusFlyoutInner .lotusTabCondensed .lotusTabs li.lotusSelected {
     border-bottom: 2px solid $highlight-background-color;
+  }
+
+  /* Einführungs-Box */
+  .hopscotch-bubble {
+    .hopscotch-bubble-container {
+      border: none !important;
+      .hopscotch-actions {
+        background-color: $highlight-background-color;
+        color: $highlight-foreground-color;
+        border: none;
+        margin: -1px;
+        .hopscotch-nav-arrow {
+          background: none;
+          .hopscotch-svg-nav {
+            color: $highlight-foreground-color;
+          }
+        }
+        .progress-nums {
+          color: $highlight-foreground-color;
+        }
+      }
+      .hopscotch-bubble-content {
+        h3, .hopscotch-content {
+          color: $text-color;
+        }
+      }
+      .hopscotch-close {
+        color: $highlight-foreground-color;
+      }
+    }
+    .hopscotch-bubble-arrow-container {
+      color: $highlight-background-color;
+    }
   }
 }
 
@@ -111,4 +140,126 @@
 // Link zu Datei einfügen: Abstand Durchsuchen-Button zu Hinweistext
 .lotusUploadFile .pickerDropfilesDesc {
   margin-top: 15px;
+}
+
+// Für Dialoge wie "Datei hinzufügen"
+.lotusDialogWrapper {
+  .lotusDialogBorder {
+    border: none;
+    .lotusDialogHeader {
+      .lotusDialogClose {
+        &:focus {
+          outline: none;
+        }
+        &::before {
+          @extend %fa-shared;
+          content: "\f00d";
+          color: #fff;
+          font-size: 20px;
+          padding: 0;
+          margin-top: 6px;
+          margin-right: 10px;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+    .lconnPickerDialogBody, .lconnPickerSourceArea {
+      .lconnFilesTree, select, label {
+        color: $text-color;
+      }
+      .lotusMeta {
+        color: $light-text-color;
+      }
+    }
+    .lconnPickerSourceArea {
+      .lconnUploadMultiple {
+        max-width: 98%;
+      }
+    }
+    .lotusDialogFooter {
+      .lotusFormButton {
+        @extend %button-default-color;
+        &#cancel_button {
+          @extend %button-secondary-color;
+        }
+      }
+    }
+  }
+}
+
+/* Activity Stream Flyout */
+.dijitPopup.lotusui30 {
+  .lotusFlyout {
+    border: none;
+    .lotusWrapper {
+      border: none;
+      .lotusFlyoutHeader {
+        background-color: $highlight-background-color;
+        color: $highlight-foreground-color;
+        .flyoutTitleInner {
+          height: 13px;
+        }
+        .flyoutTitle {
+          .vcard > a {
+            color: $highlight-foreground-color;
+          }
+        }
+        .flyoutTime {
+          color: $highlight-foreground-color;
+          border-color: $highlight-foreground-color;
+        }
+        .lotusClose {
+          input {
+            display: none;
+          }
+          .lotusAltText {
+            display: inline-block;
+            position: relative;
+            text-indent: -9999px;
+            width: 16px;
+            height: 16px;
+            &::before {
+              @extend %fa-shared;
+              content: "\f00d";
+              position: absolute;
+              padding: 0;
+              text-indent: 0;
+              top: 0;
+              right: 0;
+              width: 16px;
+              height: 16px;
+              font-size: 16px;
+              line-height: 1;
+              color: $highlight-foreground-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.lotusFlyout > .lotusFlyoutConnector {
+  position: relative;
+  margin-left: -2px;
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 15px 12px 0;
+    border-color: transparent white transparent transparent;
+  }
+  &::before {
+    border-color: transparent rgba(0,0,0,.1) transparent transparent;
+    top: 0px;
+    left: -2px;
+    border-width: 12px 16px 12px 0;
+    filter: blur(1px);
+  }
 }

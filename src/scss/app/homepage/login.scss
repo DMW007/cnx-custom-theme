@@ -1,0 +1,45 @@
+.lotusui {
+  .lotusui30_layout {
+    .lotusLoginBox {
+      &.lotusLoginBoxWide {
+        width: 100%;
+        max-width: 400px;
+        background-color: white; // add as variable
+        .lotusLoginContent {
+          padding: 30px 15px;
+          .lotusHeading, .lotusHeading2, p, .lotusLicense {
+            color: $text-color;
+          }
+          .lotusHeading {
+            font-size: 22px;
+          }
+          .lotusHeading2 {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 0;
+          }
+          p {
+            font-size: 14px;
+            border: none;
+            a {
+              white-space: normal !important;
+              width: auto !important;
+            }
+          }
+          .lotusDescription {
+            margin: 0 0 20px;
+            padding: 0;
+            width: auto;
+          }
+          .lotusLegal {
+            margin-top: 15px;
+            .lotusLicense {
+              padding: 0;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

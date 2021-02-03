@@ -56,6 +56,7 @@
   li[data-activity-verb="post"],
   li[data-activity-verb="like"][data-activity-target-object="article"],
   li[data-activity-verb="follow"],
+  li[data-activity-verb="invite"],
   li[data-activity-verb="update"],
   li[data-activity-verb="add"],
   li[data-activity-verb="make-friend"],
@@ -136,19 +137,25 @@
     padding-bottom: 15px !important;
     margin-top: -7px !important;
     z-index: 99999999 !important;
+    overflow: hidden;
   }
   .stream-finRight:before {
     @extend %fa-shared;
     content: "\f0de" !important;
-    margin-left: 3px !important;
     color: white !important;
-    font-size: 20px !important;
+    font-size: 32px !important;
   }
   .headerFins {
     height: 30px !important;
   }
   .lotusPagingTop {
     margin-bottom: -3px !important;
+  }
+  .streamHeaderWrapper.isSticky {
+    .stream-finRight::before {
+      font-size: 20px !important;
+      margin-left: 3px;
+    }
   }
 }
 
