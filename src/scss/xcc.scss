@@ -194,6 +194,41 @@ body.xccstyle {
       }
     }
   }
+
+  /* Widget default styles */
+  .widgetContainer {
+    #xccBody.container {
+      #xccContent {
+        .widget {
+          .xccWidget {
+            .wedit {
+              right: 5px !important;
+            }
+            .wheader {
+
+            }
+            .wbody {
+              font-size: $default-font-size;
+              h1, h2, h3 {
+                &:first-child {
+                  margin-top: 0;
+                }
+              }
+              a, p {
+                font-size: $default-font-size;
+              }
+              a {
+                color: $link-color !important;
+                &:hover {
+                  text-decoration: underline !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {

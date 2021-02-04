@@ -153,6 +153,9 @@
                     }
                 }
             }
+            #tags-collection-wrapper, #profile-colleagues, #communities-collection {
+                margin-bottom: 0;
+            }
         }
         @if $touchpoint-background-image {
             background-image: url("#{$touchpoint-background-image}");
