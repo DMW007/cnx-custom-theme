@@ -23,6 +23,13 @@
 }
 
 body.xccstyle {
+  .xccWidget[data-wname^='html_codes'] {
+    background: transparent;
+    min-height: 0;
+    box-shadow: none;
+    border: none;
+    opacity: .2;
+  }
   div.adminpanel {
     .ui-tabs-nav li {
       color: $text-color !important;
