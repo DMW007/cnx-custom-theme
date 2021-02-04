@@ -23,6 +23,107 @@
 }
 
 body.xccstyle {
+  div.adminpanel {
+    .ui-tabs-nav li {
+      color: $text-color !important;
+      a {
+        color: $text-color !important;
+        border: none !important;
+      }
+      &:focus {
+        color: $text-color !important;
+        border: none;
+        outline: none;
+        a {
+          color: $text-color !important;
+        }
+      }
+      &:hover {
+        background: $header-background-color-hover !important;
+        color: $header-foreground-color-hover !important;
+        a {
+          color: $header-foreground-color-hover !important;
+        }
+      }
+      &.ui-tabs-active {
+        &:hover {
+          background: $header-background-color-hover !important;
+          color: $header-foreground-color-hover !important;
+          a {
+            color: $header-foreground-color-hover !important;
+          }
+        }
+        &::after {
+          background: $header-background-color-hover;
+        }
+      }
+    }
+
+    .widgetConfig {
+      .wcMenu {
+        .choosewidget {
+          color: $text-color;
+        }
+        .wcmItem, .wcmItem.clicked a {
+          color: $text-color !important;
+          &::before {
+            background-color: $header-background-color-hover;
+          }
+        } 
+      }
+      a.wcLink {
+        color: $link-color;
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+
+    .layoutConfig {
+      .bx--link {
+        color: $link-color;
+      }
+      .btn {
+        @extend %button-default-color;
+        border-radius: 0;
+        max-height: 34px;
+        outline: none;
+        &:hover {
+          opacity: 1;
+        }
+        &.btn-default {
+          background: $button-foreground-color !important;
+          color: $text-color !important;
+          &.active {
+            @extend %button-default-color;
+          }
+          &:hover {
+            opacity: 1;
+            @extend %button-default-color;
+          }
+        }
+      }
+      .panel-heading {
+        color: $text-color;
+      }
+      .input-group {
+        > span, > input, > select {
+          color: $text-color;
+          border-radius: 0;
+          box-shadow: none;
+          > a {
+            span, i {
+              color: $link-color;
+            }
+          }
+        }
+        input:disabled {
+          background-color: inherit;
+          opacity: $button-disabled-opacity;
+        }
+      }
+    }
+  }
   .live-editor {
     .live-editor_form {
       width: 35vw;

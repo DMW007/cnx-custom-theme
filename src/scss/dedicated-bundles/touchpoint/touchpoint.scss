@@ -1,45 +1,243 @@
-#header span {
-    font-size: 22px !important;
-}
-#header-wrapper {
-    background-color: white !important;
-    border-top: none !important;
-}
-#header-wrapper,
-#productName,
-.step-description h1{
-    color: #004f23 !important;
-}
-#button-start,
-#button-continue,
-.nextbutton,
-.backbutton{
-    background: #004f23 !important;
-    border: none !important;
-    color: white !important;
-}
-.pip-filled,
-.follow-button {
-    background: #004f23 !important;
-    border: none !important;
-}
-.follow-button {
-    color: white !important;
-}
+@import "../../color-vars.scss";
+@import "../../button.scss";
 
-/* The image is blue, we hide it as workaround */
-.navigation-back .button-arrow {
-    display: none !important;
-}
-
-#welcome-content, #privacyAndGuidelines-content {
-    // ToDo: Add var to cover 2021 path
-    // background-image: url('Cover2021.jpg') !important;
-}
-
-/* Avoid white text on the white baloons of the bg */
-#welcome-content-home, #privacyAndGuidelines-content-home { margin-left: 40px !important;}
-#networkExternal {
-    /*margin-left: 190px !important; */
-    display: none !important;
+#page-wrapper {
+    margin-top: -17px;
+    #header-wrapper {
+        position: relative;
+        z-index: 10;
+        border: none;
+        height: $header-height;
+        background-color: $header-background-color;
+        color: $header-background-color;
+        box-shadow: 0 2px 0 rgba(0,0,0,.1);
+        #header {
+            position: relative;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 25px;
+            @media screen and (min-width: 1250px) {
+                max-width: 1560px;
+            }
+            @media screen and (min-width: 1600px) {
+                max-width: 1700px;
+            }
+            > span {
+                display: block;
+                width: 216px;
+                height: 100%;
+                font-size: 22px;
+                font-weight: 700;
+                margin: 0 20px 0 0;
+                padding: 0 20px 0 0;
+                line-height: 56px;
+                color: $header-foreground-color;
+                @if $logo-left {
+                    background: url($logo-left);
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: $logo-left-width $logo-left-height;
+                    font-size: 0;
+                    color: transparent;
+                }
+            }
+            #productLogo {
+                @if $logo-right or $hide-hcl-logo {
+                    img {
+                        display: none;
+                    }
+                }
+                @if $logo-right {
+                    display: inline-block;
+                    width: $logo-right-width;
+                    height: 100%;
+                    background: url($logo-right);
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    background-size: $logo-right-width $logo-right-height;
+                }
+            }
+        }
+    }
+    #content-wrapper {
+        height: calc(100% - #{$header-height} - #{$header-height});
+        overflow: auto;
+        .content-container {
+            max-height: 95%;
+            .step-description-wrapper {
+                background-color: rgba(255,255,255,.8);
+                h1 {
+                    color: $primary-color;
+                }
+                h2 {
+                    color: $text-color;
+                }
+                + div:not(.content-left) {
+                    background-color: rgba(255,255,255,.8);
+                    overflow: hidden;
+                    max-width: 500px;
+                    margin: 50px auto;
+                    #profile-attributes {
+                        #editJobTitle {
+                            top: 6px;
+                        }
+                        label {
+                            color: $text-color;
+                        }
+                        input {
+                            background: white;
+                            border: 1px solid $border-color;
+                            color: $text-color;
+                            padding: 8px 10px;
+                            &.displayMode {
+                                background: transparent;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+                + div {
+                    &.content-left, + div.content-right {
+                        background-color: rgba(255,255,255,.8);
+                        overflow: hidden;
+                        padding: 20px;
+                        .typeahead {
+                            .typeahead-icon {
+                                left: 250px;
+                            }
+                            input.typeahead-input {
+                                width: 96%;
+                                border-radius: 0;
+                            }
+                            #tagTypeahead-dropdown {
+                                width: 280px;
+                                border-radius: 0;
+                            }
+                        }
+                        .sidebar-subinfo {
+                            color: $light-text-color;
+                            #followedExperts-title {
+                                color: $text-color;
+                            }
+                        }
+                        .colleague-card {
+                            background-color: $header-background-color;
+                            span:not(.vertical-align-inner) {
+                                color: $header-foreground-color;
+                            }
+                            .follow-button {
+                                @extend %button-default-color;
+                                border-radius: 0;
+                                border: none;
+                            }
+                            &.followed {
+                                background-color: $header-background-color-hover;
+                                span:not(.vertical-align-inner) {
+                                    color: $header-foreground-color-hover;
+                                }
+                                .follow-button {
+                                    @extend %button-default-color-negative;
+                                }
+                            }
+                        }
+                        #tags-collection-wrapper {
+                            .profile-tag {
+                                background: $header-background-color;
+                                color: $header-foreground-color;
+                                &.profile-tag-selected {
+                                    background: $header-background-color-hover;
+                                    color: $header-foreground-color-hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @if $touchpoint-background-image {
+            background-image: url("#{$touchpoint-background-image}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: $header-background-color;
+            #content-welcome {
+                background: none;
+                #welcome-content {
+                    background: none;
+                    margin: 0 auto;
+                    @media screen and (min-width: 1250px) {
+                        max-width: 1560px;
+                    }
+                    @media screen and (min-width: 1600px) {
+                        max-width: 1700px;
+                    }
+                    #welcome-content-home {
+                        position: relative;
+                        top: 80px;
+                        margin: 0;
+                        padding: 30px 30px 40px;
+                        background-color: rgba(255,255,255,.8);
+                        header,div {
+                            p {
+                                color: $text-color;
+                                span {
+                                    color: $primary-color;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                        div {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    #networkExternal {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    #navigation-wrapper {
+        position: relative;
+        height: $header-height;
+        #progress-pips-align {
+            .pip-filled {
+                background-color: $primary-color;
+            }
+        }
+        .button-wrapper {
+            @extend %button-default-color;
+            border-radius: 0;
+            border: none;
+            > span {
+                font-size: 16px;
+                font-weight: 700;
+            }
+            &.backbutton, &#finishLater, &#button-continue, &#cancel, &#button-close {
+                @extend %button-secondary-color;
+            }
+            &.nextbutton {
+                .button-arrow {
+                    display: none;
+                }
+                span::after {
+                    content: "»";
+                    font-size: 18px;
+                    margin-left: 10px;
+                }
+            }
+            &.backbutton {
+                .button-arrow {
+                    display: none;
+                }
+                span::before {
+                    content: "«";
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }

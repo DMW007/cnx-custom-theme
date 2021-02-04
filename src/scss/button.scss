@@ -83,6 +83,16 @@
   }
 }
 
+%button-default-color-negative {
+  background-color: $button-foreground-color !important;
+  color: $button-background-color !important;
+  box-shadow: none !important;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 %button-secondary-color {
   color: $button-secondary-foreground-color !important;
   background-color: $button-secondary-background-color !important;
