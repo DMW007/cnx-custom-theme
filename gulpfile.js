@@ -41,7 +41,12 @@ let outputFiles = {
     baseDir: `${outputFolder}/css`,
     fullBundle: 'custom-touchpoint.css',
     indexInputFile: `${srcFolder}/scss/dedicated-bundles/touchpoint/touchpoint.scss`
-  }, 
+  },
+  cssUsermanager: {
+    baseDir: `${outputFolder}/css`,
+    fullBundle: 'custom-usermanager.css',
+    indexInputFile: `${srcFolder}/scss/dedicated-bundles/gis-usermanager/usermanager.scss`
+  },
   js: {
     baseDir: `${outputFolder}/js`,
     custom: 'custom.js'
@@ -73,6 +78,9 @@ function dedicatedBundleScssPipe(inputFile, outputFile, outputDir) {
 // look and feel like we applied for connections without redundance.
 gulp.task("scss-touchpoint", () => {
   return dedicatedBundleScssPipe(outputFiles.cssTouchpoint.indexInputFile, outputFiles.cssTouchpoint.fullBundle, outputFiles.cssTouchpoint.baseDir)
+})
+gulp.task("scss-usermanager", () => {
+  return dedicatedBundleScssPipe(outputFiles.cssUsermanager.indexInputFile, outputFiles.cssUsermanager.fullBundle, outputFiles.cssUsermanager.baseDir)
 })
 
 // Divide own CSS and included libraries for faster live-reloading (when usually just our own css changes)
@@ -143,7 +151,7 @@ gulp.task("bundle-all", gulp.series("scss", "css-lib", () => {
     .pipe(replace(" addWithoutChange */", ""))
     .pipe(gulp.dest(outputFiles.css.baseDir));
 }));
-gulp.task("css", gulp.series("scss", "scss-touchpoint", "css-lib", "bundle-all"));
+gulp.task("css", gulp.series("scss", "scss-touchpoint", "scss-usermanager", "css-lib", "bundle-all"));
 
 gulp.task("watch-css", () => {
   var watcher = gulp.watch("src/**/*.scss", gulp.series("scss", "bundle-all"));
