@@ -1,3 +1,86 @@
-#pageHeader, .wpthemeBanner {
-	height: 43px !important;
+@import "../../color-vars.scss";
+@import "../../button.scss";
+
+.wpthemeFrame {
+  #pageHeader {
+    height: $header-height !important;
+    background: $header-background-color;
+    .wpthemeBanner {
+      background: transparent;
+      height: $header-height !important;
+      .wpthemeBannerInner {
+        height: 100%;
+        .wpthemeInner {
+          margin: 0 auto;
+          max-width: none;
+          height: 100%;
+          line-height: $header-height;
+          padding: 0 25px;
+          box-shadow: 0 2px 0 rgba(0,0,0,.1);
+          @media screen and (min-width: 1250px) {
+            max-width: 1560px;
+          }
+          @media screen and (min-width: 1600px) {
+            max-width: 1700px;
+          }
+          .navbar-header {
+            > a {
+              display: block;
+              width: 216px;
+              height: $header-height;
+              margin: 0 20px 0 0;
+              padding: 0 20px 0 0;
+              box-sizing: content-box;
+              @if $logo-left {
+                background: url($logo-left);
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: $logo-left-width $logo-left-height;
+                > img {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #pContent {
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      margin: 0 auto;
+      .gccMainLayout {
+        margin: 0;
+        background-color: rgba(255,255,255,.8);
+        .page-header, label {
+          color: $text-color;
+          font-size: $default-font-size;
+          h3 {
+            font-size: $default-font-size * 2;
+            margin-bottom: 15px;
+          }
+        }
+        label {
+          margin-bottom: 0;
+        }
+        .form-actions {
+          .btn {
+            @extend %button-secondary-color;
+            padding: 8px 10px;
+            &:hover {
+              opacity: .8;
+            }
+            &.btn-primary {
+              @extend %button-default-color;
+            }
+          }
+        }
+      }
+    }
+  }
 }
