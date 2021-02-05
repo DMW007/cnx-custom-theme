@@ -53,22 +53,26 @@ let cleanCssCallback = details => {
   );
 };
 
-// We seperate some apps cause they were not properly integrated into CNX from a UI perspective. So it doesn't make sense to include our CNX bundle here,
-// it doesn't match and would only cause a lot of overhead/potential for conflicts. But we can still use our color-vars in them, to give them the same
-// look and feel like we applied for connections without redundance.
-gulp.task("scss-touchpoint", () => {
+function dedicatedBundleScssPipe(inputFile, outputFile, outputDir) {
   return gulp
-  .src(outputFiles.cssTouchpoint.indexInputFile)
+  .src(inputFile)
   .pipe(wait(200))
   .pipe(productionBuild ? noop() : sourcemaps.init())
   .pipe(sass())
-  .pipe(rename(outputFiles.cssTouchpoint.fullBundle))
+  .pipe(rename(outputFile))
   .pipe(
     productionBuild ? cleanCSS(cleanCssOptions, cleanCssCallback) : noop()
   )
   .pipe(productionBuild ? sourcemaps.write() : noop())
   .pipe(header('/*`This file was automatically generated using gulp. Please apply changes to the original scss sources files. */\n'))
-  .pipe(gulp.dest(outputFiles.cssTouchpoint.baseDir));
+  .pipe(gulp.dest(outputDir));
+}
+
+// We seperate some apps cause they were not properly integrated into CNX from a UI perspective. So it doesn't make sense to include our CNX bundle here,
+// it doesn't match and would only cause a lot of overhead/potential for conflicts. But we can still use our color-vars in them, to give them the same
+// look and feel like we applied for connections without redundance.
+gulp.task("scss-touchpoint", () => {
+  return dedicatedBundleScssPipe(outputFiles.cssTouchpoint.indexInputFile, outputFiles.cssTouchpoint.fullBundle, outputFiles.cssTouchpoint.baseDir)
 })
 
 // Divide own CSS and included libraries for faster live-reloading (when usually just our own css changes)
