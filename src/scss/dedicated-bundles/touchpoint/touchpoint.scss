@@ -80,6 +80,7 @@
                     #profile-attributes {
                         #editJobTitle {
                             top: 6px;
+                            right: 10px;
                         }
                         label {
                             color: $text-color;
@@ -89,7 +90,7 @@
                             border: 1px solid $border-color;
                             color: $text-color;
                             padding: 8px 10px;
-                            &.displayMode {
+                            &#userName {
                                 background: transparent;
                                 border: none;
                             }

@@ -89,14 +89,17 @@
           margin-bottom: 0;
         }
         .form-input {
-          .form-control {
-            border-radius: 0;
-            color: $text-color;
-            border: 1px solid $form-border-color;
-            box-shadow: none;
-            &:focus {
-              border: 1px solid $primary-color;
+          .form-group {
+            background: transparent;
+            .form-control {
+              border-radius: 0;
+              color: $text-color;
+              border: 1px solid $form-border-color;
               box-shadow: none;
+              &:focus {
+                border: 1px solid $primary-color;
+                box-shadow: none;
+              }
             }
           }
         }
