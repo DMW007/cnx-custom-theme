@@ -36,7 +36,7 @@
 
 }
 @if $hide-metrics-menu {
-  #lotusBannerHeaderMetrics {
+  #lotusBannerHeaderMetrics, #tabNavMenu #metricsLinkId {
     display: none;
   }
 }
