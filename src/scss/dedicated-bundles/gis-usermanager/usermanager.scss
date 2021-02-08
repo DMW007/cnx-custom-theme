@@ -42,11 +42,26 @@
               }
             }
           }
+          .userInfo {
+            color: $header-foreground-color;
+            margin: 0;
+          }
         }
       }
     }
   }
   #pContent {
+    position: relative;
+    height: calc(100vh - #{$header-height});
+    overflow: auto;
+    @if $usermanager-background-image {
+      background-image: url("#{$usermanager-background-image}");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-color: $header-background-color;
+      width: 100%;
+    }
     .container {
       position: absolute;
       top: 50%;
@@ -54,6 +69,11 @@
       right: 0;
       transform: translateY(-50%);
       margin: 0 auto;
+      max-height: 100%;
+      .gccBanner {
+        background: $highlight-background-color;
+        color: $highlight-foreground-color;
+      }
       .gccMainLayout {
         margin: 0;
         background-color: rgba(255,255,255,.8);
@@ -68,10 +88,25 @@
         label {
           margin-bottom: 0;
         }
+        .form-input {
+          .form-control {
+            border-radius: 0;
+            color: $text-color;
+            border: 1px solid $form-border-color;
+            box-shadow: none;
+            &:focus {
+              border: 1px solid $primary-color;
+              box-shadow: none;
+            }
+          }
+        }
         .form-actions {
           .btn {
             @extend %button-secondary-color;
-            padding: 8px 10px;
+            padding: 10px 14px;
+            font-size: $default-font-size;
+            border: none;
+            border-radius: 0;
             &:hover {
               opacity: .8;
             }
@@ -79,6 +114,10 @@
               @extend %button-default-color;
             }
           }
+        }
+        #pMain {
+          min-height: 500px;
+          background: transparent;
         }
       }
     }

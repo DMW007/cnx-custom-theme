@@ -23,6 +23,7 @@ $header-background-color-hover: $second-color-light !default;
 $highlight-foreground-color: white !default;
 $highlight-background-color: $primary-color !default;
 $border-color: rgba(0, 0, 0, 0.2) !default;
+$form-border-color: #c2c2c2 !default;
 // ToDo: Not widely used, we need to replace the hover border color in many scss files
 $hover-border-color: $primary-color !default;
 $secondary-background-color: $secondary-color !default;
@@ -80,3 +81,6 @@ $transition-default-all: all .15s ease-in !default;
 
 // touchpoint background image
 $touchpoint-background-image: false !default;
+
+// usermanager background image
+$usermanager-background-image: false !default;
