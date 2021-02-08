@@ -14,6 +14,9 @@ html, body.lotusui30.lotusLogin2 {
 
 body.lotusui30.lotusLogin2 {
   overflow: auto !important;
+  .lotusui30_layout .lotusBanner .lotusRightCorner .lotusInner .lotusLogo {
+    height: 100%;
+  }
 }
 
 .lotusui {
