@@ -63,6 +63,9 @@
             margin: 0 20px 0 0;
             padding-right: 20px;
             box-sizing: content-box;
+            > span.lotusAltText {
+              color: $header-foreground-color;
+            }
             @if $logo-left {
               background: url($logo-left);
               background-repeat: no-repeat;

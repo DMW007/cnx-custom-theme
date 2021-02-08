@@ -1,10 +1,68 @@
+@if $touchpoint-background-image {
+  body.lotusui30.lotusLogin2 {
+    background-image: url("#{$login-background-image}");
+    background-repeat: no-repeat;
+    background-position: center $header-height;
+    background-size: cover;
+    background-color: $header-background-color;
+  }
+}
+
+html, body.lotusui30.lotusLogin2 {
+  height: 100%;
+}
+
+body.lotusui30.lotusLogin2 {
+  overflow: auto !important;
+}
+
 .lotusui {
   .lotusui30_layout {
+    .lotusBanner {
+      box-shadow: 0 2px 0 rgba(0,0,0,.1);
+      .lotusRightCorner {
+        background: $header-background-color;
+        height: $header-height;
+        padding: 0;
+        .lotusInner {
+          height: 100%;
+          box-sizing: content-box;
+          a {
+            &#notificationCenterNode, &#headerHelpLink {
+              height: 100% ;
+            }
+          }
+          .lotusLogo {
+            width: 216px;
+            margin: 0 20px 0 0;
+            padding-right: 20px;
+            box-sizing: content-box;
+            > span.lotusAltText {
+              color: $header-foreground-color;
+              font-size: 22px;
+              padding: 0;
+              line-height: 56px;
+            }
+            @if $logo-left {
+              background: url($logo-left);
+              background-repeat: no-repeat;
+              background-position: left center;
+              background-size: $logo-left-width $logo-left-height;
+              > span.lotusAltText {
+                visibility: hidden;
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
     .lotusLoginBox {
+      border: none;
       &.lotusLoginBoxWide {
         width: 100%;
         max-width: 400px;
-        background-color: white; // add as variable
+        background-color: rgba(255,255,255,.8);
         .lotusLoginContent {
           padding: 30px 15px;
           .lotusHeading, .lotusHeading2, p, .lotusLicense {
@@ -36,6 +94,19 @@
             .lotusLicense {
               padding: 0;
               font-size: 12px;
+            }
+          }
+          .lotusLoginForm {
+            input.lotusText {
+              border-radius: 0;
+              color: $text-color;
+              border: 1px solid $form-border-color;
+              box-shadow: none;
+              &:focus {
+                border: 1px solid $primary-color;
+                box-shadow: none;
+                outline: none;
+              }
             }
           }
         }
