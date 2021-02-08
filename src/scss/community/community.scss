@@ -132,7 +132,7 @@ div[data-dojo-attach-point="_tagSearchText"] a,
       padding: 15px 0;
       &.tabNavFixed {
         position: fixed;
-        top: 0;
+        top: 0 !important;
       }
     }
   }
