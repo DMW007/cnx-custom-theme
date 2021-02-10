@@ -1,12 +1,12 @@
 /* Titelgröße in den Blogs vergrößern */
 .entryContentContainerTD {
   h4 {
-    font-size: 2em !important;
+    font-size: $large-headline-font-size !important;
   }
   /* Standard-Schriftgröße von Hikari. Scheint sich nur derart unschön lösen zu lassen, da Connections keinen vernünftigen Selektor für den Blogtitel bietet */
   .entryContentContainer h4 {
     /* 1em ~ ca 16px */
-    font-size: 1.2em !important;
+    font-size: $headline-font-size !important;
   }
 
   // More space between content and controls

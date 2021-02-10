@@ -26,7 +26,7 @@
                 display: block;
                 width: 216px;
                 height: 100%;
-                font-size: 22px;
+                font-size: $headline-font-size;
                 font-weight: 700;
                 margin: 0 20px 0 0;
                 padding: 0 20px 0 0;
@@ -192,7 +192,7 @@
                         }
                         div {
                             p {
-                                font-size: 18px;
+                                font-size: $large-font-size;
                             }
                         }
                     }
@@ -214,7 +214,7 @@
         #privacyAndGuidelines {
             position: relative;
             height: 35px;
-            font-size: 16px;
+            font-size: $form-label-font-size;
             line-height: 35px;
             input[type="checkbox"] {
                 position: absolute;
@@ -260,7 +260,7 @@
             border-radius: 0;
             border: none;
             > span {
-                font-size: 16px;
+                font-size: $form-label-font-size;
                 font-weight: 700;
                 color: inherit;
             }

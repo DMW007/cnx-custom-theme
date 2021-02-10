@@ -60,6 +60,7 @@
           }
           .lotusLogo {
             width: 216px;
+            height: 100%;
             margin: 0 20px 0 0;
             padding-right: 20px;
             box-sizing: content-box;
@@ -102,7 +103,7 @@
           }
           .lotusAltText {
             color: $header-foreground-color;
-            font-size: 22px;
+            font-size: $headline-font-size;
             padding: 0;
             line-height: $header-height;
           }
@@ -139,7 +140,7 @@
             }
           }
           a {
-            font-size: 18px;
+            font-size: $menu-font-size;
             height: 100%;
             line-height: $header-height;
             padding: 0 15px;

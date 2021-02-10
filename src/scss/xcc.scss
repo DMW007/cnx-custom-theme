@@ -211,10 +211,11 @@ body.xccstyle {
             right: 5px !important;
           }
           .wheader {
-
+            padding: 10px 20px;
           }
           .wbody {
             font-size: $default-font-size;
+            padding: 20px;
             h1, h2, h3 {
               &:first-child {
                 margin-top: 0;

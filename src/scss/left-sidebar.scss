@@ -3,6 +3,7 @@
   a,
   a:visited {
     color: $text-color !important;
+    font-size: $default-font-size;
   }
   /* Per default haben wir eine schwarze Box, die weg muss */
   a:hover {
@@ -46,7 +47,7 @@ div#dropdownSubMenuContainer div#dropdownSubMenu {
         /* ToDo: IBM-Farbe, nicht CD! */
         color: $text-color !important;
         /* Einheitliche Schriftgröße für alle Unterelemente */
-        font-size: 14px;
+        font-size: $default-font-size;
       }
     }
     .lotusContent {

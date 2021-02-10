@@ -1,5 +1,11 @@
 .lotusui30 {
+  font-family: $font-family;
+  font-size: $default-font-size;
   color: $text-color;
+
+  .dijitTooltipContainer{
+    font-size: $default-font-size;
+  }
 
   /*Linkfarbe*/
   .lotusColLeft a, a {
