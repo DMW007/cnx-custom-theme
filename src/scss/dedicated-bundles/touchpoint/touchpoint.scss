@@ -156,6 +156,58 @@
             #tags-collection-wrapper, #profile-colleagues, #communities-collection {
                 margin-bottom: 0;
             }
+            #tos, #privacy {
+                position: relative;
+                margin-top: 15px;
+                font-size: $large-font-size;
+                input[type="checkbox"] {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    opacity: 0;
+                    cursor: pointer;
+                    &[name="privacyAndGuidelines"], &[name="privacyAndGuidelines"] + #acceptTC {
+                        position: fixed;
+                        left: -1000px;
+                    }
+                    &:checked {
+                        + #acceptTC::before, + label::before{
+                            content: "✔";
+                            background-color: $button-background-color;
+                            border: 2px solid $button-background-color;
+                            color: $button-foreground-color;
+                        }
+                    }
+                    + #acceptTC, + label {
+                        margin-left: 0;
+                        display: inline;
+                        font-size: inherit;
+                        color: inherit;
+                        &::before {
+                            content: "";
+                            pointer-events: none;
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                            border: 2px solid $secondary-color;
+                            font-size: 16px;
+                            line-height: 17px;
+                            text-align: center;
+                            vertical-align: middle;
+                            margin: -3px 10px 0 0;
+                        }
+                        a {
+                            color: $link-color;
+                            text-decoration: none;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
         }
         @if $touchpoint-background-image {
             background-image: url("#{$touchpoint-background-image}");
