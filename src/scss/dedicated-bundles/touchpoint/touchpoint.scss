@@ -208,9 +208,10 @@
         overflow: hidden;
         .vertical-align-inner {
             position: relative;
+            vertical-align: inherit;
             .button-wrapper {
                 position: relative;
-                top: calc(100% - 50px );
+                top: calc(100% - 62px);
             }
         }
         #progress-pips-align {
