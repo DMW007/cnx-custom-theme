@@ -205,6 +205,13 @@
     #navigation-wrapper {
         position: relative;
         height: $header-height;
+        .vertical-align-inner {
+            position: relative;
+            .button-wrapper {
+                position: relative;
+                top: calc(100% - 50px );
+            }
+        }
         #progress-pips-align {
             .pip-filled {
                 background-color: $primary-color;
@@ -212,9 +219,13 @@
         }
         #privacyAndGuidelines {
             position: relative;
-            height: 35px;
+            height: auto;
+            padding: 10px 0;
             font-size: $form-label-font-size;
             line-height: 35px;
+            > div {
+                position: relative;
+            }
             input[type="checkbox"] {
                 position: absolute;
                 top: 7px;
@@ -223,14 +234,23 @@
                 height: 20px;
                 opacity: 0;
                 cursor: pointer;
-                &:checked + #acceptTC::before {
-                    content: "✔";
-                    background-color: $button-background-color;
-                    border: 2px solid $button-background-color;
-                    color: $button-foreground-color;
+                &[name="privacyAndGuidelines"], &[name="privacyAndGuidelines"] + #acceptTC {
+                    position: fixed;
+                    left: -1000px;
                 }
-                + #acceptTC {
+                &:checked {
+                    + #acceptTC::before, + label::before{
+                        content: "✔";
+                        background-color: $button-background-color;
+                        border: 2px solid $button-background-color;
+                        color: $button-foreground-color;
+                    }
+                }
+                + #acceptTC, + label {
                     margin-left: 0;
+                    display: inline;
+                    font-size: 16px;
+                    color: inherit;
                     &::before {
                         content: "";
                         pointer-events: none;
@@ -243,6 +263,13 @@
                         text-align: center;
                         vertical-align: middle;
                         margin: -3px 10px 0 0;
+                    }
+                    a {
+                        color: $link-color;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
