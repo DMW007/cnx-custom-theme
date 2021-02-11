@@ -59,7 +59,7 @@
         }
     }
     #content-wrapper {
-        height: calc(100% - #{$header-height} - #{$header-height});
+        height: calc(100% - #{$header-height} - 90px);
         overflow: auto;
         .content-container {
             max-height: 95%;
@@ -204,7 +204,8 @@
     }
     #navigation-wrapper {
         position: relative;
-        height: $header-height;
+        height: 90px;
+        overflow: hidden;
         .vertical-align-inner {
             position: relative;
             .button-wrapper {
