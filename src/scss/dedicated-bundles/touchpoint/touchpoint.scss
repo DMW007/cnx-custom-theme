@@ -59,7 +59,7 @@
         }
     }
     #content-wrapper {
-        height: calc(100% - #{$header-height} - 90px);
+        height: calc(100% - #{$header-height} - #{$header-height});
         overflow: auto;
         .content-container {
             max-height: 95%;
@@ -256,14 +256,14 @@
     }
     #navigation-wrapper {
         position: relative;
-        height: 90px;
+        height: $header-height;
         overflow: hidden;
         .vertical-align-inner {
             position: relative;
             vertical-align: inherit;
             .button-wrapper {
                 position: relative;
-                margin-top: 28px;
+                margin-top: 11px;
             }
         }
         #progress-pips-align {
