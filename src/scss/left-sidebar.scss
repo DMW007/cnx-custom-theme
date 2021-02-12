@@ -51,6 +51,9 @@ div#dropdownSubMenuContainer div#dropdownSubMenu {
       }
     }
     .lotusContent {
+      &::before {
+        display: none;
+      }
       #lotusSyncViewWelcomeBox table {
         .lotusSyncHeading, p, .lotusSyncLinkSpan {
           color: $text-color;

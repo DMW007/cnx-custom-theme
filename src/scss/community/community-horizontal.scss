@@ -1,3 +1,18 @@
+#lotusMain {
+  max-width: 1700px;
+  width: auto;
+}
+#lotusFrame.lotusWidget_3columnsWithBannerTopMenuLayout {
+  min-width: auto;
+}
+.lotusWidget_3columnsTopMenuLayout.lotusui30_layout .lotusColLeft:after, .lotusWidget_3columnsWithBannerTopMenuLayout.lotusui30_layout .lotusColLeft:after {
+  display: none;
+}
+
+.cardResultsBody .panel-grid-wrapper {
+  min-width: 1000px;
+}
+
 // Folgen/Community Aktionen Links
 #communityActionBar a {
   color: $link-color !important;

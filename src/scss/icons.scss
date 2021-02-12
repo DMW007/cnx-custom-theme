@@ -83,6 +83,18 @@
             }
           }
         }
+        img[src*="kudos"] {
+          display: none;
+          + a::before {
+            @extend %fa-shared;
+            font-size: 1.3em;
+            margin: -5px 5px 0 0;
+            width: 20px;
+            text-align: center;
+            content: "\f233";
+            transform: rotate(-90deg);
+          }
+        }
       }
     }
   }
