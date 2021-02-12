@@ -94,6 +94,9 @@ body.lotusui30.lotusLogin2 {
           }
           .lotusLegal {
             margin-top: 15px;
+            a {
+              font-weight: 700;
+            }
             .lotusLicense {
               padding: 0;
               font-size: $small-font-size;

@@ -263,3 +263,16 @@
     filter: blur(1px);
   }
 }
+
+
+.ics-viewer-open .ics-viewer .ics-viewer-details .ics-panel-entry-container .panelContent .ics-viewer-stream .comment {
+  &[data-highlight=true] {
+    background: $primary-color-light;
+    padding: 10px;
+    margin: 0 -10px 20px;
+    .icon {
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
