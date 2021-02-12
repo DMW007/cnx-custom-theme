@@ -74,6 +74,7 @@ $override-lconn-sprite: false !default;
 // Entries in the global header navigation 
 $hide-profiles-menu: false !default;
 $hide-metrics-menu: false !default;
+$hide-touchpoint-profile-attributes: false !default;
 
 // Hide the "time" label in the user profile to save space and improve usability (designed for icon usage)
 $hide-user-profile-page-time-label: false !default;

@@ -65,6 +65,9 @@
             max-height: 95%;
             .step-description-wrapper {
                 background-color: rgba(255,255,255,.8);
+                #profilePhoto-upload {
+                    margin-bottom: 60px;
+                }
                 h1 {
                     color: $primary-color;
                 }
@@ -92,6 +95,14 @@
                             &#userName {
                                 background: transparent;
                                 border: none;
+                            }
+                        }
+                        @if $hide-touchpoint-profile-attributes {
+                            > li {
+                                display: none;
+                                &:first-child {
+                                    display: block;
+                                }
                             }
                         }
                     }
