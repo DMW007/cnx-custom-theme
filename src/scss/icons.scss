@@ -9,6 +9,22 @@
 }
 
 .lotusui30 {
+  .lotusLike {
+    &::before {
+      @extend %fa-shared;
+      padding: 0;
+      content: "\f164";
+      vertical-align: initial;
+      font-weight: 400;
+    }
+    .lotusLikeCount {
+      padding-left: 0;
+    }
+    img {
+      display: none !important;
+    }
+  }
+
   /* Search */
   .lotusTitleBar2 .icSearchPaneButton, .icSearchPane .icTopSection .icSearchBar {
     .icSearchIcon {
@@ -226,9 +242,6 @@ body .ics-viewer {
       margin: 0;
       top: 50%;
       transform: translateY(-50%);
-      &:first-child {
-        margin-right: 15px;
-      }
       &:hover {
         color: $header-background-color-hover;
       }
@@ -252,6 +265,28 @@ body .ics-viewer {
         &::before {
           @extend %fa-shared;
           font-weight: 400;
+          padding: 0 !important;
+        }
+      }
+      &.ics-viewer-action-upload {
+        margin-right: 10px;
+      }
+      &.dropdown-menu:not(.ics-viewer-more-actions) {
+        .dijitButtonNode {
+          background: none !important;
+          color: $header-foreground-color;
+          &::before {
+            @extend %fa-shared;
+            padding: 0;
+            content: "\f0d7";
+            font-size: 24px;
+          }
+          &:hover::before {
+            color: $header-background-color-hover;
+          }
+          .dijitIcon {
+            display: none;
+          }
         }
       }
       &.ics-viewer-action-favorite {
@@ -271,7 +306,7 @@ body .ics-viewer {
       }
       &.ics-viewer-action-like {
         a::before {
-          content: "\f004";
+          content: "\f164";
         }
         .checked {
           a::before {
@@ -310,9 +345,24 @@ body .ics-viewer {
         }
       }
       &.ics-viewer-action-close {
-        a::before {
-          content: "\f00d";
-          font-weight: 900;
+        a {
+          margin-right: 10px;
+          background: $alert-background-color;
+          padding: 5px !important;
+          border-radius: 4px;
+          opacity: .8;
+          &:hover { 
+            opacity: 1;
+          }
+          &::before {
+            content: "\f00d";
+            font-weight: 900;
+            color: $alert-foreground-color;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+          }
         }
       }
     }

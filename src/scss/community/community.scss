@@ -121,21 +121,27 @@ div[data-dojo-attach-point="_tagSearchText"] a,
 }
 
 .lotusui {
-  > .lotusCommunities.lotusWidget_3columnsTopMenuLayout {
+  //> .lotusCommunities, &.blog {
     .lotusBanner {
       margin-bottom: 140px;
     }
+    #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
+      margin-top: -140px;
+    }
     .tabNavBar {
       position: absolute;
-      width: calc(100% - 50px);
+      width: calc(100% - 40px);
       top: $header-height;
       padding: 15px 25px;
       &.tabNavFixed {
         position: fixed;
         top: 0 !important;
       }
+      #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
+        margin-top: 0;
+      }
     }
-  }
+  //}
   .lotusMain {
     .resultsDisplay {
       .filter-refiner {

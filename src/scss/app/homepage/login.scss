@@ -1,10 +1,6 @@
 @if $touchpoint-background-image {
   body.lotusui30.lotusLogin2 {
     background-image: url("#{$login-background-image}");
-    background-repeat: no-repeat;
-    background-position: center $header-height;
-    background-size: cover;
-    background-color: $header-background-color;
   }
 }
 
@@ -14,6 +10,10 @@ html, body.lotusui30.lotusLogin2 {
 
 body.lotusui30.lotusLogin2 {
   overflow: auto !important;
+  background-repeat: no-repeat;
+  background-position: center $header-height;
+  background-size: cover;
+  background-color: $header-background-color;
   .lotusui30_layout .lotusBanner .lotusRightCorner .lotusInner .lotusLogo {
     height: 100%;
   }

@@ -204,6 +204,28 @@ body.xccstyle {
 
   /* Widget default styles */
   #xccBody.container {
+    .xccHeader {
+      .customize {
+        margin-top: 0;
+        button.actualMode {
+          position: fixed;
+          left: 36px;
+          margin-top: 30px;
+          transition: $transition-default-all;
+          transform: translateX(-100%);
+          &::after {
+            @extend %fa-shared;
+            padding: 0;
+            content: "\f304";
+            margin: -3px -10px 0 10px;
+          }
+          &:hover {
+            transform: translateX(0);
+            left: 0;
+          }
+        }
+      }
+    }
     #xccContent {
       .widget {
         .xccWidget {
