@@ -131,6 +131,9 @@ body.xccstyle {
       }
     }
   }
+  .clearfix.customize {
+    line-height: 0;
+  }
   .live-editor {
     .live-editor_form {
       width: 35vw;
@@ -213,6 +216,7 @@ body.xccstyle {
           margin-top: 30px;
           transition: $transition-default-all;
           transform: translateX(-100%);
+          z-index: 1000;
           &::after {
             @extend %fa-shared;
             padding: 0;
