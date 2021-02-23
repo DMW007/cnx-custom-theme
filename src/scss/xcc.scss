@@ -220,8 +220,8 @@ body.xccstyle {
           &::after {
             @extend %fa-shared;
             padding: 0;
-            content: "\f304";
-            margin: -3px -10px 0 10px;
+            content: "\f044";
+            margin: -3px -12px 0 15px;
           }
           &:hover {
             transform: translateX(0);
@@ -234,10 +234,45 @@ body.xccstyle {
       .widget {
         .xccWidget {
           .wedit {
-            right: 5px !important;
+            right: 8px !important;
+            top: 8px;
+            background: none;
+            .bx--action-icon_btn {
+              &:focus {
+                border-color: transparent;
+              }
+              svg, &::before, &:after {
+                fill: transparent;
+                display: inline-block;
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 3px;
+                background: $form-border-color;
+                opacity: .5;
+              }
+              &::before {
+                margin-right: 2px;
+                background: $primary-color;
+              }
+              &:after {
+                margin-left: 2px;
+                background: $widget-title-bg;
+              }
+              &:hover {
+                svg, &::before, &:after {
+                  opacity: 1;
+                }
+              }
+            }
           }
           .wheader {
-            padding: 10px 20px;
+            padding: 0 20px;
+            .wtitle {
+              top: 0;
+              line-height: 48px;
+              font-weight: 400;
+            }
           }
           .wbody {
             font-size: $default-font-size;
@@ -262,6 +297,16 @@ body.xccstyle {
                   margin-top: 0;
                 }
                 margin-top: 5px;
+              }
+            }
+            table {
+              thead td, th {
+                background-color: $secondary-color-medium;
+                text-align: center;
+                font-weight: 700;
+              }
+              th, td {
+                padding: 6px 4px 4px;
               }
             }
           }
