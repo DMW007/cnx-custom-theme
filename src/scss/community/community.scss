@@ -132,7 +132,7 @@ div[data-dojo-attach-point="_tagSearchText"] a,
       position: absolute;
       width: calc(100% - 40px);
       top: $header-height;
-      padding: 15px 25px;
+      padding: 15px 20px !important;
       &.tabNavFixed {
         position: fixed;
         top: 0 !important;
