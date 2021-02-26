@@ -97,3 +97,15 @@ $touchpoint-background-image: false !default;
 
 // usermanager background image
 $usermanager-background-image: false !default;
+
+// board tile backgrounds
+$scarlet-tile: linear-gradient(to bottom, #6b1b1b 0%, #cc3333 100%) !default;
+$umber-tile: linear-gradient(to bottom, #6b501b 0%, #cc9933 100%) !default;
+$acid-tile: linear-gradient(to bottom, #6b6b1b 0%, #cccc33 100%) !default;
+$mint-tile: linear-gradient(to bottom, #295315 0%, #52a329 100%) !default;
+$teal-tile: linear-gradient(to bottom, #15533e 0%, #29a37a 100%) !default;
+$sky-tile: linear-gradient(to bottom, #1b506b 0%, #3399cc 100%) !default;
+$royal-tile: linear-gradient(to bottom, #1b1b6b 0%, #4848d1 100%) !default;
+$fuchsia-tile: linear-gradient(to bottom, #501b6b 0%, #9933cc 100%) !default;
+$magenta-tile: linear-gradient(to bottom, #6b1b50 0%, #cc3399 100%) !default;
+$charcoal-tile: linear-gradient(to bottom, #606060 0%, #8c8c8c 100%) !default;

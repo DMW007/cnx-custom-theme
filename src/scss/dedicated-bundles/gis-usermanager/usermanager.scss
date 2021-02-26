@@ -10,13 +10,13 @@
       height: $header-height !important;
       .wpthemeBannerInner {
         height: 100%;
+        box-shadow: 0 2px 0 rgba(0,0,0,.1);
         .wpthemeInner {
           margin: 0 auto;
           max-width: none;
           height: 100%;
           line-height: $header-height;
           padding: 0 25px;
-          box-shadow: 0 2px 0 rgba(0,0,0,.1);
           @media screen and (min-width: 1250px) {
             max-width: 1560px;
           }
@@ -70,7 +70,7 @@
       top: 50%;
       left: 0;
       right: 0;
-      transform: translateY(-50%);
+      transform: translateY(-50.1%);
       margin: 0 auto;
       max-height: 100%;
       .gccBanner {
@@ -124,9 +124,35 @@
             }
           }
         }
+        #pNav {
+          margin: 1px 0 0 -5px;
+          li {
+            border-color: transparent;
+            margin-bottom: 1px;
+            a {
+              color: $header-foreground-color;
+              font-size: $form-label-font-size;
+            }
+            &.wpthemeSelected, &:hover {
+              background: $header-background-color-hover;
+              margin-right: -1px;
+              a {
+                color: $header-foreground-color-hover;
+              }
+            }
+          }
+        }
         #pMain {
           min-height: 500px;
           background: transparent;
+          .list-group-item {
+            background: none;
+            color: $text-color;
+            font-size: $form-label-font-size;
+            .glyphicon, a {
+              color: $link-color;
+            }
+          }
         }
       }
     }

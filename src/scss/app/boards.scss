@@ -126,3 +126,46 @@ body.hikari-theme #board-info-container {
 body.hikari-theme #board-info-container {
   border-top: none !important;
 }
+
+
+
+.lotusui.kudos-boards-ui {
+  .action-menu .floating-view, .color-selection-row, .board-list .board-tile {
+    border-radius: 0;
+  }
+  .tile-color-selection-view, .boardsMain .lotusContent .board-list {
+    .scarlet-tile { background: $scarlet-tile !important; }
+    .umber-tile { background: $umber-tile !important; }
+    .acid-tile { background: $acid-tile !important; }
+    .mint-tile { background: $mint-tile !important; }
+    .teal-tile { background: $teal-tile !important; }
+    .sky-tile { background: $sky-tile !important; }
+    .royal-tile { background: $royal-tile !important; }
+    .fuchsia-tile { background: $fuchsia-tile !important; }
+    .magenta-tile { background: $magenta-tile !important; }
+    .charcoal-tile { background: $charcoal-tile !important; }
+  }
+  .board-info-bar {
+    margin-top: 5px;
+    .community-info {
+      float: none;
+      display: inline;
+      line-height: $headline-font-size;
+      + .glyphicons.chevron-right {
+        margin-right: 10px;
+      }
+    }
+    .community-info strong, h2.header-content-container {
+      font-size: $headline-font-size;
+      line-height: $headline-font-size;
+      vertical-align: top;
+    }
+  }
+  .boardsMain .lotusContent {
+    .section-view {
+      .sectionInfo, div:last-child {
+        border-radius: 0;
+      }
+    }
+  }
+}
