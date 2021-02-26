@@ -121,27 +121,25 @@ div[data-dojo-attach-point="_tagSearchText"] a,
 }
 
 .lotusui {
-  //> .lotusCommunities, &.blog {
-    .lotusBanner {
-      margin-bottom: 140px;
+  .lotusBanner {
+    margin-bottom: 140px;
+  }
+  #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
+    margin-top: -140px;
+  }
+  .tabNavBar {
+    position: absolute;
+    width: calc(100% - 40px);
+    top: $header-height;
+    padding: 15px 20px !important;
+    &.tabNavFixed {
+      position: fixed;
+      top: 0 !important;
     }
     #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
-      margin-top: -140px;
+      margin-top: 0;
     }
-    .tabNavBar {
-      position: absolute;
-      width: calc(100% - 40px);
-      top: $header-height;
-      padding: 15px 20px !important;
-      &.tabNavFixed {
-        position: fixed;
-        top: 0 !important;
-      }
-      #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
-        margin-top: 0;
-      }
-    }
-  //}
+  }
   .lotusMain {
     .resultsDisplay {
       .filter-refiner {
