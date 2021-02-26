@@ -1,15 +1,19 @@
 .lotusui30 {
   .lotusMain {
     #catalog-app-container {
-      .catalog-top-nav {
-
-      }
       .lotusContent {
         .lconn-filter-input-container {
           .catalog-text-input {
             border: 1px solid $border-color;
             border-radius: 0;
             padding-bottom: 32px;
+            overflow: hidden;
+          }
+        }
+        #view-select-container {
+          grid-column: 14/span 3;
+          .ic-view-select {
+            min-width: 0;
           }
         }
       }
@@ -190,6 +194,54 @@ div[data-dojo-attach-point="_tagSearchText"] a,
     }
   }
 }
+
+
+/* NEEDS MORE TESTING
+// makes community sidebar dynamic so it will be hidden if there is no content
+.lotusui {
+  .lotusMain {
+    .lotusColLeft  {
+      width: auto !important;
+      max-width: 220px !important;
+      min-height: auto !important;
+      background: none !important;
+      &::after {
+        display: none;
+      }
+      .lotusGlobalActionBar, .lotusMenu {
+        &::after {
+          content: "";
+          display: block;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          width: 50px;
+          margin-left: -1000px;
+          border-left: 1000px solid #f1f1f1;
+          background: #f1f1f1;
+          width: 1px;
+          border-right: 240px solid #f1f1f1;
+          height: 100%;
+          z-index: -2;
+        }
+      }
+      .lotusMenu {
+        &::after {
+          border-left: 1000px solid #f1f1f1;
+          background: #f1f1f1;
+          border-right: 240px solid #f1f1f1;
+        }
+      }
+    }
+  }
+}
+
+.communities-widget-appearance .lotusWidget_3columnLayout .lotusColLeft .lotusMenu::after {
+  border-left: 1000px solid #fff;
+  background: #fff;
+  border-right: 240px solid #fff;
+}
+*/
 
 @import "community-vertical";
 @import "community-horizontal";

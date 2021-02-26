@@ -217,6 +217,7 @@ body.xccstyle {
           transition: $transition-default-all;
           transform: translateX(-100%);
           z-index: 1000;
+          opacity: .7;
           &::after {
             @extend %fa-shared;
             padding: 0;
@@ -226,6 +227,7 @@ body.xccstyle {
           &:hover {
             transform: translateX(0);
             left: 0;
+            opacity: 1;
           }
         }
       }

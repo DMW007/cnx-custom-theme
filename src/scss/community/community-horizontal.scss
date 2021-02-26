@@ -7,6 +7,7 @@
 }
 .lotusWidget_3columnsTopMenuLayout #lotusMain.lotusMain, .lotusWidget_3columnsWithBannerTopMenuLayout #lotusMain.lotusMain {
   max-width: 1360px;
+  min-width: auto;
 }
 .lotusWidget_3columnsTopMenuLayout.lotusui30_layout .lotusColLeft:after, .lotusWidget_3columnsWithBannerTopMenuLayout.lotusui30_layout .lotusColLeft:after {
   display: none;

@@ -321,6 +321,9 @@
         }
         a {
           padding-right: 32px;
+          strong {
+            pointer-events: none;
+          }
         }
       }
     }
@@ -328,6 +331,22 @@
       .lotusNavMenuLarge {
         td {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .lotusui {
+    .lotusui30_layout {
+      .lotusBanner {
+        .lotusRightCorner {
+          .lotusInner {
+            a {
+              font-size: $form-label-font-size;
+            }
+          }
         }
       }
     }

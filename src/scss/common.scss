@@ -184,4 +184,7 @@ form label {
       border-radius:0;
     }
   }
-}
+  div.lotusPlaceBar h2, .lotusTitleBar2 .lotusHeading a, .lotusMeta, .lotusWidget2 h2, input, select {
+    font-family: $font-family;
+  }
+} 

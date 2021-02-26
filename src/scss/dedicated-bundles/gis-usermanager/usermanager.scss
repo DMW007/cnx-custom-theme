@@ -1,5 +1,10 @@
 @import "../../color-vars.scss";
 @import "../../button.scss";
+@import "../../fonts";
+
+.lotusui30 {
+  font-family: $font-family;
+}
 
 .wpthemeFrame {
   #pageHeader {

@@ -23,6 +23,9 @@
     img {
       display: none !important;
     }
+    .lotusLike::before {
+      display: none;
+    }
   }
 
   /* Search */

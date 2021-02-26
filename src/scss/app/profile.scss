@@ -56,11 +56,13 @@
   .lotusFrame {
     .lotusTitleBar2 .lotusHeading .lotusText {
       color: $text-color;
+      font-family: $font-family;
     }
     .lotusMain {
       .lotusColLeft, .lotusColRight {
         .widgetTitle {
           color: $text-color;
+          font-family: $font-family;
         }
       }
       .lotusContent {
