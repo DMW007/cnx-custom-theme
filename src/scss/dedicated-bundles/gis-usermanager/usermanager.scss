@@ -31,6 +31,13 @@
           #primaryNav {
             width: auto !important;
           }
+          #secondaryNav {
+            .userInfo {
+              display: none;
+              color: $header-foreground-color;
+              margin: 0;
+            }
+          }
           .navbar-header {
             > a {
               display: block;
@@ -49,10 +56,6 @@
                 }
               }
             }
-          }
-          .userInfo {
-            color: $header-foreground-color;
-            margin: 0;
           }
         }
       }
