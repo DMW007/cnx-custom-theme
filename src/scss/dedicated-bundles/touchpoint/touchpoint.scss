@@ -171,6 +171,7 @@
                 position: relative;
                 margin-top: 15px;
                 font-size: $large-font-size;
+                display: inline-block;
                 input[type="checkbox"] {
                     position: absolute;
                     top: 0;
@@ -229,6 +230,7 @@
             #content-welcome {
                 background: none;
                 #welcome-content {
+                    text-align: left !important;
                     background: none;
                     margin: 0 auto;
                     @media screen and (min-width: 1250px) {
@@ -243,6 +245,7 @@
                         margin: 0;
                         padding: 30px 30px 40px;
                         background-color: rgba(255,255,255,.8);
+                        max-width: calc(100% - 60px);
                         header,div {
                             p {
                                 color: $text-color;
