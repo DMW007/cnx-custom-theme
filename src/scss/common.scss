@@ -58,6 +58,14 @@
     // No important to allow users to override the color using inline css
     color: $link-color;
   }
+  .lotusMain a {
+    > img {
+      transition: $transition-default-all;
+    }
+    &:hover > img {
+      transform: scale(0.95);
+    }
+  }
   .lotusVCard {
     a,
     a:active,
@@ -184,7 +192,7 @@ form label {
       border-radius:0;
     }
   }
-  div.lotusPlaceBar h2, .lotusTitleBar2 .lotusHeading a, .lotusMeta, .lotusWidget2 h2, input, select {
+  .lotusWidget2 .lotusTable h4, .dijitTitlePaneTitle, .lotusSection h2, div.lotusPlaceBar h2, .lotusTitleBar2 .lotusHeading a, .lotusMeta, .lotusWidget2 h2, input, select {
     font-family: $font-family;
   }
 } 

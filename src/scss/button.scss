@@ -77,7 +77,7 @@
   color: $button-foreground-color !important;
   background-color: $button-background-color !important;
   box-shadow: none !important;
-  font-family: $font-family;
+  font-family: $font-family !important;
   &:hover {
     opacity: 0.7;
   }

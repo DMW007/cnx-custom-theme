@@ -94,17 +94,17 @@
 }
 
 // Links in Community Übersicht Widgets
-.communities-widget-appearance
-  .lotusui30
-  div:not(#profilePaneLeft):not(#profilePaneRight):not(#profileBody):not(#tabsWidget1_widgetId_container)
-  > .lotusWidget2
-  .lotusTable
-  h4 {
-  color: $link-color;
+.communities-widget-appearance .lotusui30 div:not(#profilePaneLeft):not(#profilePaneRight):not(#profileBody):not(#tabsWidget1_widgetId_container)
+  > .lotusWidget2 .lotusTable
+    h4 {
+      color: $link-color;
+    a {
+      color: $link-color;
+    }
+}
 
-  a {
-    color: $link-color;
-  }
+.lotusui30 .lotusTable h4 {
+  font-family: $font-family;
 }
 
 // "Tags" Widget
