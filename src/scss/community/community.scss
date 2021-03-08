@@ -131,6 +131,11 @@ div[data-dojo-attach-point="_tagSearchText"] a,
   #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
     margin-top: -140px;
   }
+  @media screen and (max-width: 1212px) {
+    .lotusTitleBarExt .lotusInlinelist.lotusActions {
+      width: auto;
+    }
+  }
   .tabNavBar {
     position: absolute;
     width: calc(100% - 40px);
@@ -139,6 +144,15 @@ div[data-dojo-attach-point="_tagSearchText"] a,
     &.tabNavFixed {
       position: fixed;
       top: 0 !important;
+      .tabNavPlaceBar {
+        #communityActionBar.tabNavActionsMenu, .tabNavActionsMenu {
+          display: inline-block;
+          top: 7px;
+          > ul {
+            display: inline-block;
+          }
+        }
+      }
     }
     #lotusTitleBar, .lotusTitleBar, .lotusTitleBar2 {
       margin-top: 0;
@@ -195,6 +209,13 @@ div[data-dojo-attach-point="_tagSearchText"] a,
   }
 }
 
+.lotusui {
+  &.lotusAppcommunities, &.lotusAppwikis {
+    .lotusMain {
+      padding-top: 25px !important;
+    }
+  }
+}
 
 /* NEEDS MORE TESTING
 // makes community sidebar dynamic so it will be hidden if there is no content
@@ -205,6 +226,7 @@ div[data-dojo-attach-point="_tagSearchText"] a,
       max-width: 220px !important;
       min-height: auto !important;
       background: none !important;
+      margin-right: 0;
       &::after {
         display: none;
       }
@@ -233,15 +255,18 @@ div[data-dojo-attach-point="_tagSearchText"] a,
         }
       }
     }
+    .lotusContent {
+      padding-left: 50px !important;
+    }
   }
-}
+}*/
 
 .communities-widget-appearance .lotusWidget_3columnLayout .lotusColLeft .lotusMenu::after {
   border-left: 1000px solid #fff;
   background: #fff;
   border-right: 240px solid #fff;
 }
-*/
+
 
 @import "community-vertical";
 @import "community-horizontal";
