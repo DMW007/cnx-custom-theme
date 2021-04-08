@@ -195,4 +195,8 @@ form label {
   .lotusWidget2 .lotusTable h4, .dijitTitlePaneTitle, .lotusSection h2, div.lotusPlaceBar h2, .lotusTitleBar2 .lotusHeading a, .lotusMeta, .lotusWidget2 h2, input, select {
     font-family: $font-family;
   }
+  // Fix too large footer by inline css
+  .lotusFooter {
+    height: auto !important;
+  }
 } 
