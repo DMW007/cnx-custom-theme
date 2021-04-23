@@ -210,7 +210,7 @@ div[data-dojo-attach-point="_tagSearchText"] a,
 }
 
 .lotusui {
-  &.lotusAppcommunities, &.lotusAppwikis {
+  &.lotusAppcommunities:not(.catalog), &.lotusAppwikis {
     .lotusMain {
       padding-top: 25px !important;
     }
