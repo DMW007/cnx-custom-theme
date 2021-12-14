@@ -23,6 +23,27 @@
 }
 
 body.xccstyle {
+  .header-wrapper {
+    height: $header-height;
+
+    .header-bar {
+      line-height: $header-height;
+
+      * {
+        margin-top: 0 !important;
+        font-size: $headline-font-size;
+      }
+
+      .inside-label {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      > .clearfix {
+        display: none;
+      }
+    }
+  }
+
   .xccWidget[data-wname^='html_codes'] {
     background: transparent;
     min-height: 0;

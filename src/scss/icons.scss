@@ -31,7 +31,7 @@
   /* Search */
   .lotusTitleBar2 .icSearchPaneButton, .icSearchPane .icTopSection .icSearchBar {
     .icSearchIcon {
-      background-color: $header-background-color-hover !important;
+      //background-color: $header-background-color-hover !important;
       &::before {
         @extend %fa-shared;
         content: "\f002";

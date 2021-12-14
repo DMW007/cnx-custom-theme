@@ -1,4 +1,4 @@
-.lotusui30 {
+.lotusui30, .connections-header.lotusui30_body {
   font-family: $font-family;
   font-size: $default-font-size;
   color: $text-color;
@@ -113,6 +113,20 @@
   min-width: initial;
 }
 
+.connections-header.lotusui30_body {
+  max-height: $header-height;
+  min-height: $header-height;
+  height: $header-height;
+  
+  * {
+    font-family: $font-family;
+  }
+
+  .lotusAltText * {
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial;
+  }
+}
+
 /* Hinweis-Boxen mit Tipps, die z.B. in "Lesezeichen" links erscheinen, wenn man zum ersten Mal mit diesen arbeitet */
 .lotusInfoBox {
   /* Standard ist ein Rahmen um die gesamte Box. Mit der neuen Titelfarbe sieht dies aufgrund des hohen Kontrastes merkwürdig aus. */
@@ -148,9 +162,28 @@ body {
 // Muss auf .entryContentContainer beschränkt werden, da ansonsten Avatare verzerrt dargestellt werden
 #wikiContentDiv,
 // Blogs
-.lotusui30 .entryContentContainer {
+.lotusui30 .entryContentContainer,
+#previewArea {
   img {
     max-width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#wikiContentDiv {
+  img {
+    margin: 5px 15px;
+
+    &[style*="float:left"] {
+      margin-left: 0;
+    }
+    &[style*="float:right"] {
+      margin-right: 0;
+    }
   }
 }
 

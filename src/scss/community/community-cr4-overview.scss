@@ -76,7 +76,7 @@ body .icCatalogCommunityCreate.bx--dropdown .bx--dropdown-toggle:hover {
           height: 1px;
           width: 100%;
           bottom: 15%;
-          background-color: $header-foreground-color;
+          background-color: $widget-title-fg;
           opacity: 1;
           transition: $transition-default-all;
         }
@@ -95,7 +95,7 @@ body .icCatalogCommunityCreate.bx--dropdown .bx--dropdown-toggle:hover {
         line-height: 40px;
         padding: 0;
         background: none;
-        color: $header-foreground-color;
+        color: $widget-title-fg;
       }
     }
   }

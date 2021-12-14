@@ -41,7 +41,7 @@
   }
 }
 
-.lotusui30 {
+.lotusui30, .connections-header.lotusui30_body {
   .lotusFrame  {
     /* Header */
     .lotusBanner {
@@ -57,6 +57,8 @@
             &#notificationCenterNode, &#headerHelpLink {
               height: 100% ;
             }
+
+            color: $header-foreground-color !important;
           }
           .lotusLogo {
             width: 216px;
@@ -79,7 +81,8 @@
             }
           }
           .lotusBranding {
-            padding: 0 0 0 15px;
+            padding: 0;
+            margin-left: 15px;
             line-height: $header-height;
             display: inline;
             @if $hide-hcl-logo and $logo-right == false {
@@ -106,6 +109,8 @@
             font-size: $headline-font-size;
             padding: 0;
             line-height: $header-height;
+            font-weight: 400;
+            font-family: "Helvetica Neue",Arial,sans-serif;
           }
           #lotusBannerNotifications, #headerHelpLi {
             a {
