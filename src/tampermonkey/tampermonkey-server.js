@@ -11,6 +11,9 @@ app.use(express.static(www));
 
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
+io.origins( function (origin, callback) {
+  return callback (null, true);
+});
 
 io.on("connection", socket => {
   // Lokale Änderungen beim händischen neu Laden bzw neu Öffnen anzeigen, ohne dass SCSS händisch gespeichert/getriggert werden muss
