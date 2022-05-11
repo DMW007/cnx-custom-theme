@@ -159,3 +159,15 @@
     }
   }
 }
+
+#memberAddForm {
+  #addAllParentMembersRow {
+    .lotusFormFieldRow {
+      text-align: right;
+
+      label {
+        pointer-events: none;
+      }
+    }
+  }
+}
