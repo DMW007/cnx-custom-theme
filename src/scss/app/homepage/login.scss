@@ -95,7 +95,7 @@ body.lotusui30.lotusLogin2 {
           .lotusLegal {
             margin-top: 15px;
             a {
-              font-weight: 700;
+              font-weight: 400;
             }
             .lotusLicense {
               padding: 0;
@@ -113,6 +113,13 @@ body.lotusui30.lotusLogin2 {
                 box-shadow: none;
                 outline: none;
               }
+            }
+
+            .lotusBtnContainer.passwordReset {
+              text-align: center;
+              font-size: 16px;
+              font-weight: 700;
+              margin-top: 20px;
             }
           }
           table.lotusLegal {
