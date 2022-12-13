@@ -32,7 +32,7 @@
     "babelify": "^10.0.0",
     "browserify": "^16.5.1",
     "chokidar": "^2.1.8",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fs-extra": "^9.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-base64": "^0.1.3",
